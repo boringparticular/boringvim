@@ -274,6 +274,9 @@
         webdev = [
           emmet-vim
         ];
+
+        sgdev = [
+        ];
       };
 
       # not loaded automatically at startup.
@@ -297,6 +300,9 @@
       environmentVariables = {
         test = {
           CATTESTVAR = "It worked!";
+        };
+        sgdev = {
+          SG_NVIM_DEV = "true";
         };
       };
 
@@ -400,6 +406,20 @@
         categories = {
           have_nerd_font = false;
         };
+      };
+
+      sgdevNvim = args: {
+        settings =
+          baseSettings args
+          // {
+            wrapRc = false;
+            extraName = "sgvim";
+          };
+        categories =
+          baseCategories args
+          // {
+            sgdev = true;
+          };
       };
 
       testNvim = args: {

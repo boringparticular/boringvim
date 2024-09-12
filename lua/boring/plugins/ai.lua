@@ -13,7 +13,7 @@ return {
         enabled = require('nixCatsUtils').enableForCategory('ai'),
         event = 'InsertEnter',
         keys = {
-            { 'n', '<leader>cc', '<cmd>CodyToggle<CR>', desc = '[C]ody [C]hat' },
+            { '<leader>cc', '<cmd>CodyToggle<CR>', desc = '[C]ody [C]hat' },
         },
         opts = {
             accept_tos = true,

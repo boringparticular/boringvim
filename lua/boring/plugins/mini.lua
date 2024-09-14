@@ -34,11 +34,16 @@ return {
                 -- - sd'   - [S]urround [D]elete [']quotes
                 -- - sr)'  - [S]urround [R]eplace [)] [']
                 require('mini.surround').setup()
+
+                require('mini.splitjoin').setup()
             end
             if require('nixCatsUtils').enableForCategory('mini.optional') then
                 require('mini.files').setup()
                 require('mini.sessions').setup()
                 require('mini.visits').setup()
+                -- require('mini.bufremove').setup()
+                require('mini.indentscope').setup()
+                require('mini.completion').setup()
             end
             -- ... and there is more!
             --  Check out: https://github.com/echasnovski/mini.nvim

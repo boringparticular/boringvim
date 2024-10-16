@@ -126,6 +126,7 @@ return {
                     { name = 'treesitter' },
                     { max_item_count = 5, name = 'path' },
                     { name = 'supermaven' },
+                    { name = 'conjure' },
                 },
                 view = {
                     entries = {

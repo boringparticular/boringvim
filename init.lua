@@ -48,6 +48,7 @@ require('nixCatsUtils.lazyCat').setup(pluginList, nixLazyPath, {
     -- NOTE: nixCats: nix downloads it with a different file name.
     -- tell lazy about that.
     { 'Olical/conjure' },
+    { 'PaterJason/cmp-conjure' },
 
     { 'eraserhd/parinfer-rust', build = require('nixCatsUtils').lazyAdd('cargo build --release') },
     { 'numToStr/Comment.nvim', name = 'comment.nvim', opts = {}, enabled = require('nixCatsUtils').enableForCategory('general') },

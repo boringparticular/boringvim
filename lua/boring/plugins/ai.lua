@@ -39,5 +39,18 @@ return {
             disable_inline_completion = true,
         },
     },
+    {
+        'Exafunction/codeium.nvim',
+        enabled = require('nixCatsUtils').enableForCategory('ai'),
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+            'hrsh7th/nvim-cmp',
+        },
+        config = function()
+            require('codeium').setup({
+                ebable_chat = true,
+            })
+        end,
+    },
     load_sg(),
 }

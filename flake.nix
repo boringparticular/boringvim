@@ -156,6 +156,7 @@
         ];
 
         ai = [
+          codeium
           inputs.sg-nvim.packages.${pkgs.system}.default
         ];
 
@@ -223,6 +224,7 @@
 
         ai = [
           supermaven-nvim
+          codeium-nvim
           # sg-nvim # breaks with rust 1.80
           inputs.sg-nvim.packages.${pkgs.system}.sg-nvim
         ];

@@ -52,5 +52,45 @@ return {
             })
         end,
     },
+    {
+        'zbirenbaum/copilot.lua',
+        enabled = require('nixCatsUtils').enableForCategory('ai'),
+        cmd = 'Copilot',
+        event = 'InsertEnter',
+        config = function()
+            require('copilot').setup({
+                suggestion = { enabled = false },
+                panel = { enabled = false },
+            })
+        end,
+    },
+    {
+        'zbirenbaum/copilot-cmp',
+        enabled = require('nixCatsUtils').enableForCategory('ai'),
+        config = function()
+            require('copilot_cmp').setup()
+        end,
+    },
+    {
+        'CopilotC-Nvim/CopilotChat.nvim',
+        enabled = require('nixCatsUtils').enableForCategory('ai'),
+        branch = 'canary',
+        dependencies = {
+            { 'zbirenbaum/copilot.lua' }, -- or github/copilot.vim
+            { 'nvim-lua/plenary.nvim' }, -- for curl, log wrapper
+        },
+        build = require('nixCatsUtils').lazyAdd((function()
+            if vim.fn.executable('make') == 0 then
+                return
+            end
+            return 'make tiktoken'
+        end)()),
+        opts = {
+            debug = false, -- Enable debugging
+            model = 'gpt-4o', -- GPT model to use, 'gpt-3.5-turbo', 'gpt-4', or 'gpt-4o'
+            temperature = 0.1, -- GPT temperature
+        },
+        -- See Commands section for default commands if you want to lazy load on them
+    },
     load_sg(),
 }

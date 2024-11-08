@@ -49,6 +49,15 @@ require('nixCatsUtils.lazyCat').setup(pluginList, nixLazyPath, {
     -- tell lazy about that.
     { 'Olical/conjure' },
     { 'PaterJason/cmp-conjure' },
+    {
+        'NeogitOrg/neogit',
+        dependencies = {
+            'nvim-lua/plenary.nvim', -- required
+            'sindrets/diffview.nvim', -- optional - Diff integration
+            'nvim-telescope/telescope.nvim', -- optional
+        },
+        config = true,
+    },
 
     { 'eraserhd/parinfer-rust', build = require('nixCatsUtils').lazyAdd('cargo build --release') },
     { 'numToStr/Comment.nvim', name = 'comment.nvim', opts = {}, enabled = require('nixCatsUtils').enableForCategory('general') },

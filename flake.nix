@@ -367,7 +367,7 @@
     # see :help nixCats.flake.outputs.settings
     baseSettings = {pkgs, ...}: {
       wrapRc = true;
-      unwrappedCfgPath = "/home/kmies/projects/nixos/nixCats";
+      unwrappedCfgPath = "/home/kmies/projects/nixos/boringvim";
       neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.system}.neovim;
       withNodeJs = true;
     };

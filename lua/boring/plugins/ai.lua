@@ -12,7 +12,7 @@ local function load_sg()
         dependencies = { 'nvim-lua/plenary.nvim' },
         event = 'InsertEnter',
         keys = {
-            { '<leader>cc', '<cmd>CodyToggle<CR>', desc = '[C]ody [C]hat' },
+            -- { '<leader>cc', '<cmd>CodyToggle<CR>', desc = '[C]ody [C]hat' },
         },
         opts = {
             accept_tos = true,
@@ -24,7 +24,7 @@ local function load_sg()
         },
         config = function(_, opts)
             require('sg').setup(opts)
-            vim.keymap.set('n', '<leader>cc', '<cmd>CodyToggle<CR>', { desc = '[C]ody [C]hat' })
+            -- vim.keymap.set('n', '<leader>cc', '<cmd>CodyToggle<CR>', { desc = '[C]ody [C]hat' })
         end,
     })
 end
@@ -88,14 +88,61 @@ return {
             end
             return 'make tiktoken'
         end)()),
-        opts = {
-            debug = false, -- Enable debugging
-            model = 'claude-3.5-sonnet', -- GPT model to use, 'gpt-3.5-turbo', 'gpt-4', or 'gpt-4o'
-            temperature = 0.1, -- GPT temperature
-        },
-        config = function(_, opts)
-            require('CopilotChat').setup(opts)
-            vim.keymap.set('n', '<leader>tc', '<cmd>CopilotChatToggle<CR>', { desc = '[T]oggle GitHub [C]opilot' })
+        config = function()
+            local chat = require('CopilotChat')
+            chat.setup({
+                debug = false, -- Enable debugging
+                model = 'claude-3.5-sonnet', -- GPT model to use, 'gpt-3.5-turbo', 'gpt-4', or 'gpt-4o'
+                temperature = 0.1, -- GPT temperature
+                callback = function(response)
+                    if vim.g.chat_title then
+                        chat.save(vim.g.chat_title)
+                        return
+                    end
+
+                    local prompt = [[
+                Generate chat title in filepath-friendly format for:
+
+                ```
+                %s
+                ```
+
+                Output only the title and nothing else in your response.
+                ]]
+
+                    chat.ask(vim.trim(prompt:format(response)), {
+                        no_chat = true,
+                        callback = function(gen_response)
+                            vim.g.chat_title = vim.trim(gen_response)
+                            print('Chat title set to: ' .. vim.g.chat_title)
+                            chat.save(vim.g.chat_title)
+                        end,
+                    })
+                end,
+            })
+            vim.keymap.set('n', '<leader>cc', '<cmd>CopilotChatToggle<CR>', { desc = '[T]oggle GitHub [C]opilot' })
+
+            vim.keymap.set('n', '<leader>ccp', function()
+                local actions = require('CopilotChat.actions')
+                require('CopilotChat.integrations.telescope').pick(actions.prompt_actions())
+            end, { desc = '[C]opilot [P]rompt actions' })
+
+            -- vim.keymap.set('n', '<leader>ccl', function()
+            --     local options = vim.tbl_map(function(file)
+            --         return vim.fn.fnamemodify(file, ':t:r')
+            --     end, vim.fn.glob(M.config.history_path .. '/*', true, true))
+            --
+            --     if not vim.tbl_contains(options, 'default') then
+            --         table.insert(options, 1, 'default')
+            --     end
+            --
+            --     require('CopilotChat.integrations.telescope').pick(options)
+            -- end, { desc = '[C]opilot [L]oad chat' })
+
+            vim.keymap.set({ 'n', 'v' }, '<leader>ax', function()
+                vim.g.chat_title = nil
+                chat.reset()
+            end)
         end,
         -- See Commands section for default commands if you want to lazy load on them
     },

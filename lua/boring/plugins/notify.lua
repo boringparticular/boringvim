@@ -7,7 +7,7 @@ return {
             render = 'wrapped-compact',
         },
         config = function()
-            vim.keymap.set('n', '<leader>sn', 'require("telescope").extensions.notify.notify', { desc = '[S]earch [N]otifications' })
+            vim.keymap.set('n', '<leader>sn', '<cmd>Telescope notify<CR>', { desc = '[S]earch [N]otifications' })
         end,
     },
 }

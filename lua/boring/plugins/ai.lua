@@ -101,14 +101,14 @@ return {
                     end
 
                     local prompt = [[
-                Generate chat title in filepath-friendly format for:
+                    Generate chat title in filepath-friendly format for:
 
-                ```
-                %s
-                ```
+                    ```
+                    %s
+                    ```
 
-                Output only the title and nothing else in your response.
-                ]]
+                    Output only the title and nothing else in your response.
+                    ]]
 
                     chat.ask(vim.trim(prompt:format(response)), {
                         no_chat = true,

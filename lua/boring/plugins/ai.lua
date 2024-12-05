@@ -118,9 +118,14 @@ return {
                     })
                 end,
             })
-            vim.keymap.set('n', '<leader>ccc', '<cmd>CopilotChatToggle<CR>', { desc = '[T]oggle GitHub [C]opilot' })
-            vim.keymap.set('n', '<leader>cce', '<cmd>CopilotChatExplain<CR>', { desc = 'CopilotChat [E]xplain code' })
-            vim.keymap.set('n', '<leader>cct', '<cmd>CopilotChatTests<CR>', { desc = 'CopilotChat - Generate [T]ests' })
+            vim.keymap.set('n', '<leader>ac', '<cmd>CopilotChatToggle<CR>', { desc = '[A]I [C]hat' })
+            vim.keymap.set('n', '<leader>ccc', '<cmd>CopilotChatToggle<CR>', { desc = '[C]opilot [C]hat' })
+            vim.keymap.set('n', '<leader>ae', '<cmd>CopilotChatExplain<CR>', { desc = '[A]I [E]xplain code' })
+            vim.keymap.set('n', '<leader>cce', '<cmd>CopilotChatExplain<CR>', { desc = '[C]opilot [C]hat [E]xplain code' })
+            vim.keymap.set('n', '<leader>at', '<cmd>CopilotChatTests<CR>', { desc = '[A]I Generate [T]ests' })
+            vim.keymap.set('n', '<leader>cct', '<cmd>CopilotChatTests<CR>', { desc = '[C]opilot [C]hat Generate [T]ests' })
+            vim.keymap.set('n', '<leader>ar', '<cmd>CopilotChatReview<CR>', { desc = '[A]I [R]eview Code' })
+            vim.keymap.set('n', '<leader>ccr', '<cmd>CopilotChatReview<CR>', { desc = '[C]opilot [C]hat [R]eview Code' })
 
             vim.keymap.set('n', '<leader>ccp', function()
                 local actions = require('CopilotChat.actions')

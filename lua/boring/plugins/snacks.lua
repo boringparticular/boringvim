@@ -7,6 +7,7 @@ return {
             bigfile = { enabled = true },
             notifier = { enabled = true },
             quickfile = { enabled = true },
+            terminal = { enabled = true },
             words = { enabled = true },
         },
     },

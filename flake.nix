@@ -155,10 +155,14 @@
           luarocks
         ];
 
-        ai = [
-          codeium
-          inputs.sg-nvim.packages.${pkgs.system}.default
-        ];
+        ai = {
+          codeium = [
+            codeium
+          ];
+          cody = [
+            inputs.sg-nvim.packages.${pkgs.system}.default
+          ];
+        };
 
         debug = [
           delve
@@ -225,15 +229,23 @@
           pkgs.neovimPlugins.go-nvim
         ];
 
-        ai = [
-          supermaven-nvim
-          codeium-nvim
-          # sg-nvim # breaks with rust 1.80
-          inputs.sg-nvim.packages.${pkgs.system}.sg-nvim
-          copilot-lua
-          copilot-cmp
-          CopilotChat-nvim
-        ];
+        ai = {
+          copilot = [
+            copilot-lua
+            copilot-cmp
+            CopilotChat-nvim
+          ];
+          cody = [
+            # sg-nvim # breaks with rust 1.80
+            inputs.sg-nvim.packages.${pkgs.system}.sg-nvim
+          ];
+          supermaven = [
+            supermaven-nvim
+          ];
+          codeium = [
+            codeium-nvim
+          ];
+        };
 
         notes = [
           neorg
@@ -375,7 +387,12 @@
     # (and other information to pass to lua)
     baseCategories = {pkgs, ...}: {
       general = true;
-      ai = true;
+      ai = {
+        copilot = true;
+        codeium = false;
+        cody = false;
+        supermaven = false;
+      };
       go = true;
       notes = true;
       treesitter-optional = true;

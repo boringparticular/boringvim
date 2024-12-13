@@ -8,7 +8,7 @@ local function load_sg()
     end
 
     return vim.tbl_extend('force', result, {
-        enabled = require('nixCatsUtils').enableForCategory('ai'),
+        enabled = require('nixCatsUtils').enableForCategory('ai.cody'),
         dependencies = { 'nvim-lua/plenary.nvim' },
         event = 'InsertEnter',
         keys = {
@@ -32,7 +32,7 @@ end
 return {
     {
         'supermaven-inc/supermaven-nvim',
-        enabled = require('nixCatsUtils').enableForCategory('ai'),
+        enabled = require('nixCatsUtils').enableForCategory('ai.supermaven'),
         event = 'InsertEnter',
         opts = {
             disable_keymaps = true,
@@ -41,7 +41,7 @@ return {
     },
     {
         'Exafunction/codeium.nvim',
-        enabled = require('nixCatsUtils').enableForCategory('ai'),
+        enabled = require('nixCatsUtils').enableForCategory('ai.codeium'),
         dependencies = {
             'nvim-lua/plenary.nvim',
             'hrsh7th/nvim-cmp',
@@ -54,7 +54,7 @@ return {
     },
     {
         'zbirenbaum/copilot.lua',
-        enabled = require('nixCatsUtils').enableForCategory('ai'),
+        enabled = require('nixCatsUtils').enableForCategory('ai.copilot'),
         cmd = 'Copilot',
         event = 'InsertEnter',
         config = function()
@@ -69,14 +69,14 @@ return {
     },
     {
         'zbirenbaum/copilot-cmp',
-        enabled = require('nixCatsUtils').enableForCategory('ai'),
+        enabled = require('nixCatsUtils').enableForCategory('ai.copilot'),
         config = function()
             require('copilot_cmp').setup()
         end,
     },
     {
         'CopilotC-Nvim/CopilotChat.nvim',
-        enabled = require('nixCatsUtils').enableForCategory('ai'),
+        enabled = require('nixCatsUtils').enableForCategory('ai.copilot'),
         branch = 'canary',
         dependencies = {
             { 'zbirenbaum/copilot.lua' }, -- or github/copilot.vim

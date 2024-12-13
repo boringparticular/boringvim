@@ -178,7 +178,7 @@ return {
             end
 
             -- servers.nextls = { cmd = { 'nextls' } }
-            servers.elixirls = { cmd = { 'elixir-ls' } }
+            -- servers.elixirls = { cmd = { 'elixir-ls' } }
             -- servers.lexical = { cmd = { 'lexical' } }
 
             -- NOTE: nixCats: nixd is not available on mason.

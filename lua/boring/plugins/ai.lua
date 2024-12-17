@@ -8,22 +8,20 @@ local function load_sg()
     end
 
     return vim.tbl_extend('force', result, {
-        enabled = require('nixCatsUtils').enableForCategory('ai.cody'),
-        dependencies = { 'nvim-lua/plenary.nvim' },
+        for_cat = 'ai.cody',
         event = 'InsertEnter',
         keys = {
             -- { '<leader>cc', '<cmd>CodyToggle<CR>', desc = '[C]ody [C]hat' },
         },
-        opts = {
-            accept_tos = true,
-            enable_cody = true,
-            download_binaries = false,
-            chat = {
-                default_model = 'anthropic/claude-3-5-sonnet-20240620',
-            },
-        },
-        config = function(_, opts)
-            require('sg').setup(opts)
+        after = function(_)
+            require('sg').setup({
+                accept_tos = true,
+                enable_cody = true,
+                download_binaries = false,
+                chat = {
+                    default_model = 'anthropic/claude-3-5-sonnet-20240620',
+                },
+            })
             -- vim.keymap.set('n', '<leader>cc', '<cmd>CodyToggle<CR>', { desc = '[C]ody [C]hat' })
         end,
     })
@@ -31,36 +29,33 @@ end
 
 return {
     {
-        'supermaven-inc/supermaven-nvim',
-        enabled = require('nixCatsUtils').enableForCategory('ai.supermaven'),
+        'supermaven-nvim',
+        for_cat = 'ai.supermaven',
         event = 'InsertEnter',
-        opts = {
-            disable_keymaps = true,
-            disable_inline_completion = true,
-        },
+        after = function(_)
+            require('supermaven').setup({
+                disable_keymaps = true,
+                disable_inline_completion = true,
+            })
+        end,
     },
     {
-        'Exafunction/codeium.nvim',
+        'codeium.nvim',
         -- NOTE: Why does completion not work if i set it like this?
-        -- enabled = require('nixCatsUtils').enableForCategory('ai.codeium'),
-        -- enabled = require('nixCatsUtils').enableForCategory('ai'),
+        for_cat = 'ai.codeium',
         enabled = true,
-        dependencies = {
-            'nvim-lua/plenary.nvim',
-            'hrsh7th/nvim-cmp',
-        },
-        config = function()
+        after = function(_)
             require('codeium').setup({
                 ebable_chat = true,
             })
         end,
     },
     {
-        'zbirenbaum/copilot.lua',
-        enabled = require('nixCatsUtils').enableForCategory('ai.copilot'),
+        'copilot.lua',
+        for_cat = 'ai.copilot',
         cmd = 'Copilot',
         event = 'InsertEnter',
-        config = function()
+        after = function(_)
             require('copilot').setup({
                 suggestion = { enabled = false },
                 panel = { enabled = false },
@@ -71,27 +66,22 @@ return {
         end,
     },
     {
-        'zbirenbaum/copilot-cmp',
-        enabled = require('nixCatsUtils').enableForCategory('ai.copilot'),
-        config = function()
+        'copilot-cmp',
+        for_cat = 'ai.copilot',
+        after = function(_)
             require('copilot_cmp').setup()
         end,
     },
     {
-        'CopilotC-Nvim/CopilotChat.nvim',
-        enabled = require('nixCatsUtils').enableForCategory('ai.copilot'),
-        branch = 'canary',
-        dependencies = {
-            { 'zbirenbaum/copilot.lua' }, -- or github/copilot.vim
-            { 'nvim-lua/plenary.nvim' }, -- for curl, log wrapper
-        },
-        build = require('nixCatsUtils').lazyAdd((function()
-            if vim.fn.executable('make') == 0 then
-                return
-            end
-            return 'make tiktoken'
-        end)()),
-        config = function()
+        'CopilotChat.nvim',
+        for_cat = 'ai.copilot',
+        -- build = require('nixCatsUtils').lazyAdd((function()
+        --     if vim.fn.executable('make') == 0 then
+        --         return
+        --     end
+        --     return 'make tiktoken'
+        -- end)()),
+        after = function(_)
             local chat = require('CopilotChat')
             chat.setup({
                 debug = false, -- Enable debugging
@@ -152,7 +142,6 @@ return {
                 chat.reset()
             end)
         end,
-        -- See Commands section for default commands if you want to lazy load on them
     },
     load_sg(),
 }

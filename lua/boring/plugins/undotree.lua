@@ -1,7 +1,14 @@
 return {
     {
-        'mbbill/undotree',
-        enabled = require('nixCatsUtils').enableForCategory('extra'),
+        'undotree',
+        for_cat = 'extra',
+        cmd = {
+            'UndotreeToggle',
+            'UndotreeHide',
+            'UndotreeShow',
+            'UndotreeFocus',
+            'UndotreePersistUndo',
+        },
         keys = {
             {
                 '<leader>tu',
@@ -9,5 +16,8 @@ return {
                 desc = '[T]oggle [U]ndoTree',
             },
         },
+        after = function(_)
+            -- vim.keymap.set('n', '<leader>tu', vim.cmd.UndotreeToggle, { desc = '[T]oggle [U]ndotree' })
+        end,
     },
 }

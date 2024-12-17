@@ -1,52 +1,97 @@
+---packadd + after/plugin
+---@type fun(names: string[]|string)
+local load_w_after_plugin = require('nixCatsUtils.lzUtils').make_load_with_after({ 'plugin' })
+
+-- NOTE: packadd doesnt load after directories.
+-- hence, the above function that you can get from luaUtils that exists to make that easy.
+
 return {
-    { -- Autocompletion
-        'hrsh7th/nvim-cmp',
-        enabled = require('nixCatsUtils').enableForCategory('general'),
+    {
+        'lspkind.nvim',
+        for_cat = 'general.cmp',
+        dep_of = { 'nvim-cmp' },
+        load = load_w_after_plugin,
+    },
+    {
+        'cmp_luasnip',
+        for_cat = 'general.cmp',
+        on_plugin = { 'nvim-cmp' },
+        load = load_w_after_plugin,
+    },
+    {
+        'cmp-nvim-lsp',
+        for_cat = 'general.cmp',
+        on_plugin = { 'nvim-cmp' },
+        load = load_w_after_plugin,
+    },
+    {
+        'cmp-path',
+        for_cat = 'general.cmp',
+        on_plugin = { 'nvim-cmp' },
+        load = load_w_after_plugin,
+    },
+    {
+        'cmp-cmdline',
+        for_cat = 'general.cmp',
+        on_plugin = { 'nvim-cmp' },
+        load = load_w_after_plugin,
+    },
+    {
+        'cmp-buffer',
+        for_cat = 'general.cmp',
+        on_plugin = { 'nvim-cmp' },
+        load = load_w_after_plugin,
+    },
+    {
+        'cmp-nvim-lsp-document-symbol',
+        for_cat = 'general.cmp',
+        on_plugin = { 'nvim-cmp' },
+        dep_of = { 'nvim-lspconfig' },
+        load = load_w_after_plugin,
+    },
+    {
+        'cmp-nvim-lsp-signature-help',
+        for_cat = 'general.cmp',
+        on_plugin = { 'nvim-cmp' },
+        dep_of = { 'nvim-lspconfig' },
+        load = load_w_after_plugin,
+    },
+    {
+        'cmp-nvim-lua',
+        for_cat = 'general.cmp',
+        on_plugin = { 'nvim-cmp' },
+        load = load_w_after_plugin,
+    },
+    {
+        'cmp-treesitter',
+        for_cat = 'general.cmp',
+        on_plugin = { 'nvim-cmp' },
+        load = load_w_after_plugin,
+    },
+    {
+        'friendly-snippets',
+        for_cat = 'general.cmp',
+        dep_of = { 'nvim-cmp' },
+    },
+    {
+        'luasnip',
+        for_cat = 'general.cmp',
+        dep_of = { 'nvim-cmp' },
+        after = function(_)
+            local luasnip = require('luasnip')
+            require('luasnip.loaders.from_vscode').lazy_load()
+            luasnip.config.setup({})
+        end,
+    },
+    {
+        'nvim-cmp',
+        for_cat = 'general.cmp',
         event = 'InsertEnter',
-        dependencies = {
-            -- Snippet Engine & its associated nvim-cmp source
-            {
-                'L3MON4D3/LuaSnip',
-                enabled = require('nixCatsUtils').enableForCategory('general'),
-                -- NOTE: nixCats: nix downloads it with a different file name.
-                -- tell lazy about that.
-                name = 'luasnip',
-                build = require('nixCatsUtils').lazyAdd((function()
-                    -- Build Step is needed for regex support in snippets.
-                    -- This step is not supported in many windows environments.
-                    -- Remove the below condition to re-enable on windows.
-                    if vim.fn.has('win32') == 1 or vim.fn.executable('make') == 0 then
-                        return
-                    end
-                    return 'make install_jsregexp'
-                end)()),
-                dependencies = {
-                    {
-                        'rafamadriz/friendly-snippets',
-                        enabled = require('nixCatsUtils').enableForCategory('extra'),
-                        config = function()
-                            require('luasnip.loaders.from_vscode').lazy_load()
-                        end,
-                    },
-                },
-            },
-            { 'onsails/lspkind.nvim', enabled = require('nixCatsUtils').enableForCategory('general') },
-            { 'saadparwaiz1/cmp_luasnip', enabled = require('nixCatsUtils').enableForCategory('general') },
-            { 'hrsh7th/cmp-nvim-lsp', enabled = require('nixCatsUtils').enableForCategory('devtools') },
-            { 'hrsh7th/cmp-path', enabled = require('nixCatsUtils').enableForCategory('general') },
-            { 'hrsh7th/cmp-cmdline', enabled = require('nixCatsUtils').enableForCategory('general') },
-            { 'hrsh7th/cmp-buffer', enabled = require('nixCatsUtils').enableForCategory('general') },
-            { 'hrsh7th/cmp-nvim-lsp-document-symbol', enabled = require('nixCatsUtils').enableForCategory('devtools') },
-            { 'hrsh7th/cmp-nvim-lsp-signature-help', enabled = require('nixCatsUtils').enableForCategory('devtools') },
-            { 'hrsh7th/cmp-nvim-lua', enabled = require('nixCatsUtils').enableForCategory('devtools') },
-            { 'ray-x/cmp-treesitter', enabled = require('nixCatsUtils').enableForCategory('devtools') },
-        },
-        config = function()
-            -- See `:help cmp`
+        on_require = { 'cmp' },
+        after = function(_)
             local cmp = require('cmp')
             local luasnip = require('luasnip')
             local lspkind = require('lspkind')
-            luasnip.config.setup({})
 
             cmp.setup({
                 formatting = {

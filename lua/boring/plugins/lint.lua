@@ -1,10 +1,10 @@
 return {
 
-    { -- Linting
-        'mfussenegger/nvim-lint',
-        enabled = require('nixCatsUtils').enableForCategory('devtools'),
+    {
+        'nvim-lint',
+        for_cat = 'general.extra',
         event = { 'BufReadPre', 'BufNewFile' },
-        config = function()
+        after = function(_)
             local lint = require('lint')
             lint.linters_by_ft = {
                 markdown = { 'markdownlint' },

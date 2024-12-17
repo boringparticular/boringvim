@@ -1,8 +1,7 @@
 return {
     {
-        'folke/trouble.nvim',
-        enabled = require('nixCatsUtils').enableForCategory('extra'),
-        opts = {}, -- for default options, refer to the configuration section for custom setup.
+        'trouble.nvim',
+        for_cat = 'general.extra',
         cmd = 'Trouble',
         keys = {
             {

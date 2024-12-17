@@ -1,34 +1,10 @@
 return {
     {
-        'nvim-telescope/telescope.nvim',
-        enabled = require('nixCatsUtils').enableForCategory('general'),
+        'telescope.nvim',
+        for_cat = 'general.extra',
         event = 'VimEnter',
-        branch = '0.1.x',
-        dependencies = {
-            'nvim-lua/plenary.nvim',
-            {
-                'nvim-telescope/telescope-fzf-native.nvim',
-
-                -- `build` is used to run some command when the plugin is installed/updated.
-                -- This is only run then, not every time Neovim starts up.
-                -- NOTE: nixCats: use lazyAdd to only run build steps if nix wasnt involved.
-                -- because nix already did this.
-                build = require('nixCatsUtils').lazyAdd('make'),
-
-                -- `cond` is a condition used to determine whether this plugin should be
-                -- installed and loaded.
-                -- NOTE: nixCats: use lazyAdd to only add this if nix wasnt involved.
-                -- because nix built it already, so who cares if we have make in the path.
-                cond = require('nixCatsUtils').lazyAdd(function()
-                    return vim.fn.executable('make') == 1
-                end),
-            },
-            { 'nvim-telescope/telescope-ui-select.nvim' },
-
-            -- Useful for getting pretty icons, but requires a Nerd Font.
-            { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
-        },
-        config = function()
+        on_require = { 'telescope' },
+        after = function(_)
             require('telescope').setup({
                 defaults = {
                     file_ignore_patterns = {

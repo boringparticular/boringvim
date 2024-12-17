@@ -1,50 +1,47 @@
 return {
-    { -- LSP Configuration & Plugins
-        'neovim/nvim-lspconfig',
-        enabled = require('nixCatsUtils').enableForCategory('devtools'),
-        dependencies = {
-            -- Automatically install LSPs and related tools to stdpath for Neovim
-            {
-                'williamboman/mason.nvim',
-                -- NOTE: nixCats: use lazyAdd to only enable mason if nix wasnt involved.
-                -- because we will be using nix to download things instead.
-                enabled = require('nixCatsUtils').lazyAdd(true, false),
-                config = true,
-            }, -- NOTE: Must be loaded before dependants
-            {
-                'williamboman/mason-lspconfig.nvim',
-                -- NOTE: nixCats: use lazyAdd to only enable mason if nix wasnt involved.
-                -- because we will be using nix to download things instead.
-                enabled = require('nixCatsUtils').lazyAdd(true, false),
-            },
-            {
-                'WhoIsSethDaniel/mason-tool-installer.nvim',
-                -- NOTE: nixCats: use lazyAdd to only enable mason if nix wasnt involved.
-                -- because we will be using nix to download things instead.
-                enabled = require('nixCatsUtils').lazyAdd(true, false),
-            },
-
-            { 'j-hui/fidget.nvim', opts = {}, enabled = require('nixCatsUtils').enableForCategory('devtools') },
-
-            -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
-            -- used for completion, annotations and signatures of Neovim apis
-            {
-                'folke/lazydev.nvim',
-                enabled = require('nixCatsUtils').enableForCategory('devtools'),
-                ft = 'lua',
-                opts = {
-                    library = {
-                        -- adds type hints for nixCats global
-                        { path = require('nixCats').nixCatsPath .. '/lua', words = { 'nixCats' } },
-                    },
-                },
-            },
-        },
-        config = function()
-            --  This function gets run when an LSP attaches to a particular buffer.
-            --    That is to say, every time a new file is opened that is associated with
-            --    an lsp (for example, opening `main.rs` is associated with `rust_analyzer`) this
-            --    function will be executed to configure the current buffer
+    {
+        'nvim-lspconfig',
+        for_cat = 'general.extra',
+        event = 'FileType',
+        -- dependencies = {
+        --     -- Automatically install LSPs and related tools to stdpath for Neovim
+        --     {
+        --         'williamboman/mason.nvim',
+        --         -- NOTE: nixCats: use lazyAdd to only enable mason if nix wasnt involved.
+        --         -- because we will be using nix to download things instead.
+        --         enabled = require('nixCatsUtils').lazyAdd(true, false),
+        --         config = true,
+        --     }, -- NOTE: Must be loaded before dependants
+        --     {
+        --         'williamboman/mason-lspconfig.nvim',
+        --         -- NOTE: nixCats: use lazyAdd to only enable mason if nix wasnt involved.
+        --         -- because we will be using nix to download things instead.
+        --         enabled = require('nixCatsUtils').lazyAdd(true, false),
+        --     },
+        --     {
+        --         'WhoIsSethDaniel/mason-tool-installer.nvim',
+        --         -- NOTE: nixCats: use lazyAdd to only enable mason if nix wasnt involved.
+        --         -- because we will be using nix to download things instead.
+        --         enabled = require('nixCatsUtils').lazyAdd(true, false),
+        --     },
+        --
+        --     { 'j-hui/fidget.nvim', opts = {}, enabled = require('nixCatsUtils').enableForCategory('devtools') },
+        --
+        --     -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
+        --     -- used for completion, annotations and signatures of Neovim apis
+        --     {
+        --         'folke/lazydev.nvim',
+        --         enabled = require('nixCatsUtils').enableForCategory('devtools'),
+        --         ft = 'lua',
+        --         opts = {
+        --             library = {
+        --                 -- adds type hints for nixCats global
+        --                 { path = require('nixCats').nixCatsPath .. '/lua', words = { 'nixCats' } },
+        --             },
+        --         },
+        --     },
+        -- },
+        after = function(_)
             vim.api.nvim_create_autocmd('LspAttach', {
                 group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
                 callback = function(event)
@@ -255,12 +252,11 @@ return {
     },
 
     {
-        'ray-x/lsp_signature.nvim',
+        'lsp_signature.nvim',
         enabled = false,
         event = 'VeryLazy',
-        opts = {},
-        config = function(_, opts)
-            require('lsp_signature').setup(opts)
+        after = function(_)
+            require('lsp_signature').setup({})
 
             vim.api.nvim_create_autocmd('LspAttach', {
                 callback = function(args)

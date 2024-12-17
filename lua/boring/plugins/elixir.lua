@@ -1,10 +1,10 @@
 return {
     {
-        'elixir-tools/elixir-tools.nvim',
-        version = '*',
-        enabled = require('nixCatsUtils').enableForCategory('elixir'),
+        'elixir-tools.nvim',
+        for_cat = 'general.extra',
         event = { 'BufReadPre', 'BufNewFile' },
-        config = function()
+        ft = { 'elixir' },
+        after = function(_)
             local elixir = require('elixir')
             local elixirls = require('elixir.elixirls')
 
@@ -40,8 +40,5 @@ return {
                 },
             })
         end,
-        dependencies = {
-            'nvim-lua/plenary.nvim',
-        },
     },
 }

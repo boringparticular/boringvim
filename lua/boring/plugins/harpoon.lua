@@ -1,10 +1,9 @@
 return {
     {
-        'ThePrimeagen/harpoon',
-        enabled = require('nixCatsUtils').enableForCategory('extra'),
-        branch = 'harpoon2',
-        dependencies = { 'nvim-lua/plenary.nvim' },
-        config = function()
+        'harpoon2',
+        for_cat = 'general.extra',
+        event = 'VimEnter',
+        after = function(_)
             local harpoon = require('harpoon')
 
             harpoon:setup()

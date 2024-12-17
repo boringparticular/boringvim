@@ -175,59 +175,90 @@
 
       # This is for plugins that will load at startup without using packadd:
       startupPlugins = with pkgs.vimPlugins; {
-        general = [
-          lazy-nvim
-          plenary-nvim
-          vim-sleuth
-          fidget-nvim
-          telescope-nvim
-          telescope-fzf-native-nvim
-          telescope-ui-select-nvim
-          conform-nvim
-          oil-nvim
-          which-key-nvim
-          mini-nvim
-          catppuccin-nvim
-          comment-nvim
-
-          conjure
-          cmp-conjure
-          parinfer-rust
-
-          luasnip
-          nvim-cmp
-          cmp_luasnip
-          cmp-path
-          cmp-cmdline
-          cmp-buffer
-          cmp-treesitter
-          lspkind-nvim
-          nvim-web-devicons
-          nvim-treesitter.withAllGrammars
-          # This is for if you only want some of the grammars
-          # (nvim-treesitter.withPlugins (
-          #   plugins: with plugins; [
-          #     nix
-          #     lua
-          #   ]
-          # ))
-
-          toggleterm-nvim
-          neogit
-        ];
-
-        mini = {
-          extra = [
-            mini-nvim
+        general = {
+          always = [
+            catppuccin-nvim
+            lze
+            plenary-nvim
           ];
-          optional = [
-            mini-nvim
+          extra = [
+            oil-nvim
           ];
         };
-
-        go = [
-          pkgs.neovimPlugins.go-nvim
+        debug = [
+          nvim-nio
         ];
+      };
+
+      # not loaded automatically at startup.
+      # use with packadd and an autocommand in config to achieve lazy loading
+      optionalPlugins = with pkgs.vimPlugins; {
+        general = {
+          always = [
+            vim-sleuth
+            mini-nvim
+            snacks-nvim
+          ];
+
+          extra = [
+            direnv-vim
+            flash-nvim
+            gitsigns-nvim
+            harpoon2
+            indent-blankline-nvim
+            lazydev-nvim
+            neogit
+            noice-nvim
+            nvim-colorizer-lua
+            nvim-lint
+            nvim-notify
+            pkgs.neovimPlugins.go-nvim
+            pkgs.neovimPlugins.large-file
+            rainbow-delimiters-nvim
+            todo-comments-nvim
+            trouble-nvim
+            undotree
+            which-key-nvim
+            conform-nvim
+            comment-nvim
+          ];
+
+          telescope = [
+            telescope-fzf-native-nvim
+            telescope-nvim
+            telescope-ui-select-nvim
+          ];
+
+          cmp = [
+            blink-cmp
+            luasnip
+            nvim-cmp
+            cmp_luasnip
+            cmp-path
+            cmp-cmdline
+            cmp-buffer
+            cmp-treesitter
+            lspkind-nvim
+          ];
+
+          lsp = [
+            nvim-lspconfig
+            cmp-nvim-lsp
+            cmp-nvim-lsp-signature-help
+            cmp-nvim-lsp-document-symbol
+            cmp-nvim-lua
+            lsp_signature-nvim
+            fidget-nvim
+          ];
+
+          treesitter = [
+            nvim-treesitter.withAllGrammars
+            nvim-treesitter-textobjects
+            nvim-ts-context-commentstring
+            nvim-treesitter-context
+            nvim-treesitter-refactor
+          ];
+        };
 
         ai = {
           copilot = [
@@ -247,46 +278,16 @@
           ];
         };
 
+        elixir = [
+          elixir-tools-nvim
+        ];
+
         notes = [
           neorg
           neorg-telescope
           pkgs.neovimPlugins.render-markdown
           markdown-preview-nvim
           obsidian-nvim
-        ];
-
-        treesitter-optional = [
-          nvim-treesitter-textobjects
-          nvim-ts-context-commentstring
-          nvim-treesitter-context
-          nvim-treesitter-refactor
-        ];
-
-        devtools = [
-          nvim-lspconfig
-          cmp-nvim-lsp
-          cmp-nvim-lsp-signature-help
-          cmp-nvim-lsp-document-symbol
-          cmp-nvim-lua
-          lsp_signature-nvim
-          nvim-lint
-          fidget-nvim
-        ];
-
-        extra = [
-          pkgs.neovimPlugins.large-file
-          gitsigns-nvim
-          lazydev-nvim
-          todo-comments-nvim
-          undotree
-          direnv-vim
-          nvim-notify
-          harpoon2
-          indent-blankline-nvim
-          nvim-colorizer-lua
-          trouble-nvim
-          rainbow-delimiters-nvim
-          noice-nvim
         ];
 
         debug = [
@@ -296,24 +297,24 @@
           nvim-nio
         ];
 
+        go = [
+        ];
+
+        scheme = [
+          conjure
+          cmp-conjure
+          parinfer-rust
+        ];
+
         webdev = [
           emmet-vim
         ];
 
-        sgdev = [
-        ];
-
-        elixir = [
-          elixir-tools-nvim
-        ];
+        # general = [
+        #   toggleterm-nvim
+        # ];
+        #
       };
-
-      # not loaded automatically at startup.
-      # use with packadd and an autocommand in config to achieve lazy loading
-      # NOTE: this template is using lazy.nvim so, which list you put them in is irrelevant.
-      # startupPlugins or optionalPlugins, it doesnt matter, lazy.nvim does the loading.
-      # I just put them all in startupPlugins. I could have put them all in here instead.
-      optionalPlugins = {};
 
       # shared libraries to be added to LD_LIBRARY_PATH
       # variable available to nvim runtime
@@ -400,14 +401,11 @@
       elixir = true;
       go = true;
       notes = true;
-      treesitter-optional = true;
       debug = true;
-      extra = true;
       devtools = true;
       webdev = true;
       python = true;
-      mini.extra = true;
-      mini.optional = false;
+      mini.extra = false;
 
       # we can pass whatever we want actually.
       have_nerd_font = true;
@@ -521,6 +519,7 @@
           baseSettings args
           // {
             aliases = ["vim" "nvim"];
+            configDirName = "boringvim";
           };
         categories = baseCategories args // {};
       };

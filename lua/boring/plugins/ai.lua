@@ -67,7 +67,7 @@ return {
     },
     {
         'copilot-cmp',
-        for_cat = 'ai.copilot',
+        for_cat = 'ai.copilot-cmp',
         after = function(_)
             require('copilot_cmp').setup()
         end,

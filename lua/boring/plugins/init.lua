@@ -7,6 +7,7 @@ require('lze').load({
     { import = 'boring.plugins.colorizer' },
     { import = 'boring.plugins.snacks' },
     { import = 'boring.plugins.flash' },
+    { import = 'boring.plugins.conform' },
     { import = 'boring.plugins.elixir' },
     { import = 'boring.plugins.telescope' },
     { import = 'boring.plugins.treesitter' },

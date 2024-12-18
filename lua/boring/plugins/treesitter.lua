@@ -4,7 +4,6 @@ return {
         for_cat = 'general.always',
         event = 'DeferredUIEnter',
         load = function(name)
-            print(name)
             vim.cmd.packadd(name)
         end,
         after = function(_)

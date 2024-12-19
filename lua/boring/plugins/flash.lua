@@ -45,5 +45,8 @@ return {
                 desc = 'Toggle Flash Search',
             },
         },
+        after = function(_)
+            require('flash').setup({})
+        end,
     },
 }

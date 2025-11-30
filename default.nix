@@ -47,6 +47,11 @@ let
 
           lua-language-server
           stylua
+
+          nix-doc
+          nil
+          nixd
+          nixfmt-rfc-style
         ];
 
         zig = with pkgs; [

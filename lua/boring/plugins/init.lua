@@ -23,4 +23,5 @@ require('lze').load({
     { import = 'boring.plugins.flutter' },
     { import = 'boring.plugins.emmet' },
     { import = 'boring.plugins.noice' },
+    { import = 'boring.plugins.notes' },
 })

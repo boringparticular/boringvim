@@ -110,6 +110,11 @@ let
           pkgs.neovimPlugins.nvim-emmet
         ];
 
+        notes = with pkgs.vimPlugins; [
+          obsidian-nvim
+          zk-nvim
+        ];
+
         lisp = with pkgs.vimPlugins; [
           conjure
           parinfer-rust
@@ -184,7 +189,8 @@ let
         elixir = true;
         flutter = true;
         zig = true;
-	markdown = true;
+        markdown = true;
+        notes = true;
       };
     in
     {

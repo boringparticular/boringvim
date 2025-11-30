@@ -77,7 +77,8 @@ let
           conform-nvim
           lazydev-nvim
           nvim-lint
-          fyler-nvim   
+          fyler-nvim
+          flatten-nvim
         ];
       };
 

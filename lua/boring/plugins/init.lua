@@ -8,5 +8,6 @@ require('lze').load({
     { import = 'boring.plugins.neonixdev' },
     { import = 'boring.plugins.conform' },
     { import = 'boring.plugins.lint' },
+    { import = 'boring.plugins.flatten' },
     { import = 'boring.plugins.fyler' },
 })

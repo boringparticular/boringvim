@@ -17,6 +17,7 @@ require('lze').load({
     { import = 'boring.plugins.zig' },
     { import = 'boring.plugins.go' },
     { import = 'boring.plugins.python' },
+    { import = 'boring.plugins.lisp' },
     { import = 'boring.plugins.emmet' },
     { import = 'boring.plugins.noice' },
 })

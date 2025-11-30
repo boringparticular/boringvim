@@ -110,6 +110,11 @@ let
           pkgs.neovimPlugins.nvim-emmet
         ];
 
+        lisp = with pkgs.vimPlugins; [
+          conjure
+          parinfer-rust
+        ];
+
         go = with pkgs.vimPlugins; [
           go-nvim
         ];
@@ -162,6 +167,7 @@ let
         emmet = true;
         python = true;
         go = true;
+        lisp = true;
         zig = true;
       };
     in

@@ -1,7 +1,7 @@
 return {
     {
         'zls',
-        for_cat = 'extra',
+        for_cat = 'zig',
         lsp = {},
     },
 }

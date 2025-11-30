@@ -46,6 +46,9 @@ let
           stylua
         ];
 
+        zig = with pkgs; [
+          zls
+        ];
 
         ];
       };
@@ -92,6 +95,9 @@ let
         go = with pkgs.vimPlugins; [
           go-nvim
         ];
+
+        zig = with pkgs.vimPlugins; [
+        ];
       };
 
       sharedLibraries = {
@@ -134,6 +140,7 @@ let
         extra = true;
         emmet = true;
         go = true;
+        zig = true;
       };
     in
     {

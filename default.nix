@@ -94,6 +94,10 @@ let
           overseer-nvim
         ];
 
+        lsp = with pkgs.vimPlugins; {
+          core = [ nvim-lspconfig ];
+        };
+
         emmet = with pkgs.vimPlugins; [
           emmet-vim
           pkgs.neovimPlugins.nvim-emmet
@@ -146,6 +150,7 @@ let
       baseCategories = {
         general = true;
         extra = true;
+        lsp = true;
         emmet = true;
         python = true;
         go = true;

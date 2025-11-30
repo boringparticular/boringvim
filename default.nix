@@ -129,6 +129,11 @@ let
 
         zig = with pkgs.vimPlugins; [
         ];
+
+        markdown = with pkgs.vimPlugins; [
+          markdown-preview-nvim
+          render-markdown-nvim
+        ];
       };
 
       sharedLibraries = {
@@ -179,6 +184,7 @@ let
         elixir = true;
         flutter = true;
         zig = true;
+	markdown = true;
       };
     in
     {

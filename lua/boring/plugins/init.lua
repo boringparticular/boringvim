@@ -10,4 +10,5 @@ require('lze').load({
     { import = 'boring.plugins.lint' },
     { import = 'boring.plugins.flatten' },
     { import = 'boring.plugins.fyler' },
+    { import = 'boring.plugins.noice' },
 })

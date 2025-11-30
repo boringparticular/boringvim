@@ -79,6 +79,7 @@ let
           nvim-lint
           fyler-nvim
           flatten-nvim
+          noice-nvim
         ];
       };
 

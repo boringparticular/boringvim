@@ -10,7 +10,6 @@ return {
                 rst = { 'vale' },
                 python = { 'ruff' },
                 text = { 'vale' },
-                json = { 'spectral' },
                 go = { 'golangcilint' },
                 elixir = { 'credo' },
             }

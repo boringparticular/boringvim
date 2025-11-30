@@ -83,6 +83,11 @@ let
           flatten-nvim
           noice-nvim
         ];
+
+        emmet = with pkgs.vimPlugins; [
+          emmet-vim
+          pkgs.neovimPlugins.nvim-emmet
+        ];
       };
 
       sharedLibraries = {
@@ -123,6 +128,7 @@ let
       baseCategories = {
         general = true;
         extra = true;
+        emmet = true;
       };
     in
     {

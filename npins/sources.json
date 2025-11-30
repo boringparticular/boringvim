@@ -64,6 +64,19 @@
       "revision": "940083fcc3e11b7c6f6f716daa77c02ac13d5c05",
       "url": "https://github.com/BirdeeHub/lzextras/archive/940083fcc3e11b7c6f6f716daa77c02ac13d5c05.tar.gz",
       "hash": "19nh38lfjzqq77j3amrp34rxw92gzq4mz2p9ykc9q2q4hh9wq6r0"
+    },
+    "plugins-nvim-emmet": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "olrtg",
+        "repo": "nvim-emmet"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "cde4fb2968704aae5c18b7f8a9bc2508767bb78d",
+      "url": "https://github.com/olrtg/nvim-emmet/archive/cde4fb2968704aae5c18b7f8a9bc2508767bb78d.tar.gz",
+      "hash": "0xzgy9hpfbr6d5cmnw1rmn2kgd04fy287d8jhcpby13i1m4q00if"
     }
   },
   "version": 5

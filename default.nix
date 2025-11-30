@@ -37,6 +37,7 @@ let
           fd
           fzf
 
+          prettierd
           rustfmt
 
           vale

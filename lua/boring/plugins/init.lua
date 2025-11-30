@@ -6,4 +6,5 @@ require('lze').load({
     { import = 'boring.plugins.grugfar' },
     { import = 'boring.plugins.neonixdev' },
     { import = 'boring.plugins.conform' },
+    { import = 'boring.plugins.lint' },
 })

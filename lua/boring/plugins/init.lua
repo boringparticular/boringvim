@@ -22,6 +22,7 @@ require('lze').load({
     { import = 'boring.plugins.lisp' },
     { import = 'boring.plugins.flutter' },
     { import = 'boring.plugins.emmet' },
+    { import = 'boring.plugins.jujutsu' },
     { import = 'boring.plugins.noice' },
     { import = 'boring.plugins.notes' },
 })

@@ -139,6 +139,12 @@ let
         zig = with pkgs.vimPlugins; [
         ];
 
+        jujutsu = with pkgs.vimPlugins; [
+          vim-jjdescription
+          hunk-nvim
+          vim-dirdiff
+        ];
+
         markdown = with pkgs.vimPlugins; [
           markdown-preview-nvim
           render-markdown-nvim
@@ -195,6 +201,7 @@ let
         zig = true;
         markdown = true;
         notes = true;
+	jujutsu = true;
       };
     in
     {

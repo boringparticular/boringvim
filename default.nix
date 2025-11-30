@@ -96,6 +96,8 @@ let
 
         lsp = with pkgs.vimPlugins; {
           core = [ nvim-lspconfig ];
+          extra = [
+          ];
         };
 
         emmet = with pkgs.vimPlugins; [

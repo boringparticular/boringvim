@@ -1,7 +1,7 @@
 return {
     {
         'elixir-tools.nvim',
-        for_cat = 'off',
+        for_cat = 'elixir',
         event = { 'BufReadPre', 'BufNewFile' },
         ft = { 'elixir' },
         after = function(_)

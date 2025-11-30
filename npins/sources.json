@@ -1,0 +1,57 @@
+{
+  "pins": {
+    "neovim-nightly-overlay": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nix-community",
+        "repo": "neovim-nightly-overlay"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "df074066e65d8a575f218fbf74b00ab973144d45",
+      "url": "https://github.com/nix-community/neovim-nightly-overlay/archive/df074066e65d8a575f218fbf74b00ab973144d45.tar.gz",
+      "hash": "0mqzdq4yqj0b47iqhyr5kiiipp1a6wc7n8pb5kx0gmfq2viylpjg"
+    },
+    "nixCats": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "BirdeeHub",
+        "repo": "nixCats-nvim"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "16ac3281f322ea15d39843829e42a44d22da3715",
+      "url": "https://github.com/BirdeeHub/nixCats-nvim/archive/16ac3281f322ea15d39843829e42a44d22da3715.tar.gz",
+      "hash": "1gyzjmyi42dvc75wwqyja3bg6ybh1g74h48qnxvbzmwn71ys95w4"
+    },
+    "plugins-lze": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "BirdeeHub",
+        "repo": "lze"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "cf5430a701ab6795ff837e6b56c483ecbcf9043a",
+      "url": "https://github.com/BirdeeHub/lze/archive/cf5430a701ab6795ff837e6b56c483ecbcf9043a.tar.gz",
+      "hash": "0vldbzrdbl2ywalc91djr4raakwfbfchxfh9ijx2h89p3kmaij0b"
+    },
+    "plugins-lzextras": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "BirdeeHub",
+        "repo": "lzextras"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "940083fcc3e11b7c6f6f716daa77c02ac13d5c05",
+      "url": "https://github.com/BirdeeHub/lzextras/archive/940083fcc3e11b7c6f6f716daa77c02ac13d5c05.tar.gz",
+      "hash": "19nh38lfjzqq77j3amrp34rxw92gzq4mz2p9ykc9q2q4hh9wq6r0"
+    }
+  },
+  "version": 5
+}

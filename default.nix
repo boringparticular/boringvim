@@ -77,6 +77,7 @@ let
           conform-nvim
           lazydev-nvim
           nvim-lint
+          undotree
           fyler-nvim
           flatten-nvim
           noice-nvim

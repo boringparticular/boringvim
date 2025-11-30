@@ -557,7 +557,7 @@ return {
             -- - `:h MiniIndentscope.gen_animation` - available animation rules
             later(function()
                 require('mini.indentscope').setup({
-                    symbol = '▎',
+                    -- symbol = '▎',
                 })
             end)
 

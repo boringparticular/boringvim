@@ -1,7 +1,7 @@
 return {
     {
         'nvim-emmet',
-        for_cat = 'off',
+        for_cat = 'emmet',
         keys = {
             {
                 '<leader>xe',
@@ -18,7 +18,7 @@ return {
     },
     {
         'emmet_language_server',
-        for_cat = 'off',
+        for_cat = 'emmet',
         enabled = nixCats('lsp'),
         lsp = {
             filetypes = { 'heex', 'html', 'css', 'javascript', 'typescript', 'vue' },
@@ -26,7 +26,7 @@ return {
     },
     {
         'emmet-vim',
-        for_cat = 'off',
+        for_cat = 'emmet',
         ft = { 'heex', 'html', 'css', 'javascript', 'typescript', 'vue' },
     },
 }

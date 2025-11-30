@@ -119,6 +119,10 @@ let
           go-nvim
         ];
 
+        elixir = with pkgs.vimPlugins; [
+          elixir-tools-nvim
+        ];
+
         zig = with pkgs.vimPlugins; [
         ];
       };
@@ -168,6 +172,7 @@ let
         python = true;
         go = true;
         lisp = true;
+        elixir = true;
         zig = true;
       };
     in

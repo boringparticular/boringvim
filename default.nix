@@ -119,6 +119,10 @@ let
           go-nvim
         ];
 
+        flutter = with pkgs.vimPlugins; [
+          flutter-tools-nvim
+        ];
+
         elixir = with pkgs.vimPlugins; [
           elixir-tools-nvim
         ];
@@ -173,6 +177,7 @@ let
         go = true;
         lisp = true;
         elixir = true;
+        flutter = true;
         zig = true;
       };
     in

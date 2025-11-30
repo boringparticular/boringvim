@@ -36,7 +36,9 @@ let
           ripgrep
           fd
           fzf
+        ];
 
+        extra = with pkgs; [
           prettierd
           rustfmt
 
@@ -144,7 +146,7 @@ let
         general = true;
         extra = true;
         emmet = true;
-	python = true;
+        python = true;
         go = true;
         zig = true;
       };

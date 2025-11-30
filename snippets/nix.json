@@ -1,0 +1,26 @@
+{
+  "olympus module": {
+    "prefix": "omod",
+    "body": [
+      "{ config, lib, $1 ... }:",
+      "let",
+      "\tcfg = config.olympus.$2;",
+      "in",
+      "{",
+      "\toptions.olympus.$2 = {",
+      "\t\tenable = lib.mkEnableOption \"Enable $3;\"",
+      "};",
+      "",
+      "\tconfig = lib.mkIf cfg.enable {",
+      "\t\t$4",
+      "\t};",
+      "}"
+    ],
+    "desc": "Creates a module under the olympus namespace"
+  },
+  "nixCats categories plugin": {
+    "prefix": "nccatp",
+    "body": ["$1 = with pkgs.vimPlugins; [", "\t$2", "];"],
+    "desc": "Creates "
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "lll": {
+    "prefix": "lll",
+    "body": [
+      "{ config, lib, $1 ... }:",
+      "let",
+      "\tcfg = config.olympus.$2;",
+      "in",
+      "{",
+      "\toptions.olympus.$2 = {",
+      "\t\tenable = lib.mkEnableOption \"Enable $3;\"",
+      "};",
+      "",
+      "\tconfig = lib.mkIf cfg.enable {",
+      "\t\t$4",
+      "\t};",
+      "}"
+    ],
+    "desc": ""
+  }
+}

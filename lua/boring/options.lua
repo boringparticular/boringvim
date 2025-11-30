@@ -66,6 +66,8 @@ vim.o.infercase     = true    -- Infer case in built-in completion
 vim.o.shiftwidth    = 2       -- Use this number of spaces for indentation
 vim.o.smartcase     = true    -- Respect case if search pattern has upper case
 vim.o.smartindent   = true    -- Make indenting smart
+vim.opt.spelllang   = { 'en_us', 'de_de' }
+
 vim.o.spelloptions  = 'camel' -- Treat camelCase word parts as separate words
 vim.o.tabstop       = 2       -- Show tab as this number of spaces
 vim.o.virtualedit   = 'block' -- Allow going past end of line in blockwise mode

@@ -59,6 +59,7 @@ let
           vim-sleuth
           mini-nvim
           nvim-nio
+          snacks-nvim
         ];
       };
 
@@ -96,7 +97,6 @@ let
       };
 
       python3.libraries = {
-        test = (_: [ ]);
       };
 
       extraLuaPackages = {

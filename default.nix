@@ -196,7 +196,7 @@ forEachSystem (
 // (
   let
     nixosModule = utils.mkNixosModules {
-      moduleNamespace = null;
+      moduleNamespace = [ defaultPackageName ];
       inherit
         defaultPackageName
         dependencyOverlays
@@ -209,7 +209,7 @@ forEachSystem (
     };
 
     homeModule = utils.mkHomeModules {
-      moduleNamespace = null;
+      moduleNamespace = [ defaultPackageName ];
       inherit
         defaultPackageName
         dependencyOverlays

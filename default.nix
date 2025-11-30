@@ -88,6 +88,10 @@ let
           emmet-vim
           pkgs.neovimPlugins.nvim-emmet
         ];
+
+        go = with pkgs.vimPlugins; [
+          go-nvim
+        ];
       };
 
       sharedLibraries = {
@@ -129,6 +133,7 @@ let
         general = true;
         extra = true;
         emmet = true;
+        go = true;
       };
     in
     {

@@ -57,6 +57,10 @@ let
           basedpyright
           python3Packages.ruff
         ];
+
+        emmet = with pkgs; [
+          emmet-language-server
+        ];
       };
 
       # This is for plugins that will load at startup without using packadd:

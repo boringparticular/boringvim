@@ -1,7 +1,7 @@
 return {
     {
         'go.nvim',
-        for_cat = 'off',
+        for_cat = 'go',
         event = { 'CmdlineEnter' },
         ft = { 'go', 'gomod' },
         after = function(_)
@@ -10,7 +10,7 @@ return {
     },
     {
         'gopls',
-        for_cat = 'off',
+        for_cat = 'go',
         enabled = nixCats('lsp'),
         lsp = {},
     },

@@ -10,8 +10,6 @@ end
 
 -- Paste linewise before/after current line
 -- Usage: `yiw` to yank a word and `]p` to put it on the next line.
-nmap('[p', '<Cmd>exe "put! " . v:register<CR>', 'Paste Above')
-nmap(']p', '<Cmd>exe "put "  . v:register<CR>', 'Paste Below')
 
 -- nmap('<Esc>', '<cmd>nohlsearch<CR>', 'Clear search highlights')
 
@@ -26,8 +24,6 @@ _G.Config.leader_group_clues = {
   { mode = 'n', keys = '<Leader>f', desc = '+Find' },
   { mode = 'n', keys = '<Leader>g', desc = '+Git' },
   { mode = 'n', keys = '<Leader>l', desc = '+Language' },
-  -- TODO: I don't use map so I can use m for something else
-  { mode = 'n', keys = '<Leader>m', desc = '+Map' },
   { mode = 'n', keys = '<Leader>o', desc = '+Other' },
   { mode = 'n', keys = '<Leader>s', desc = '+Session' },
   { mode = 'n', keys = '<Leader>t', desc = '+Terminal' },
@@ -212,5 +208,14 @@ nmap('N', 'Nzzzv', 'Move to previous search result and center line')
 
 nmap('<C-d>', '<C-d>zz', 'Scroll half page down and center line')
 nmap('<C-u>', '<C-u>zz', 'Scroll half page up and center line')
+
+local inoremap = function(lhs, rhs, desc)
+    -- See `:h vim.keymap.set()`
+    vim.keymap.set('i', lhs, rhs, { desc = desc, expr = true, remap = false })
+end
+
+inoremap('<Tab>', function() return vim.fn.pumvisible() and "<C-e><Tab>" or "<Tab>"  end, '')
+inoremap('<Esc>', function() return vim.fn.pumvisible() and "<C-e><Esc>" or "<Esc>"  end, '')
+inoremap('<CR>', function() return vim.fn.pumvisible() and "<C-e><CR>" or "<CR>"  end, '')
 
 -- stylua: ignore end

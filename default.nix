@@ -35,22 +35,17 @@ let
         general = with pkgs; [
           ripgrep
           fd
-
           fzf
 
-          prettier-d-slim
           rustfmt
-          python3Packages.ruff
 
           vale
-          spectral-language-server
           markdownlint-cli
 
           lua-language-server
           stylua
         ];
 
-        extra = with pkgs; [
 
         ];
       };
@@ -72,17 +67,13 @@ let
       optionalPlugins = {
         general = with pkgs.vimPlugins; [
           oil-nvim
-          conform-nvim
           grug-far-nvim
           nvim-treesitter.withAllGrammars
         ];
 
         extra = with pkgs.vimPlugins; [
-          nvim-lspconfig
           friendly-snippets
           conform-nvim
-          nvim-treesitter-context
-          nvim-treesitter-refactor
           lazydev-nvim
           nvim-lint
         ];
@@ -158,6 +149,17 @@ let
           extra = { };
         };
 
+      testvim =
+        { ... }:
+        {
+          settings = baseSettings // {
+            wrapRc = false;
+            unwrappedCfgPath = "/home/kmies/.local/share/chezmoi/dot_config/nvim";
+            aliases = [ "tvim" ];
+          };
+          categories = baseCategories;
+        };
+
       boringwrapped =
         { ... }:
         {
@@ -166,6 +168,30 @@ let
             aliases = [ "bwim" ];
           };
           categories = baseCategories;
+        };
+
+      litevim =
+        { ... }:
+        {
+          settings = baseSettings // {
+            wrapRc = true;
+            aliases = [ "lvim" ];
+          };
+          categories = {
+            general = true;
+          };
+        };
+
+      vimscode =
+        { ... }:
+        {
+          settings = baseSettings // {
+            wrapRc = true;
+            aliases = [ ];
+          };
+          categories = {
+            general = true;
+          };
         };
     };
 

@@ -120,6 +120,7 @@ nmap_leader('fS', '<Cmd>Pick lsp scope="document_symbol"<CR>',  'Symbols documen
 nmap_leader('fv', '<Cmd>Pick visit_paths cwd=""<CR>',           'Visit paths (all)')
 nmap_leader('fV', '<Cmd>Pick visit_paths<CR>',                  'Visit paths (cwd)')
 nmap_leader('fk', '<Cmd>Pick keymaps<CR>',                      'Keymaps')
+nmap_leader('f"', '<Cmd>Pick registers<CR>',                    'Registers')
 
 -- g is for 'Git'. Common usage:
 -- - `<Leader>gs` - show information at cursor

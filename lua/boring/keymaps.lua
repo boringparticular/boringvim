@@ -29,6 +29,7 @@ _G.Config.leader_group_clues = {
   { mode = 'n', keys = '<Leader>o', desc = '+Other' },
   { mode = 'n', keys = '<Leader>s', desc = '+Session' },
   { mode = 'n', keys = '<Leader>t', desc = '+Terminal' },
+  { mode = 'n', keys = '<Leader>u', desc = '+UI' },
   { mode = 'n', keys = '<Leader>v', desc = '+Visits' },
 
   { mode = 'x', keys = '<Leader>g', desc = '+Git' },
@@ -210,6 +211,8 @@ nmap('N', 'Nzzzv', 'Move to previous search result and center line')
 
 nmap('<C-d>', '<C-d>zz', 'Scroll half page down and center line')
 nmap('<C-u>', '<C-u>zz', 'Scroll half page up and center line')
+
+nmap('<leader>ud', '<Cmd>lua Snacks.dim()<CR>', 'Toggle dim')
 
 local inoremap = function(lhs, rhs, desc)
     -- See `:h vim.keymap.set()`

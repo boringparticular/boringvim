@@ -50,6 +50,9 @@ let
           zls
         ];
 
+        python = with pkgs; [
+          basedpyright
+          python3Packages.ruff
         ];
       };
 
@@ -117,6 +120,7 @@ let
       };
 
       python3.libraries = {
+        test = _: [ ];
       };
 
       extraLuaPackages = {
@@ -139,6 +143,7 @@ let
         general = true;
         extra = true;
         emmet = true;
+	python = true;
         go = true;
         zig = true;
       };

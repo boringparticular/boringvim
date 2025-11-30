@@ -13,6 +13,7 @@ require('lze').load({
     { import = 'boring.plugins.trouble' },
     { import = 'boring.plugins.flatten' },
     { import = 'boring.plugins.fyler' },
+    { import = 'boring.plugins.overseer' },
     { import = 'boring.plugins.zig' },
     { import = 'boring.plugins.go' },
     { import = 'boring.plugins.python' },

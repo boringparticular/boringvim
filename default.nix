@@ -91,6 +91,7 @@ let
           fyler-nvim
           flatten-nvim
           noice-nvim
+          overseer-nvim
         ];
 
         emmet = with pkgs.vimPlugins; [

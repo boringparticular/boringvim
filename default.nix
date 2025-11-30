@@ -54,6 +54,11 @@ let
           nixfmt-rfc-style
         ];
 
+        rust = with pkgs; [
+          # NOTE: should i put this in debug?
+          vscode-extensions.vadimcn.vscode-lldb
+        ];
+
         zig = with pkgs; [
           zls
         ];
@@ -145,6 +150,10 @@ let
         zig = with pkgs.vimPlugins; [
         ];
 
+        rust = with pkgs.vimPlugins; [
+          rustaceanvim
+        ];
+
         jujutsu = with pkgs.vimPlugins; [
           vim-jjdescription
           hunk-nvim
@@ -205,6 +214,7 @@ let
         elixir = true;
         flutter = true;
         zig = true;
+        rust = true;
         markdown = true;
         notes = true;
         jujutsu = true;

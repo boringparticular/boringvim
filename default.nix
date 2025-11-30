@@ -96,6 +96,7 @@ let
           flatten-nvim
           noice-nvim
           overseer-nvim
+          arrow-nvim
         ];
 
         lsp = with pkgs.vimPlugins; {
@@ -201,7 +202,8 @@ let
         zig = true;
         markdown = true;
         notes = true;
-	jujutsu = true;
+        jujutsu = true;
+        trying = true;
       };
     in
     {

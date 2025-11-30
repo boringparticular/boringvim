@@ -100,6 +100,11 @@ let
           ];
         };
 
+        treesitter.extra = with pkgs.vimPlugins; [
+          nvim-treesitter-context
+          nvim-treesitter-refactor
+        ];
+
         emmet = with pkgs.vimPlugins; [
           emmet-vim
           pkgs.neovimPlugins.nvim-emmet
@@ -153,6 +158,7 @@ let
         general = true;
         extra = true;
         lsp = true;
+        treesitter.extra = true;
         emmet = true;
         python = true;
         go = true;

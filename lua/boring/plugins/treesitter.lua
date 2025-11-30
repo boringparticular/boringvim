@@ -6,8 +6,10 @@ return {
         on_require = 'nvim-treesitter',
         load = function(name)
             vim.cmd.packadd(name)
-            vim.cmd.packadd('nvim-treesitter-textobjects')
-            vim.cmd.packadd('nvim-treesitter-refactor')
+            if nixCats('treesitter.extra') then
+                vim.cmd.packadd('nvim-treesitter-refactor')
+            end
+            -- vim.cmd.packadd('nvim-treesitter-textobjects')
             -- vim.cmd.packadd('nvim-treesitter-commentstring')
         end,
         after = function(_)
@@ -29,7 +31,7 @@ return {
     },
     {
         'nvim-treesitter-context',
-        for_cat = 'extra',
+        for_cat = 'treesitter.extra',
         dep_of = 'nvim-treesitter',
         after = function(_)
             require('treesitter-context').setup({

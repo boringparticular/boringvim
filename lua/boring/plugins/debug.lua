@@ -66,6 +66,27 @@ return {
                 },
             }
 
+            if nixCats('languages.zig') then
+                dap.adapters.codelldb = {
+                    type = 'server',
+                    port = '${port}',
+                    executable = {
+                        command = 'codelldb',
+                        args = { '--port', '${port}' },
+                    },
+                }
+
+                dap.configurations.zig = {
+                    name = 'Launch',
+                    type = 'codelldb',
+                    request = 'launch',
+                    program = '${workspaceFolder}/zig-out/bin/${workspaceFolderBasename}',
+                    cwd = '${workspaceFolder}',
+                    stopOnEntry = false,
+                    args = {},
+                }
+            end
+
             local icons = require('boring.icons')
 
             vim.fn.sign_define('DapBreakpoint', { text = icons.dap.breakpoint, texthl = 'DapBreakpoint', linehl = '', numhl = '' })

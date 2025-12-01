@@ -11,9 +11,9 @@ return {
         },
         keys = {
             {
-                '<leader>tu',
+                '<leader>uu',
                 vim.cmd.UndotreeToggle,
-                desc = '[T]oggle [U]ndoTree',
+                desc = '[U]I [U]ndoTree',
             },
         },
         after = function(_) end,

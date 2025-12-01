@@ -68,4 +68,9 @@ require('lze').load({
         for_cat = 'general.extra',
         after = function(_) end,
     },
+    {
+        'nvim-bqf',
+        for_cat = 'general.extra',
+        ft = 'qf',
+    },
 })

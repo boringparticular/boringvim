@@ -51,6 +51,10 @@ return {
                 vim.list_extend(default_sources, { 'lazydev' })
             end
 
+            if nixCats('languages.lisp') then
+                vim.list_extend(default_sources, { 'conjure' })
+            end
+
             require('blink.cmp').setup({
                 keymap = { preset = 'default' },
                 sources = {
@@ -67,6 +71,14 @@ return {
                             score_offset = 100,
                             async = true,
                         },
+                        conjure = nixCats('languages.lisp')
+                                and {
+                                    name = 'conjure',
+                                    module = 'blink.compat.source',
+                                    score_offset = 50,
+                                    -- async = true,
+                                }
+                            or nil,
                         spell = {
                             name = 'spell',
                             module = 'blink-cmp-spell',

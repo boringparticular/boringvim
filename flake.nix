@@ -321,6 +321,7 @@
               colorful-menu-nvim
               luasnip
               friendly-snippets
+              cmp-conjure
             ];
 
             treesitter = with pkgs.vimPlugins; [
@@ -362,6 +363,11 @@
               go = with pkgs.vimPlugins; [
                 go-nvim
                 neotest-golang
+              ];
+
+              lisp = with pkgs.vimPlugins; [
+                conjure
+                parinfer-rust
               ];
 
               markdown = with pkgs.vimPlugins; [

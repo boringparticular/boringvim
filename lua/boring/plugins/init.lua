@@ -212,4 +212,11 @@ require('lze').load({
         end,
     },
     { 'golf', for_cat = 'general.extra' },
+    {
+        'flutter-tools.nvim',
+        for_cat = 'languages.flutter',
+        after = function(_)
+            require('flutter-tools').setup({})
+        end,
+    },
 })

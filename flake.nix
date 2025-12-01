@@ -367,6 +367,10 @@
             };
 
             languages = with pkgs.vimPlugins; {
+              flutter = with pkgs.vimPlugins; [
+                flutter-tools-nvim
+              ];
+
               elixir = with pkgs.vimPlugins; [
                 elixir-tools-nvim
                 neotest-elixir

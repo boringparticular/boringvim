@@ -238,7 +238,11 @@
       devShells = {
         default = pkgs.mkShell {
           name = defaultPackageName;
-          packages = [defaultPackage];
+          packages = [
+            defaultPackage
+            pkgs.nixd
+            pkgs.stylua
+          ];
           inputsFrom = [];
           shellHook = ''
           '';

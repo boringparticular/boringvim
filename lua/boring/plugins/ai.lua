@@ -89,6 +89,20 @@ return {
                 debug = false, -- Enable debugging
                 model = 'claude-3.5-sonnet', -- GPT model to use, 'gpt-3.5-turbo', 'gpt-4', or 'gpt-4o'
                 temperature = 0.1, -- GPT temperature
+                contexts = {
+                    empty = {
+                        input = function(callback)
+                            callback('')
+                        end,
+                        resolve = function(input)
+                            return {
+                                content = input,
+                                filename = 'prompt',
+                                filetype = 'raw',
+                            }
+                        end,
+                    },
+                },
                 -- NOTE: Doesn't work. it outputs part of the prompt in chat
                 callback = function(response)
                     if vim.g.chat_title then

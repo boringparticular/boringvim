@@ -35,6 +35,7 @@ require('lze').load({
         'nvim-bqf',
         for_cat = 'general',
         ft = 'qf',
+        event = 'DeferredUIEnter',
     },
     {
         'typr',

@@ -16,7 +16,6 @@ return {
                 desc = '[T]oggle [U]ndoTree',
             },
         },
-        after = function(_)
-        end,
+        after = function(_) end,
     },
 }

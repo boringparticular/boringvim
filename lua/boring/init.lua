@@ -14,7 +14,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     end,
 })
 
-
 require('boring.colorscheme')
 require('boring.lsp')
 require('boring.plugins')

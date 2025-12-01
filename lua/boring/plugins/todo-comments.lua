@@ -1,5 +1,5 @@
 return {
-        {
+    {
         'todo-comments.nvim',
         for_cat = 'general',
         event = 'DeferredUIEnter',

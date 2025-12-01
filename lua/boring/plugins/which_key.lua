@@ -14,7 +14,7 @@ return {
         },
         after = function(_)
             require('which-key').setup({
-                preset = "classic"
+                preset = 'classic',
             })
 
             require('which-key').add({

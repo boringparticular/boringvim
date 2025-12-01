@@ -115,6 +115,7 @@
         gitPlugins = with pkgs.neovimPlugins; [];
         general = with pkgs.vimPlugins; [
           catppuccin-nvim
+          lze
         ];
       };
 

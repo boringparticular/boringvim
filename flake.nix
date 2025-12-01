@@ -59,6 +59,11 @@
       flake = false;
     };
 
+    plugins-golf = {
+      url = "github:vuciv/golf";
+      flake = false;
+    };
+
     blink-pairs = {
       url = "github:Saghen/blink.pairs";
     };
@@ -244,6 +249,7 @@
                 ];
 
                 extra = [
+                  golf
                   inc-rename-nvim
                   overseer-nvim
                   edgy-nvim

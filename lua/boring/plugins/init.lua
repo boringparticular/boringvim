@@ -207,4 +207,5 @@ require('lze').load({
             })
         end,
     },
+    { 'golf', for_cat = 'general.extra' },
 })

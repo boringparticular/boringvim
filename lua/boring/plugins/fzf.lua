@@ -88,12 +88,12 @@ return {
                 },
                 keymap = {
                     builtin = {
-                        [1] = true,
+                        true,
                         ['<C-f>'] = 'preview-page-down',
                         ['<C-b>'] = 'preview-page-up',
                     },
                     fzf = {
-                        [1] = true,
+                        true,
                         ['ctrl-f'] = 'preview-page-down',
                         ['ctrl-b'] = 'preview-page-up',
                         ['ctrl-d'] = 'half-page-down',

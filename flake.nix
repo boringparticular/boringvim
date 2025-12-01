@@ -165,6 +165,10 @@
           nvim-dap-go
           nvim-dap-virtual-text
           nvim-nio
+          nvim-treesitter-textobjects
+          nvim-ts-context-commentstring
+          nvim-treesitter-context
+          nvim-treesitter-refactor
         ];
       };
 

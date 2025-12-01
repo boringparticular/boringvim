@@ -19,20 +19,22 @@ return {
                 preset = 'classic',
             })
 
+            -- TODO: Improve grouping
+            -- TODO: Improve icons
             require('which-key').add({
                 { '<leader>u', group = '[U]I' },
                 { '<leader>u_', hidden = true },
-                { '<leader>c', group = '[C]ode' },
+                { '<leader>c', group = '[C]ode', icon = { icon = icons.code, color = 'blue' } },
                 { '<leader>c_', hidden = true },
                 { '<leader>r', group = '[R]ename' },
                 { '<leader>r_', hidden = true },
-                { '<leader>s', group = '[S]earch' },
+                { '<leader>s', group = '[S]earch', icon = { icon = icons.search, color = 'green' } },
                 { '<leader>s_', hidden = true },
                 { '<leader>t', group = '[T]oggle' },
                 { '<leader>t_', hidden = true },
                 { '<leader>w', group = '[W]orkspace' },
                 { '<leader>w_', hidden = true },
-                { '<leader>a', group = '[A]I' },
+                { '<leader>a', group = '[A]I', icon = { icon = icons.ai, color = 'azure' } },
                 { '<leader>a_', hidden = true },
                 { '<leader>d', group = '[D]ebug', icon = { icon = icons.debug, color = 'red' } },
                 { '<leader>d_', hidden = true },
@@ -40,7 +42,7 @@ return {
                 { '<leader>x_', hidden = true },
                 { '<leader>b', group = '[B]uffer' },
                 { '<leader>b_', hidden = true },
-                { '<leader>g', group = '[G]it' },
+                { '<leader>g', group = '[G]it', icon = { icon = icons.git, color = 'orange' } },
                 { '<leader>g_', hidden = true },
                 {
                     mode = { 'v' },

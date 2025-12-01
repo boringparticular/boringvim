@@ -1,5 +1,5 @@
 require('boring.plugins.colorscheme')
-print('initA!!!')
+
 require('lze').load({
     -- { import = 'boring.plugins.colorscheme' },
     { import = 'boring.plugins.oil' },
@@ -31,5 +31,27 @@ require('lze').load({
     {
         'rainbow-delimiters.nvim',
         for_cat = 'general',
+    },
+    {
+        'direnv.vim',
+        for_cat = 'general.extra',
+    },
+    {
+        'vim-sleuth',
+        for_cat = 'general.always',
+    },
+    {
+        'comment.nvim',
+        for_cat = 'general.extra',
+    },
+    {
+        'todo-comments.nvim',
+        for_cat = 'general.extra',
+        event = 'DeferredUIEnter',
+        after = function(_)
+            require('todo-comments').setup({
+                signs = true,
+            })
+        end,
     },
 })

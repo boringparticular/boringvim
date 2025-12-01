@@ -159,7 +159,9 @@ return {
                 servers.html = {}
                 servers.htmx = {}
                 servers.svelte = {}
-                servers.tailwindcss = {}
+                servers.tailwindcss = {
+                    filetypes = { 'heex' },
+                }
                 servers.ts_ls = {}
                 servers.emmet_language_server = {
                     filetypes = { 'heex' },

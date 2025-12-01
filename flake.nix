@@ -439,7 +439,15 @@
     # and a set of categories that you want
     # (and other information to pass to lua)
     baseCategories = {pkgs, ...}: {
-      general = true;
+      general = {
+        always = true;
+        extra = true;
+        lsp = true;
+        cmp = true;
+        blink = false;
+        telescope = true;
+        treesitter = true;
+      };
       ai = {
         copilot = true;
         copilot-cmp = true;

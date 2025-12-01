@@ -141,6 +141,8 @@
           trouble-nvim
           CopilotChat-nvim
           copilot-lua
+          blink-cmp
+          blink-copilot
         ];
       };
 

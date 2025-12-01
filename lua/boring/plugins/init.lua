@@ -225,7 +225,7 @@ require('lze').load({
     },
     {
         'hunk.nvim',
-        for_cat = 'extra',
+        for_cat = 'general.extra',
         cmd = { 'DiffEditor' },
         after = function(_)
             require('hunk').setup({})
@@ -233,21 +233,21 @@ require('lze').load({
     },
     {
         'vim-dirdiff',
-        for_cat = 'extra',
+        for_cat = 'general.extra',
         after = function(_)
             --
         end,
     },
     {
         'flatten.nvim',
-        for_cat = 'extra',
+        for_cat = 'general.extra',
         after = function(_)
             require('flatten').setup({})
         end,
     },
     {
         'vim-jjdescription',
-        for_cat = 'extra',
+        for_cat = 'general.extra',
         after = function(_)
             --
         end,

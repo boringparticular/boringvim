@@ -7,6 +7,6 @@ return {
     },
     root_markers = {
         'flake.nix',
-        '.git',
+        'git',
     },
 }

@@ -10,7 +10,7 @@ return {
             local neogit = require('neogit')
             neogit.setup({})
 
-            vim.keymap.set('n', '<leader>tg', '<cmd>Neogit<CR>', { desc = '[T]oggle Neo[g]it' })
+            vim.keymap.set('n', '<leader>tg', '<cmd>Neogit kind=floating<CR>', { desc = '[T]oggle Neo[g]it' })
         end,
     },
 }

@@ -464,6 +464,17 @@
             ai.completion = false;
           };
       };
+
+      servervim = args: {
+        settings =
+          baseSettings args
+          // {
+            aliases = ["svim"];
+          };
+        categories = {
+          general.core = true;
+          treesitter = true;
+        };
       };
     };
     # In this section, the main thing you will need to do is change the default package name

@@ -24,14 +24,8 @@
       url = "github:nix-community/neovim-nightly-overlay";
     };
 
-
     plugins-nvim-emmet = {
       url = "github:olrtg/nvim-emmet";
-      flake = false;
-    };
-
-    plugins-navigator-lua = {
-      url = "github:ray-x/navigator.lua";
       flake = false;
     };
 
@@ -155,7 +149,6 @@
       optionalPlugins = {
         gitPlugins = with pkgs.neovimPlugins; [
           nvim-emmet
-          navigator-lua
           hlargs
           reactive-nvim
         ];

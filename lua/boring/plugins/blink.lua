@@ -16,6 +16,11 @@ return {
         end,
     },
     {
+        'blink.compat',
+        for_cat = 'blink',
+        dep_of = { 'blink.cmp' },
+    },
+    {
         'blink-copilot',
         for_cat = 'blink',
         dep_of = { 'blink.cmp' },

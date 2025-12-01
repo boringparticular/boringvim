@@ -315,6 +315,7 @@
 
             blink = with pkgs.vimPlugins; [
               blink-cmp
+              blink-compat
               blink-copilot
               blink-cmp-spell
               colorful-menu-nvim

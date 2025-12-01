@@ -220,6 +220,7 @@
           ];
 
           extra = [
+            fzf-lua
             direnv-vim
             flash-nvim
             gitsigns-nvim

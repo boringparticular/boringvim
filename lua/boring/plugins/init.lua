@@ -11,6 +11,7 @@ require('lze').load({
     { import = 'boring.plugins.conform' },
     { import = 'boring.plugins.elixir' },
     { import = 'boring.plugins.telescope' },
+    { import = 'boring.plugins.fzf' },
     { import = 'boring.plugins.treesitter' },
     { import = 'boring.plugins.git' },
     { import = 'boring.plugins.lint' },

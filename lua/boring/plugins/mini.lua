@@ -46,6 +46,13 @@ return {
                 require('mini.indentscope').setup()
                 require('mini.completion').setup()
             end
+
+            require('mini.animate').setup({
+                cursor = { enable = true },
+                resize = { enable = true },
+                open = { enable = true },
+                close = { enable = true },
+            })
             -- ... and there is more!
             --  Check out: https://github.com/echasnovski/mini.nvim
         end,

@@ -31,6 +31,15 @@ return {
                     workspace = {
                         checkThirdParty = false,
                     },
+                    hint = {
+                        enable = true,
+                        arrayIndex = 'Disable',
+                        await = true,
+                        paramName = 'Disable',
+                        paramType = true,
+                        semicolon = 'Disable',
+                        setType = true,
+                    },
                 },
             },
         },

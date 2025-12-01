@@ -229,6 +229,7 @@
             comment-nvim
             better-escape-nvim
             lspsaga-nvim
+            dropbar-nvim
           ];
 
           telescope = [

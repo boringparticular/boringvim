@@ -63,4 +63,9 @@ require('lze').load({
             require('lspsaga').setup({})
         end,
     },
+    {
+        'dropbar.nvim',
+        for_cat = 'general.extra',
+        after = function(_) end,
+    },
 })

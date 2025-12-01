@@ -41,6 +41,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 vim.lsp.enable('lua_ls')
 vim.lsp.enable('nixd')
+vim.lsp.enable('nil_ls')
 vim.lsp.enable('gopls')
 vim.lsp.enable('emmet_language_server')
 vim.lsp.enable('zk')

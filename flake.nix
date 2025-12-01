@@ -302,6 +302,10 @@
 
         sgdev = [
         ];
+
+        elixir = [
+          elixir-tools-nvim
+        ];
       };
 
       # not loaded automatically at startup.
@@ -393,6 +397,7 @@
         cody = false;
         supermaven = false;
       };
+      elixir = true;
       go = true;
       notes = true;
       treesitter-optional = true;

@@ -50,6 +50,7 @@ return {
                 templ = { 'templ' },
                 rust = { 'rustfmt', lsp_format = 'fallback' },
                 just = { 'just' },
+                elixir = { 'mix' },
                 ['*'] = { 'injected' },
                 ['_'] = { 'trim_whitespace' },
             },

@@ -24,6 +24,10 @@
       url = "github:nix-community/neovim-nightly-overlay";
     };
 
+    plugins-lze = {
+      url = "github:BirdeeHub/lze";
+      flake = false;
+    };
     plugins-nvim-emmet = {
       url = "github:olrtg/nvim-emmet";
       flake = false;
@@ -197,8 +201,8 @@
           # This is for plugins that will load at startup without using packadd:
           startupPlugins = {
             general = with pkgs.vimPlugins; [
+              pkgs.neovimPlugins.lze
               catppuccin-nvim
-              lze
               plenary-nvim
               vim-sleuth
               snacks-nvim

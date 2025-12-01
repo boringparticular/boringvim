@@ -606,6 +606,7 @@
           packages = [
             defaultPackage
             pkgs.stylua
+            pkgs.nixd
           ];
           inputsFrom = [];
           shellHook = ''

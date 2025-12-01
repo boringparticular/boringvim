@@ -24,6 +24,11 @@
       url = "github:nix-community/neovim-nightly-overlay";
     };
 
+
+    plugins-nvim-emmet = {
+      url = "github:olrtg/nvim-emmet";
+      flake = false;
+    };
     # see :help nixCats.flake.inputs
     # If you want your plugin to be loaded by the standard overlay,
     # i.e. if it wasnt on nixpkgs, but doesnt have an extra build step.
@@ -124,7 +129,9 @@
       # not loaded automatically at startup.
       # use with packadd and an autocommand in config to achieve lazy loading
       optionalPlugins = {
-        gitPlugins = with pkgs.neovimPlugins; [];
+        gitPlugins = with pkgs.neovimPlugins; [
+          nvim-emmet
+        ];
         general = with pkgs.vimPlugins; [
           vim-sleuth
           snacks-nvim

@@ -26,6 +26,7 @@ require('lze').load({
     { import = 'boring.plugins.elixir' },
     { import = 'boring.plugins.go' },
     { import = 'boring.plugins.tailwind' },
+    { import = 'boring.plugins.emmet' },
     {
         'direnv.vim',
         for_cat = 'general.extra',

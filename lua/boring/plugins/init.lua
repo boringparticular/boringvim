@@ -95,6 +95,18 @@ require('lze').load({
         end,
     },
     {
+        'typr',
+        for_cat = 'general.extra',
+        cmd = { 'Typr', 'TyprStats' },
+        load = function(name)
+            vim.cmd.packadd(name)
+            vim.cmd.packadd('volt')
+        end,
+        after = function(_)
+            require('typr').setup({})
+        end,
+    },
+    {
         'nvim-emmet',
         for_cat = 'webdev',
         keys = {

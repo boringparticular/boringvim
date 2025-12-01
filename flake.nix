@@ -78,6 +78,16 @@
       flake = false;
     };
 
+    plugins-volt = {
+      url = "github:nvzone/volt";
+      flake = false;
+    };
+
+    plugins-typr = {
+      url = "github:nvzone/typr";
+      flake = false;
+    };
+
     plugins-nvim-emmet = {
       url = "github:olrtg/nvim-emmet";
       flake = false;
@@ -237,6 +247,8 @@
             fastaction-nvim
             pkgs.neovimPlugins.quicker-nvim
             dressing-nvim
+            pkgs.neovimPlugins.volt
+            pkgs.neovimPlugins.typr
           ];
 
           telescope = [

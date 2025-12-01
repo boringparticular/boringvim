@@ -95,7 +95,7 @@ return {
         },
         config = function(_, opts)
             require('CopilotChat').setup(opts)
-            vim.keymap.set('n', '<leader>tg', '<cmd>CopilotChatToggle<CR>', { desc = '[T]oggle [G]itHub Copilot' })
+            vim.keymap.set('n', '<leader>tc', '<cmd>CopilotChatToggle<CR>', { desc = '[T]oggle GitHub [C]opilot' })
         end,
         -- See Commands section for default commands if you want to lazy load on them
     },

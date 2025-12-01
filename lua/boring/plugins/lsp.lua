@@ -15,10 +15,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
         end, { buffer = args.buf, desc = 'LSP: Hover' })
 
         local client = vim.lsp.get_client_by_id(args.data.client_id)
-        if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
-            vim.keymap.set('n', '<leader>th', function()
-                vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-            end, { desc = 'LSP: [T]oggle Inlay [H]ints' })
+
+        if not client then
+            return
+        end
+
+        if client:supports_method('textDocument/inlayHint') then
+            vim.lsp.inlay_hint.enable(true, { bufnr = args.buf })
         end
     end,
 })

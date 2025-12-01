@@ -72,6 +72,15 @@ return {
             vim.keymap.set('n', '<leader>ar', '<cmd>CopilotChatReview<CR>', { desc = '[A]I [R]eview Code' })
             vim.keymap.set('n', '<leader>ao', '<cmd>CopilotChatOptimize<CR>', { desc = '[A]I [O]ptimize Code' })
             vim.keymap.set('n', '<leader>ad', '<cmd>CopilotChatDocs<CR>', { desc = '[A]I [D]ocument Code' })
+            vim.keymap.set('n', '<leader>aq', function()
+                vim.ui.input({
+                    prompt = 'Quick Chat: ',
+                }, function(input)
+                    if input ~= '' then
+                        require('CopilotChat').ask(input)
+                    end
+                end)
+            end, { desc = '[A]I [Q]uick Chat' })
 
             vim.keymap.set('n', '<leader>ap', function()
                 chat.select_prompt()

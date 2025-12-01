@@ -160,6 +160,10 @@
           render-markdown-nvim
           obsidian-nvim
           zk-nvim
+          nvim-dap
+          nvim-dap-ui
+          nvim-dap-go
+          nvim-dap-virtual-text
           nvim-nio
         ];
       };

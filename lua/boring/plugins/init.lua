@@ -19,4 +19,9 @@ require('lze').load({
         'vim-sleuth',
         for_cat = 'general',
     },
+    {
+        'nvim-bqf',
+        for_cat = 'general',
+        ft = 'qf',
+    },
 })

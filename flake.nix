@@ -148,6 +148,7 @@
           blink-copilot
           blink-cmp-spell
           gitsigns-nvim
+          nvim-bqf
         ];
       };
 

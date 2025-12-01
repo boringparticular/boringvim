@@ -128,6 +128,7 @@
         general = with pkgs.vimPlugins; [];
         general = with pkgs.vimPlugins; [
           nvim-treesitter.withAllGrammars
+          fzf-lua
         ];
       };
 

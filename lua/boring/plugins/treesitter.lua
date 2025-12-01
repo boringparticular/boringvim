@@ -34,6 +34,10 @@ return {
 
             ---@diagnostic disable-next-line: missing-fields
             require('nvim-treesitter.configs').setup({
+                refactor = {
+                    highlight_current_scope = { enable = true },
+                    highlight_definitions = { clear_on_cursor_move = true, enable = true },
+                },
                 highlight = {
                     enable = true,
                     -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.

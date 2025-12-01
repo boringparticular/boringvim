@@ -19,6 +19,7 @@ require('lze').load({
     { import = 'boring.plugins.trouble' },
     { import = 'boring.plugins.flash' },
     { import = 'boring.plugins.copilot' },
+    { import = 'boring.plugins.aider' },
     { import = 'boring.plugins.gitsigns' },
     { import = 'boring.plugins.arrow' },
     { import = 'boring.plugins.better-escape' },

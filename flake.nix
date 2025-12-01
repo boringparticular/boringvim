@@ -347,6 +347,7 @@
             ai = with pkgs.vimPlugins; [
               CopilotChat-nvim
               copilot-lua
+              aider-nvim
             ];
 
             debug = with pkgs.vimPlugins; {

@@ -172,6 +172,10 @@ return {
                 servers.asm_lsp = {}
             end
 
+            if nixCats('notes') then
+                servers.zk = {}
+            end
+
             -- servers.nextls = { cmd = { 'nextls' } }
             -- servers.elixirls = { cmd = { 'elixir-ls' } }
             -- servers.lexical = { cmd = { 'lexical' } }

@@ -171,6 +171,7 @@
 
         notes = [
           luarocks
+          zk
         ];
 
         ai = {
@@ -316,6 +317,7 @@
           pkgs.neovimPlugins.render-markdown
           markdown-preview-nvim
           obsidian-nvim
+          zk-nvim
         ];
 
         debug = [

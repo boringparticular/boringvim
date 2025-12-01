@@ -69,4 +69,11 @@ return {
             })
         end,
     },
+    {
+        'zk-nvim',
+        for_cat = 'notes',
+        after = function(_)
+            require('zk').setup({})
+        end,
+    },
 }

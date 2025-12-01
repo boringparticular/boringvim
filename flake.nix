@@ -260,6 +260,10 @@
                 ];
 
                 extra = [
+                  flatten-nvim
+                  vim-jjdescription
+                  hunk-nvim
+                  vim-dirdiff
                   golf
                   inc-rename-nvim
                   overseer-nvim

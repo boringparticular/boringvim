@@ -68,6 +68,15 @@ return {
                 },
 
                 indent = { enable = true, disable = { 'ruby' } },
+                incremental_selection = {
+                    enable = true,
+                    keymaps = {
+                        init_selection = '<C-space>',
+                        node_incremental = '<C-space>',
+                        scope_incremental = false,
+                        node_decremental = '<bs>',
+                    },
+                },
             })
         end,
     },

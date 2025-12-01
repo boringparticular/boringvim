@@ -10,10 +10,11 @@ vim.keymap.set({ 'n', 'v' }, '<leader>ca', '<cmd>FzfLua lsp_code_actions<CR>', {
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('boring-lsp', { clear = true }),
     callback = function(args)
-        vim.keymap.set('n', 'K', function()
-            vim.lsp.buf.hover({ border = 'rounded' })
-        end, { buffer = args.buf, desc = 'LSP: Hover' })
-
+        -- NOTE: default since 0.11?
+        -- vim.keymap.set('n', 'K', function()
+        --     vim.lsp.buf.hover({ border = 'rounded' })
+        -- end, { buffer = args.buf, desc = 'LSP: Hover' })
+        --
         local client = vim.lsp.get_client_by_id(args.data.client_id)
 
         if not client then

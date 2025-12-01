@@ -1,12 +1,11 @@
 return {
     {
-        'folke/which-key.nvim',
-        enabled = require('nixCatsUtils').enableForCategory('general'),
-        event = 'VimEnter', -- Sets the loading event to 'VimEnter'
-        config = function() -- This is the function that runs, AFTER loading
-            require('which-key').setup()
+        'which-key.nvim',
+        for_cat = 'general.extra',
+        event = 'DeferredUIEnter',
+        after = function(_)
+            require('which-key').setup({})
 
-            -- Document existing key chains
             require('which-key').add({
                 { '<leader>c', group = '[C]ode' },
                 { '<leader>c_', hidden = true },

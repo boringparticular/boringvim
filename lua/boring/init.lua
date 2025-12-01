@@ -1,11 +1,10 @@
-require('nixCatsUtils').setup({
-    non_nix_value = true,
-})
-
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ','
 
 vim.g.have_nerd_font = nixCats('have_nerd_font')
+
+require('lze').register_handlers(require('lze.x'))
+require('lze').register_handlers(require('nixCatsUtils.lzUtils').for_cat)
 
 require('boring.options')
 require('boring.keymaps')
@@ -17,3 +16,5 @@ vim.api.nvim_create_autocmd('TextYankPost', {
         vim.highlight.on_yank()
     end,
 })
+
+require('boring.plugins')

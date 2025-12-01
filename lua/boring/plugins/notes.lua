@@ -1,8 +1,7 @@
 return {
     {
-        'epwalsh/obsidian.nvim',
-        enabled = require('nixCatsUtils').enableForCategory('notes'),
-        version = '*', -- recommended, use latest release instead of latest commit
+        'obsidian.nvim',
+        for_cat = 'notes',
         lazy = true,
         ft = 'markdown',
         -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
@@ -13,26 +12,20 @@ return {
         --   "BufReadPre path/to/my-vault/*.md",
         --   "BufNewFile path/to/my-vault/*.md",
         -- },
-        dependencies = {
-            -- Required.
-            'nvim-lua/plenary.nvim',
-
-            -- see below for full list of optional dependencies 👇
-        },
-        opts = {
-            workspaces = {
-                {
-                    name = 'personal',
-                    path = '~/Nextcloud/obsidian',
+        after = function(_)
+            require('obsidian').setup({
+                workspaces = {
+                    {
+                        name = 'personal',
+                        path = '~/Nextcloud/obsidian',
+                    },
                 },
-            },
-
-            -- see below for full list of options 👇
-        },
+            })
+        end,
     },
     {
-        'iamcco/markdown-preview.nvim',
-        enabled = require('nixCatsUtils').enableForCategory('notes'),
+        'markdown-preview.nvim',
+        for_cat = 'notes',
         cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
         ft = { 'markdown' },
         build = function()
@@ -41,40 +34,39 @@ return {
     },
     {
         'MeanderingProgrammer/render-markdown.nvim',
-        enabled = require('nixCatsUtils').enableForCategory('notes'),
+        for_cat = 'notes',
         name = 'render-markdown',
-        config = function()
+        after = function(_)
             require('render-markdown').setup({})
         end,
         ft = 'markdown',
         -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
         -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
-        dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+        -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
     },
     {
-        'nvim-neorg/neorg',
-        enabled = require('nixCatsUtils').enableForCategory('notes'),
-        lazy = true,
+        'neorg',
+        for_cat = 'notes',
         ft = 'neorg',
-        version = '*',
-        config = true,
-        --[[ opts = {
-            load = {
-                ['core.defaults'] = {},
-                ['core.concealer'] = {},
-                -- ['core.completion'] = {
-                --     engine = 'nvim-cmp',
-                --     name = '[Neorg]',
-                -- },
-                ['core.dirman'] = {
-                    config = {
-                        workspaces = {
-                            notes = '~/Nextcloud/notes',
+        after = function(_)
+            require('neorg').setup({
+                load = {
+                    ['core.defaults'] = {},
+                    ['core.concealer'] = {},
+                    -- ['core.completion'] = {
+                    --     engine = 'nvim-cmp',
+                    --     name = '[Neorg]',
+                    -- },
+                    ['core.dirman'] = {
+                        config = {
+                            workspaces = {
+                                notes = '~/Nextcloud/notes',
+                            },
+                            default_workspace = 'notes',
                         },
-                        default_workspace = 'notes',
                     },
                 },
-            },
-        }, ]]
+            })
+        end,
     },
 }

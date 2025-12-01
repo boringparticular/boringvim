@@ -133,6 +133,7 @@
           nvim-treesitter.withAllGrammars
           which-key-nvim
           fzf-lua
+          neogit
         ];
       };
 

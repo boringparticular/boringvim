@@ -2,6 +2,7 @@ return {
     {
         'trouble.nvim',
         for_cat = 'general',
+        on_require = 'trouble',
         cmd = 'Trouble',
         keys = {
             {

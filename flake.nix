@@ -135,6 +135,7 @@
           fzf-lua
           neogit
           undotree
+          flash-nvim
           todo-comments-nvim
           trouble-nvim
         ];

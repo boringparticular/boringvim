@@ -169,6 +169,7 @@
           nvim-ts-context-commentstring
           nvim-treesitter-context
           nvim-treesitter-refactor
+          nvim-bqf
           nvzone-volt
           nvzone-typr
         ];

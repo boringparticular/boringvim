@@ -208,6 +208,7 @@
           yazi-nvim
           nvzone-volt
           nvzone-typr
+          nvim-web-devicons
 
           elixir-tools-nvim
           tailwind-tools-nvim

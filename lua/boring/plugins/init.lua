@@ -56,4 +56,11 @@ require('lze').load({
             })
         end,
     },
+    {
+        'lspsaga.nvim',
+        for_cat = 'general.extra',
+        after = function(_)
+            require('lspsaga').setup({})
+        end,
+    },
 })

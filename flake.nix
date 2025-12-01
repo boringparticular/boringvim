@@ -482,10 +482,11 @@
           blink = true;
           treesitter = true;
           notes = true;
-          ai = {
-            completion = true;
-            chat = true;
-          };
+          ai = false;
+          # ai = {
+          #   completion = true;
+          #   chat = true;
+          # };
           debug = true;
           languages = true;
           webdev = true;

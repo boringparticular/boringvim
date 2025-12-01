@@ -1,4 +1,6 @@
 return {
+    { 'neotest-elixir', for_cat = 'languages.elixir', dep_of = 'neotest' },
+    { 'neotest-golang', for_cat = 'languages.go', dep_of = 'neotest' },
     {
         'neotest',
         for_cat = 'general.extra',

@@ -156,6 +156,10 @@
           better-escape-nvim
           noice-nvim
           colorful-menu-nvim
+          markdown-preview-nvim
+          render-markdown-nvim
+          obsidian-nvim
+          zk-nvim
           nvim-nio
         ];
       };

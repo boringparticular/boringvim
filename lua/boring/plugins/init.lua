@@ -8,6 +8,7 @@ require('lze').load({
     { import = 'boring.plugins.which-key' },
     { import = 'boring.plugins.conform' },
     { import = 'boring.plugins.lint' },
+    { import = 'boring.plugins.notes' },
     { import = 'boring.plugins.git' },
     { import = 'boring.plugins.undotree' },
     { import = 'boring.plugins.todo-comments' },

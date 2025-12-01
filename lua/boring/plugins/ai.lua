@@ -87,29 +87,30 @@ return {
                 debug = false, -- Enable debugging
                 model = 'claude-3.5-sonnet', -- GPT model to use, 'gpt-3.5-turbo', 'gpt-4', or 'gpt-4o'
                 temperature = 0.1, -- GPT temperature
-                callback = function(response)
-                    if vim.g.chat_title then
-                        chat.save(vim.g.chat_title)
-                        return
-                    end
-
-                    local prompt = [[
-                    Generate chat title in filepath-friendly format for:
-
-                    %s
-
-                    Output only the title and nothing else in your response.
-                    ]]
-
-                    chat.ask(vim.trim(prompt:format(response)), {
-                        no_chat = true,
-                        callback = function(gen_response)
-                            vim.g.chat_title = vim.trim(gen_response)
-                            print('Chat title set to: ' .. vim.g.chat_title)
-                            chat.save(vim.g.chat_title)
-                        end,
-                    })
-                end,
+                -- NOTE: Doesn't work. it outputs part of the prompt in chat
+                -- callback = function(response)
+                --     if vim.g.chat_title then
+                --         chat.save(vim.g.chat_title)
+                --         return
+                --     end
+                --
+                --     local prompt = [[
+                --     Generate chat title in filepath-friendly format for:
+                --
+                --     %s
+                --
+                --     Output only the title and nothing else in your response.
+                --     ]]
+                --
+                --     chat.ask(vim.trim(prompt:format(response)), {
+                --         no_chat = true,
+                --         callback = function(gen_response)
+                --             vim.g.chat_title = vim.trim(gen_response)
+                --             print('Chat title set to: ' .. vim.g.chat_title)
+                --             chat.save(vim.g.chat_title)
+                --         end,
+                --     })
+                -- end,
             })
             vim.keymap.set('n', '<leader>ac', '<cmd>CopilotChatToggle<CR>', { desc = '[A]I [C]hat' })
             vim.keymap.set('n', '<leader>ccc', '<cmd>CopilotChatToggle<CR>', { desc = '[C]opilot [C]hat' })
@@ -137,10 +138,10 @@ return {
             --     require('CopilotChat.integrations.telescope').pick(options)
             -- end, { desc = '[C]opilot [L]oad chat' })
 
-            vim.keymap.set({ 'n', 'v' }, '<leader>ax', function()
-                vim.g.chat_title = nil
-                chat.reset()
-            end)
+            -- vim.keymap.set({ 'n', 'v' }, '<leader>ax', function()
+            --     vim.g.chat_title = nil
+            --     chat.reset()
+            -- end)
         end,
     },
     load_sg(),

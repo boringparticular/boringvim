@@ -1,7 +1,7 @@
 return {
     {
         'fidget.nvim',
-        for_cat = 'general.extra',
+        for_cat = 'general.lsp',
         dep_of = { 'nvim-lspconfig' },
         after = function(_)
             require('fidget').setup({})
@@ -21,7 +21,7 @@ return {
     },
     {
         'nvim-lspconfig',
-        for_cat = 'general.extra',
+        for_cat = 'general.lsp',
         event = 'FileType',
         after = function(_)
             vim.api.nvim_create_autocmd('LspAttach', {

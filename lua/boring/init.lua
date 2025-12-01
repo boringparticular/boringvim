@@ -4,6 +4,7 @@ vim.g.maplocalleader = ','
 require('lze').register_handlers(require('nixCatsUtils.lzUtils').for_cat)
 
 require('boring.options')
+require('boring.keymaps')
 
 vim.api.nvim_create_autocmd('TextYankPost', {
     desc = 'Highlight when yanking (copying) text',

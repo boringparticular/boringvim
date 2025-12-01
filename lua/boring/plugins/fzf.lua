@@ -49,6 +49,7 @@ return {
                     '.git/',
                     '.venv/',
                     '.direnv/',
+                    '.zig_cache/',
                     '.node_modules/',
                     'node_modules/',
                     'deps/',

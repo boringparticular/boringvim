@@ -1,3 +1,7 @@
+---packadd + after/plugin
+---@type fun(names: string[]|string)
+local load_w_after_plugin = require('nixCatsUtils.lzUtils').make_load_with_after({ 'plugin' })
+
 local function load_sg()
     local result
 
@@ -68,6 +72,9 @@ return {
     {
         'copilot-cmp',
         for_cat = 'ai.copilot-cmp',
+        -- dep_of = { 'nvim-cmp' },
+        on_plugin = { 'nvim-cmp' },
+        load = load_w_after_plugin,
         after = function(_)
             if pcall(require, 'cmp') then
                 require('copilot_cmp').setup()

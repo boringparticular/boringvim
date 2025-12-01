@@ -193,6 +193,10 @@
               ];
 
               extra = [
+                imagemagick
+                ghostscript
+                mermaid-cli
+                tectonic
                 chafa
                 ast-grep
                 yazi

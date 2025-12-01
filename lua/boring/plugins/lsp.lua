@@ -39,9 +39,19 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end,
 })
 
-vim.lsp.enable('lua_ls')
-vim.lsp.enable('nixd')
-vim.lsp.enable('nil_ls')
-vim.lsp.enable('gopls')
-vim.lsp.enable('emmet_language_server')
-vim.lsp.enable('zk')
+return {
+    {
+        'nvim-lspconfig',
+        for_cat = 'lsp',
+        lsp = function(plugin)
+            vim.lsp.config(plugin.name, plugin.lsp or {})
+            vim.lsp.enable(plugin.name)
+            vim.print(plugin)
+        end,
+        before = function(_)
+            vim.lsp.config('*', {
+                capabilities = {},
+            })
+        end,
+    },
+}

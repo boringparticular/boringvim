@@ -1,7 +1,10 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ','
 
-require('lze').register_handlers(require('nixCatsUtils.lzUtils').for_cat)
+require('lze').register_handlers({
+    require('nixCatsUtils.lzUtils').for_cat,
+    require('lzextras').lsp,
+})
 
 require('boring.options')
 require('boring.keymaps')
@@ -15,9 +18,4 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 require('boring.colorscheme')
-
-if nixCats('lsp') then
-    require('boring.lsp')
-end
-
 require('boring.plugins')

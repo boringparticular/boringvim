@@ -28,6 +28,17 @@
       url = "github:BirdeeHub/lze";
       flake = false;
     };
+
+    plugins-lzextras = {
+      url = "github:BirdeeHub/lzextras";
+      flake = false;
+    };
+
+    "plugins-nvim-lspconfig" = {
+      url = "github:neovim/nvim-lspconfig";
+      flake = false;
+    };
+
     plugins-nvim-emmet = {
       url = "github:olrtg/nvim-emmet";
       flake = false;
@@ -208,6 +219,7 @@
           startupPlugins = {
             general = with pkgs.vimPlugins; [
               pkgs.neovimPlugins.lze
+              pkgs.neovimPlugins.lzextras
               catppuccin-nvim
               plenary-nvim
               vim-sleuth
@@ -270,6 +282,7 @@
               with pkgs.vimPlugins;
               with pkgs.neovimPlugins;
               [
+                pkgs.neovimPlugins.nvim-lspconfig
                 fidget-nvim
                 lspsaga-nvim
                 outline-nvim

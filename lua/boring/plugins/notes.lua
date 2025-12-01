@@ -39,4 +39,10 @@ return {
             require('zk').setup({})
         end,
     },
+    {
+        'zk',
+        for_cat = 'notes',
+        enabled = nixCats('lsp'),
+        lsp = {},
+    },
 }

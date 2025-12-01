@@ -8,4 +8,10 @@ return {
             require('go').setup()
         end,
     },
+    {
+        'gopls',
+        for_cat = 'languages.go',
+        enabled = nixCats('lsp'),
+        lsp = {},
+    },
 }

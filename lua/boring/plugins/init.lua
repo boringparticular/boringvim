@@ -1,4 +1,5 @@
 require('lze').load({
+    { import = 'boring.plugins.lsp' },
     { import = 'boring.plugins.snacks' },
     { import = 'boring.plugins.treesitter' },
     { import = 'boring.plugins.mini' },

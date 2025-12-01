@@ -12,4 +12,37 @@ return {
             })
         end,
     },
+    {
+        'lua_ls',
+        enabled = nixCats('languages.lua') or nixCats('neonixdev'),
+        lsp = {
+            settings = {
+                Lua = {
+                    completion = {
+                        callSnippet = 'Replace',
+                    },
+                    diagnostics = {
+                        globals = { 'nixCats', 'vim' },
+                        disable = { 'missing-fields' },
+                    },
+                    runtime = {
+                        version = 'LuaJIT',
+                    },
+                    workspace = {
+                        checkThirdParty = false,
+                    },
+                },
+            },
+        },
+    },
+    {
+        'nixd',
+        for_cat = 'neonixdev',
+        lsp = {},
+    },
+    {
+        'nil_ls',
+        for_cat = 'neonixdev',
+        lsp = {},
+    },
 }

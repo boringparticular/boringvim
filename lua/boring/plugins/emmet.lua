@@ -17,6 +17,14 @@ return {
         end,
     },
     {
+        'emmet_language_server',
+        for_cat = 'emmet',
+        enabled = nixCats('lsp'),
+        lsp = {
+            filetypes = { 'heex', 'html', 'css', 'javascript', 'typescript', 'vue' },
+        },
+    },
+    {
         'emmet-vim',
         for_cat = 'emmet',
         ft = { 'heex', 'html', 'css', 'javascript', 'typescript', 'vue' },

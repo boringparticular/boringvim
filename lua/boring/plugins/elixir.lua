@@ -10,7 +10,7 @@ return {
 
             elixir.setup({
                 nextls = {
-                    enable = true,
+                    enable = false,
                     init_options = {
                         mix_env = 'dev',
                         mix_target = 'host',
@@ -23,7 +23,7 @@ return {
                 },
 
                 elixirls = {
-                    enable = false,
+                    enable = true,
                     settings = elixirls.settings({
                         dialyzerEnabled = true,
                         enableTestLenses = true,

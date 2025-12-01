@@ -394,6 +394,7 @@
       general = true;
       ai = {
         copilot = true;
+        copilot-cmp = true;
         codeium = false;
         cody = false;
         supermaven = false;
@@ -507,6 +508,7 @@
           // {
             ai = {
               copilot = true;
+              copilot-cmp = false;
               codeium = false;
               cody = false;
               supermaven = false;

@@ -470,6 +470,16 @@
           };
       };
 
+      # remove ai for advent of code
+      aocNVim = args: {
+        settings = baseSettings args // {};
+        categories =
+          baseCategories args
+          // {
+            ai = false;
+          };
+      };
+
       boringVim = args: {
         settings =
           baseSettings args

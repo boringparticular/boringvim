@@ -85,6 +85,7 @@ return {
             local luasnip = require('luasnip')
             require('luasnip.loaders.from_vscode').lazy_load()
             luasnip.config.setup({})
+            luasnip.add_snippets('elixir', require('boring.snippets.elixir'))
         end,
     },
     {

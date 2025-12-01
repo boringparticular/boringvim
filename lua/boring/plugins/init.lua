@@ -109,4 +109,11 @@ require('lze').load({
             require('kulala').setup({})
         end,
     },
+    {
+        'grug-far.nvim',
+        for_cat = 'general.extra',
+        after = function(_)
+            require('grug-far').setup({})
+        end,
+    },
 })

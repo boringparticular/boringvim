@@ -163,6 +163,7 @@
 
               extra = [
                 chafa
+                ast-grep
                 yazi
               ];
             };
@@ -235,6 +236,7 @@
                   kulala-nvim
                   yazi-nvim
                   reactive-nvim
+                  grug-far-nvim
                 ];
               };
 

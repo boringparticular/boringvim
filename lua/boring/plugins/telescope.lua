@@ -35,6 +35,7 @@ return {
                         '^.git/',
                         '^.venv/',
                         '^.node_modules/',
+                        '^node_modules/',
                     },
                     mappings = {
                         i = { ['<c-enter>'] = 'to_fuzzy_refine' },

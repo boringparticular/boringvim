@@ -108,6 +108,7 @@ return {
                 file_ignore_patterns = {
                     '.git/',
                     '.venv/',
+                    '.direnv/',
                     '.node_modules/',
                     'node_modules/',
                     'deps/',

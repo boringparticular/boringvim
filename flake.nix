@@ -482,7 +482,6 @@
           };
         categories = {
           mini.extra = true;
-          mini.optional = true;
         };
       };
 

@@ -351,6 +351,22 @@
         "type": "github"
       }
     },
+    "plugins-portal-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1711985078,
+        "narHash": "sha256-QCdyJ5in3Dm4IVlBUtbGWRZxl87gKHhRiGmZcIGEHm0=",
+        "owner": "cbochs",
+        "repo": "portal.nvim",
+        "rev": "77d9d53fec945bfa407d5fd7120f1b4f117450ed",
+        "type": "github"
+      },
+      "original": {
+        "owner": "cbochs",
+        "repo": "portal.nvim",
+        "type": "github"
+      }
+    },
     "plugins-reactive-nvim": {
       "flake": false,
       "locked": {
@@ -375,6 +391,7 @@
         "nixpkgs": "nixpkgs_3",
         "plugins-hlargs": "plugins-hlargs",
         "plugins-nvim-emmet": "plugins-nvim-emmet",
+        "plugins-portal-nvim": "plugins-portal-nvim",
         "plugins-reactive-nvim": "plugins-reactive-nvim"
       }
     },

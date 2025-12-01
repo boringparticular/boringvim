@@ -256,4 +256,11 @@ require('lze').load({
             --
         end,
     },
+    {
+        'fyler.nvim',
+        for_cat = 'general.extra',
+        after = function(_)
+            require('fyler').setup({})
+        end,
+    },
 })

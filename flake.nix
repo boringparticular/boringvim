@@ -260,6 +260,7 @@
                 ];
 
                 extra = [
+                  fyler-nvim
                   flatten-nvim
                   vim-jjdescription
                   hunk-nvim

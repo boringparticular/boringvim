@@ -4,7 +4,7 @@ require('lze').load({
     { import = 'boring.plugins.fzf' },
     { import = 'boring.plugins.blink' },
     { import = 'boring.plugins.oil' },
-    { import = 'boring.plugins.which_key' },
+    { import = 'boring.plugins.which-key' },
     { import = 'boring.plugins.conform' },
     { import = 'boring.plugins.lint' },
     { import = 'boring.plugins.git' },

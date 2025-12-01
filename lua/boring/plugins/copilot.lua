@@ -4,7 +4,19 @@ return {
         for_cat = 'ai',
         cmd = 'Copilot',
         event = 'InsertEnter',
+        keys = {
+            {
+                '<leader>ua',
+                function()
+                    vim.g.ai_completion_enabled = not vim.g.ai_completion_enabled
+                    vim.notify('AI Completion ' .. (vim.g.ai_completion_enabled and 'Enabled' or 'Disabled'))
+                end,
+                desc = 'Toggle AI Completion',
+            },
+        },
         after = function(_)
+            vim.g.ai_completion_enabled = true
+
             require('copilot').setup({
                 suggestion = { enabled = true },
                 panel = { enabled = true },

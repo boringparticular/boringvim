@@ -70,6 +70,9 @@ return {
                             module = 'blink-copilot',
                             score_offset = 100,
                             async = true,
+                            enabled = nixCats('ai.completion') and function()
+                                return vim.g.ai_completion_enabled
+                            end,
                         },
                         conjure = nixCats('languages.lisp')
                                 and {

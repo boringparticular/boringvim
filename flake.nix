@@ -125,8 +125,8 @@
       # use with packadd and an autocommand in config to achieve lazy loading
       optionalPlugins = {
         gitPlugins = with pkgs.neovimPlugins; [];
-        general = with pkgs.vimPlugins; [];
         general = with pkgs.vimPlugins; [
+          snacks-nvim
           oil-nvim
           conform-nvim
           nvim-lint

@@ -37,6 +37,15 @@ require('catppuccin').setup({
             BlinkCmpDoc = { fg = colors.text, bg = colors.base },
             BlinkCmpSignatureHelpActiveParameter = { fg = colors.mauve },
             BlinkCmpSignatureHelpBorder = { fg = colors.blue },
+
+            SnacksIndent1 = { fg = colors.red },
+            SnacksIndent2 = { fg = colors.yellow },
+            SnacksIndent3 = { fg = colors.blue },
+            SnacksIndent4 = { fg = colors.peach },
+            SnacksIndent5 = { fg = colors.green },
+            SnacksIndent6 = { fg = colors.mauve },
+            SnacksIndent7 = { fg = colors.teal },
+            SnacksIndent8 = { fg = colors.maroon },
         }
     end,
     integrations = {
@@ -56,6 +65,7 @@ require('catppuccin').setup({
             indentscope_color = 'lavender',
         },
         telescope = { enabled = true },
+        snacks = { enabled = true, indent_scope_color = 'lavender' },
         treesitter = true,
         which_key = true,
     },

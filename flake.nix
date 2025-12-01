@@ -435,7 +435,7 @@
           ...
         }:
         {
-          suffix-path = false;
+          suffix-path = true;
           suffix-LD = true;
           hosts.node.enable = true;
           wrapRc = true;

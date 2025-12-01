@@ -2,6 +2,8 @@ return {
     {
         'fzf-lua',
         for_cat = 'general',
+        cmd = 'FzfLua',
+        on_require = 'fzf-lua',
         keys = {
             {
                 mode = 'n',

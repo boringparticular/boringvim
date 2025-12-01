@@ -34,9 +34,15 @@ require('catppuccin').setup({
     end,
     integrations = {
         blink_cmp = true,
-        cmp = true,
         gitsigns = true,
+        dropbar = {
+            enabled = true,
+            color_mode = true,
+        },
+        fidget = true,
+        fzf = true,
         rainbow_delimiters = true,
+        treesitter = true,
         treesitter_context = true,
         indent_blankline = {
             enabled = true,
@@ -49,8 +55,14 @@ require('catppuccin').setup({
             indentscope_color = 'lavender',
         },
         snacks = { enabled = true, indent_scope_color = 'lavender' },
-        treesitter = true,
         which_key = true,
+        lsp_saga = true,
+        neogit = true,
+        noice = true,
+        dap = true,
+        dap_ui = true,
+        render_markdown = true,
+        lsp_trouble = true,
     },
 })
 vim.cmd.colorscheme('catppuccin')

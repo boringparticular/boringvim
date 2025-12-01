@@ -246,6 +246,7 @@
                 extra = [
                   overseer-nvim
                   edgy-nvim
+                  neotest
                   blink-pairs
                   conform-nvim
                   nvim-lint

@@ -1,30 +1,18 @@
 return {
     {
+        'fidget.nvim',
+        for_cat = 'general.extra',
+        dep_of = { 'nvim-lspconfig' },
+        after = function(_)
+            vim.notify('fidget')
+            require('fidget').setup({})
+        end,
+    },
+    {
         'nvim-lspconfig',
         for_cat = 'general.extra',
         event = 'FileType',
         -- dependencies = {
-        --     -- Automatically install LSPs and related tools to stdpath for Neovim
-        --     {
-        --         'williamboman/mason.nvim',
-        --         -- NOTE: nixCats: use lazyAdd to only enable mason if nix wasnt involved.
-        --         -- because we will be using nix to download things instead.
-        --         enabled = require('nixCatsUtils').lazyAdd(true, false),
-        --         config = true,
-        --     }, -- NOTE: Must be loaded before dependants
-        --     {
-        --         'williamboman/mason-lspconfig.nvim',
-        --         -- NOTE: nixCats: use lazyAdd to only enable mason if nix wasnt involved.
-        --         -- because we will be using nix to download things instead.
-        --         enabled = require('nixCatsUtils').lazyAdd(true, false),
-        --     },
-        --     {
-        --         'WhoIsSethDaniel/mason-tool-installer.nvim',
-        --         -- NOTE: nixCats: use lazyAdd to only enable mason if nix wasnt involved.
-        --         -- because we will be using nix to download things instead.
-        --         enabled = require('nixCatsUtils').lazyAdd(true, false),
-        --     },
-        --
         --     { 'j-hui/fidget.nvim', opts = {}, enabled = require('nixCatsUtils').enableForCategory('devtools') },
         --
         --     -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
@@ -138,8 +126,15 @@ return {
             --  By default, Neovim doesn't support everything that is in the LSP specification.
             --  When you add nvim-cmp, luasnip, etc. Neovim now has *more* capabilities.
             --  So, we create new capabilities with nvim cmp, and then broadcast that to the servers.
-            local capabilities = vim.lsp.protocol.make_client_capabilities()
-            capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
+            local has_blink, blink = pcall(require, 'blink.cmp')
+            local has_cmp, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
+            local capabilities = vim.tbl_deep_extend(
+                'force',
+                {},
+                vim.lsp.protocol.make_client_capabilities(),
+                has_blink and blink.get_lsp_capabilities() or {},
+                has_cmp and cmp_nvim_lsp.default_capabilities() or {}
+            )
 
             -- Enable the following language servers
             --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.

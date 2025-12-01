@@ -472,7 +472,11 @@
 
       # remove ai for advent of code
       aocNvim = args: {
-        settings = baseSettings args // {};
+        settings =
+          baseSettings args
+          // {
+            extraName = "aocNvim";
+          };
         categories =
           baseCategories args
           // {

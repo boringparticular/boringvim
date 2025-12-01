@@ -12,6 +12,7 @@ require('lze').load({
     { import = 'boring.plugins.lint' },
     { import = 'boring.plugins.debug' },
     { import = 'boring.plugins.notes' },
+    { import = 'boring.plugins.markdown' },
     { import = 'boring.plugins.neogit' },
     { import = 'boring.plugins.undotree' },
     { import = 'boring.plugins.todo-comments' },

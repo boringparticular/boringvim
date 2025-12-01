@@ -24,7 +24,7 @@ require('lze').load({
     { import = 'boring.plugins.better-escape' },
     { import = 'boring.plugins.noice' },
     { import = 'boring.plugins.colorful-menu' },
-    { import = 'boring.plugins.lazydev' },
+    { import = 'boring.plugins.neonixdev' },
     { import = 'boring.plugins.elixir' },
     { import = 'boring.plugins.go' },
     { import = 'boring.plugins.tailwind' },

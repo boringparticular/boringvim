@@ -73,4 +73,11 @@ require('lze').load({
         for_cat = 'general.extra',
         ft = 'qf',
     },
+    {
+        'fastaction.nvim',
+        for_cat = 'general.extra',
+        after = function(_)
+            vim.keymap.set({ 'n', 'x' }, '<leader>a', '<cmd>lua require("fastaction").code_action()<CR>')
+        end,
+    },
 })

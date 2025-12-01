@@ -254,6 +254,7 @@
             lspsaga-nvim
             dropbar-nvim
             nvim-bqf
+            fastaction-nvim
           ];
 
           telescope = [

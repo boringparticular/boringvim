@@ -43,10 +43,10 @@
       flake = false;
     };
 
-    # plugins-go-nvim = {
-    #   url = "github:ray-x/go.nvim";
-    #   flake = false;
-    # };
+    plugins-go-nvim = {
+      url = "github:ray-x/go.nvim";
+      flake = false;
+    };
 
     blink-cmp = {
       url = "github:Saghen/blink.cmp";
@@ -216,7 +216,7 @@
             nvim-colorizer-lua
             nvim-lint
             nvim-notify
-            # pkgs.neovimPlugins.go-nvim
+            pkgs.neovimPlugins.go-nvim
             pkgs.neovimPlugins.large-file
             rainbow-delimiters-nvim
             todo-comments-nvim

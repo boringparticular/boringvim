@@ -152,6 +152,7 @@
           arrow-nvim
           better-escape-nvim
           noice-nvim
+          colorful-menu-nvim
         ];
       };
 

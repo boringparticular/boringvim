@@ -221,6 +221,7 @@
             which-key-nvim
             conform-nvim
             comment-nvim
+            better-escape-nvim
           ];
 
           telescope = [

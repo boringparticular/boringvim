@@ -4,6 +4,7 @@ require('lze').load({
     -- { import = 'boring.plugins.colorscheme' },
     { import = 'boring.plugins.oil' },
     { import = 'boring.plugins.mini' },
+    { import = 'boring.plugins.better-escape' },
     { import = 'boring.plugins.colorizer' },
     { import = 'boring.plugins.snacks' },
     { import = 'boring.plugins.flash' },

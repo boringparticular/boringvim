@@ -1,6 +1,8 @@
 local M = {}
 
--- these 3 files are intended to be independent. You will likely want at least something in this one,
+-- This directory is the luaUtils template.
+-- the other 3 files are intended to be independent, but may depend on this one.
+-- You will likely want at least something in this one,
 -- but unless you use lazy.nvm or want to use pckr or rocks when not on nix, you wont need the other 2
 
 ---@type boolean
@@ -22,6 +24,27 @@ function M.setup(v)
         -- if not in nix, just make it return a boolean
         require('_G').nixCats = function(_)
             return nixCats_default_value
+        end
+        -- and define some stuff for the nixCats plugin
+        -- to prevent indexing errors and provide some values
+        package.preload['nixCats'] = function()
+            return {
+                cats = {},
+                pawsible = {
+                    allPlugins = {
+                        start = {},
+                        opt = {},
+                        ts_grammar_path = nil,
+                    },
+                },
+                settings = {
+                    nixCats_config_location = vim.fn.stdpath('config'),
+                    configDirName = os.getenv('NVIM_APPNAME') or 'nvim',
+                    wrapRc = false,
+                },
+                configDir = vim.fn.stdpath('config'),
+                packageBinPath = os.getenv('NVIM_WRAPPER_PATH_NIX') or vim.v.progpath,
+            }
         end
     end
 end

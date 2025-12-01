@@ -229,6 +229,10 @@
             notes = [
               pkgs.zk
             ];
+
+            markdown = [
+              pkgs.python3Packages.pylatexenc
+            ];
           };
 
           # This is for plugins that will load at startup without using packadd:

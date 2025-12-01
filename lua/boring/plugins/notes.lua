@@ -6,6 +6,7 @@ return {
         ft = 'markdown',
         after = function(_)
             require('obsidian').setup({
+                ui = { enable = false },
                 workspaces = {
                     {
                         name = 'personal',

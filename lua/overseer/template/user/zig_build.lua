@@ -4,7 +4,11 @@ return {
         return {
             cmd = { 'zig' },
             args = { 'build' },
-            components = { { 'on_output_quickfix', open = true }, 'default' },
+            components = {
+                { 'on_output_quickfix', open = true, set_diagnostics = true },
+                -- { 'on_result_diagnostics_trouble', close = false },
+                'default',
+            },
         }
     end,
     condition = {

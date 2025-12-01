@@ -8,6 +8,10 @@ require('catppuccin').setup({
     },
     custom_highlights = function(colors)
         return {
+            -- Comment = { fg = colors.flamingo },
+            -- TabLineSel = { bg = colors.pink },
+            -- CmpBorder = { fg = colors.surface2 },
+            Pmenu = { bg = colors.none },
             BlinkCmpKind = { fg = colors.blue },
 
             BlinkCmpMenu = { fg = colors.text, bg = colors.base },

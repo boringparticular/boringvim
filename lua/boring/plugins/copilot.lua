@@ -15,7 +15,7 @@ return {
             },
         },
         after = function(_)
-            vim.g.ai_completion_enabled = true
+            vim.g.ai_completion_enabled = false
 
             require('copilot').setup({
                 suggestion = { enabled = true },
@@ -50,7 +50,7 @@ return {
                         end,
                     },
                 },
-                callback = function(response)
+                callback = function(response, source)
                     if vim.g.chat_title then
                         chat.save(vim.g.chat_title)
                         return
@@ -66,10 +66,9 @@ return {
                     Output only the title and nothing else in your response.
                     ]]
 
-                    -- use AI to generate prompt title based on first AI response to user question
                     chat.ask(vim.trim(prompt:format(response)), {
-                        headless = true, -- disable updating chat buffer and history with this question
-                        callback = function(gen_response)
+                        headless = true,
+                        callback = function(gen_response, gen_source)
                             local title = gen_response:match('^%s*(.-)%s*$') -- Trim whitespace
                             vim.g.chat_title = title
                             print('Chat title set to: ' .. vim.g.chat_title)
@@ -77,6 +76,33 @@ return {
                         end,
                     })
                 end,
+                -- callback = function(response)
+                --     if vim.g.chat_title then
+                --         chat.save(vim.g.chat_title)
+                --         return
+                --     end
+                --
+                --     local prompt = [[
+                --     Generate chat title in filepath-friendly format for:
+                --
+                --     ```
+                --     %s
+                --     ```
+                --
+                --     Output only the title and nothing else in your response.
+                --     ]]
+                --
+                --     -- use AI to generate prompt title based on first AI response to user question
+                --     chat.ask(vim.trim(prompt:format(response)), {
+                --         headless = true, -- disable updating chat buffer and history with this question
+                --         callback = function(gen_response)
+                --             local title = gen_response:match('^%s*(.-)%s*$') -- Trim whitespace
+                --             vim.g.chat_title = title
+                --             print('Chat title set to: ' .. vim.g.chat_title)
+                --             chat.save(vim.g.chat_title)
+                --         end,
+                --     })
+                -- end,
             })
             vim.keymap.set({ 'n', 'v' }, '<leader>ac', '<cmd>CopilotChatToggle<CR>', { desc = '[A]I [C]hat' })
             vim.keymap.set('n', '<leader>ae', '<cmd>CopilotChatExplain<CR>', { desc = '[A]I [E]xplain code' })

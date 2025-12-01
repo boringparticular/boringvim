@@ -4,7 +4,7 @@ return {
         return {
             cmd = { 'zig' },
             args = { 'build', 'run' },
-            components = { { 'on_output_quickfix', open = true }, 'default' },
+            components = { { 'on_output_trouble', open = true }, 'default' },
         }
     end,
     condition = {

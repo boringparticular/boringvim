@@ -19,6 +19,7 @@ require('lze').load({
     { import = 'boring.plugins.arrow' },
     { import = 'boring.plugins.better-escape' },
     { import = 'boring.plugins.noice' },
+    { import = 'boring.plugins.colorful-menu' },
     {
         'vim-sleuth',
         for_cat = 'general',

@@ -7,12 +7,16 @@
   ...
 }:
 let
+  lib = import "${nixpkgs}/lib";
   utils = import nixCats;
+  forEachSystem = utils.eachSystem lib.platforms.all;
   luaPath = ./.;
   dependencyOverlays = [
     (utils.standardPluginOverlay sources)
     (import sources.neovim-nightly-overlay)
   ];
+
+  extra_pkg_config = { };
 
   # see :help nixCats.flake.outputs.categories
   categoryDefinitions =
@@ -110,47 +114,131 @@ let
     };
 
   # see :help nixCats.flake.outputs.packageDefinitions
-  packageDefinitions = {
-    boringvim =
-      {
-        pkgs,
-        name,
-        mkPlugin,
-        ...
-      }:
-      {
-        # see :help nixCats.flake.outputs.settings
-        settings = {
-          suffix-path = true;
-          suffix-LD = true;
-          host.node.enable = true;
-          host.python.enable = true;
-          wrapRc = false;
-          unwrappedCfgPath = "/home/kmies/.config/nvim";
-          # IMPORTANT:
-          # your aliases may not conflict with your other packages.
-          aliases = [
-            "bvim"
-            "nvim"
-            "vim"
-            "vi"
-          ];
-          # neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.neovim;
-        };
-        categories = {
-          general = true;
-          extra = true;
-        };
-        # anything else to pass and grab in lua with `nixCats.extra`
-        extra = { };
+  packageDefinitions =
+    let
+      baseSettings = {
+        suffix-path = true;
+        suffix-LD = true;
+        host.node.enable = true;
+        host.python.enable = true;
+        wrapRc = true;
+        aliases = [ ];
       };
-  };
+      baseCategories = {
+        general = true;
+        extra = true;
+      };
+    in
+    {
+      boringvim =
+        {
+          pkgs,
+          name,
+          mkPlugin,
+          ...
+        }:
+        {
+          # see :help nixCats.flake.outputs.settings
+          settings = baseSettings // {
+            wrapRc = false;
+            unwrappedCfgPath = "/home/kmies/.config/nvim";
+            # IMPORTANT:
+            # your aliases may not conflict with your other packages.
+            aliases = [
+              "bvim"
+              "nvim"
+              "vim"
+              "vi"
+            ];
+            # neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.neovim;
+          };
+          categories = baseCategories // {
+          };
+          # anything else to pass and grab in lua with `nixCats.extra`
+          extra = { };
+        };
+
+      boringwrapped =
+        { ... }:
+        {
+          settings = baseSettings // {
+            wrapRc = true;
+            aliases = [ "bwim" ];
+          };
+          categories = baseCategories;
+        };
+    };
 
   # We will build the one named nvim here and export that one.
   # you can change which package from packageDefinitions is built later
   # using package.override { name = "aDifferentPackage"; }
   defaultPackageName = "boringvim";
 in
-utils.baseBuilder luaPath {
-  inherit pkgs dependencyOverlays;
-} categoryDefinitions packageDefinitions defaultPackageName
+forEachSystem (
+  system:
+  let
+    nixCatsBuilder = utils.baseBuilder luaPath {
+      inherit
+        nixpkgs
+        system
+        dependencyOverlays
+        extra_pkg_config
+        ;
+    } categoryDefinitions packageDefinitions;
+    defaultPackage = nixCatsBuilder defaultPackageName;
+    pkgs = import nixpkgs { inherit system; };
+  in
+  {
+    packages = utils.mkAllWithDefault defaultPackage;
+    devShells.default = import ./shell.nix { inherit nixpkgs pkgs; };
+  }
+)
+// (
+  let
+    nixosModule = utils.mkNixosModules {
+      moduleNamespace = null;
+      inherit
+        defaultPackageName
+        dependencyOverlays
+        luaPath
+        categoryDefinitions
+        packageDefinitions
+        extra_pkg_config
+        nixpkgs
+        ;
+    };
+
+    homeModule = utils.mkHomeModules {
+      moduleNamespace = null;
+      inherit
+        defaultPackageName
+        dependencyOverlays
+        luaPath
+        categoryDefinitions
+        packageDefinitions
+        extra_pkg_config
+        nixpkgs
+        ;
+    };
+  in
+  {
+    nixosModules.default = nixosModule;
+
+    homeModules.default = homeModule;
+
+    overlays = utils.makeOverlays luaPath {
+      inherit
+        nixpkgs
+        dependencyOverlays
+        extra_pkg_config
+        ;
+    } categoryDefinitions packageDefinitions defaultPackageName;
+
+    inherit
+      sources
+      utils
+      nixosModule
+      homeModule
+      ;
+  }
+)

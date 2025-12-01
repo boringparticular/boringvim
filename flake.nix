@@ -45,6 +45,11 @@
       flake = false;
     };
 
+    plugins-arrow-nvim = {
+      url = "github:otavioschwanck/arrow.nvim";
+      flake = false;
+    };
+
     # see :help nixCats.flake.inputs
     # If you want your plugin to be loaded by the standard overlay,
     # i.e. if it wasnt on nixpkgs, but doesnt have an extra build step.
@@ -204,6 +209,7 @@
             direnv-vim
             flash-nvim
             gitsigns-nvim
+            pkgs.neovimPlugins.arrow-nvim
             harpoon2
             indent-blankline-nvim
             lazydev-nvim

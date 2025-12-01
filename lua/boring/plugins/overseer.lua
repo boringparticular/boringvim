@@ -17,6 +17,7 @@ return {
             'OverseerTaskAction',
             'OverseerClearCache',
         },
+        on_require = 'overseer',
         keys = {
             { '<leader>ow', '<cmd>OverseerToggle<cr>', desc = '[O]verseer Task list' },
             { '<leader>oo', '<cmd>OverseerRun<cr>', desc = '[O]verseer Run task' },

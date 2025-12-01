@@ -34,6 +34,12 @@ return {
                 { '<leader>a_', hidden = true },
                 { '<leader>d', group = '[D]ebug', icon = { icon = '󰃤 ', color = 'red' } },
                 { '<leader>d_', hidden = true },
+                { '<leader>x', group = 'Diagnostics' },
+                { '<leader>x_', hidden = true },
+                { '<leader>b', group = '[B]uffer' },
+                { '<leader>b_', hidden = true },
+                { '<leader>g', group = '[G]it' },
+                { '<leader>g_', hidden = true },
                 {
                     mode = { 'v' },
                     { '<leader>h', group = 'Git [H]unk' },

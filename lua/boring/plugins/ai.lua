@@ -103,9 +103,7 @@ return {
                     local prompt = [[
                     Generate chat title in filepath-friendly format for:
 
-                    ```
                     %s
-                    ```
 
                     Output only the title and nothing else in your response.
                     ]]

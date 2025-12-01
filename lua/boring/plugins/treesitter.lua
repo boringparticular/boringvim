@@ -68,6 +68,7 @@ return {
                 },
 
                 indent = { enable = true, disable = { 'ruby' } },
+
                 incremental_selection = {
                     enable = true,
                     keymaps = {
@@ -77,6 +78,7 @@ return {
                         node_decremental = '<bs>',
                     },
                 },
+
                 textobjects = {
                     move = {
                         enable = true,

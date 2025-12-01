@@ -61,6 +61,7 @@ return {
                     elixir = { 'mix' },
                     heex = { 'mix' },
                     asm = { 'nasmfmt' },
+                    zig = { 'zigfmt' },
                     ['*'] = { 'injected' },
                     ['_'] = { 'trim_whitespace' },
                 },

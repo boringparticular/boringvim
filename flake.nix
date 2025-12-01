@@ -349,6 +349,7 @@
 
               go = with pkgs.vimPlugins; [
                 go-nvim
+                neotest-golang
               ];
 
               markdown = with pkgs.vimPlugins; [

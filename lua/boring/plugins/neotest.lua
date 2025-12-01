@@ -26,6 +26,7 @@ return {
                 },
                 adapters = {
                     require('neotest-elixir'),
+                    require('neotest-golang'),
                 },
             })
         end,

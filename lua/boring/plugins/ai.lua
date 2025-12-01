@@ -41,7 +41,9 @@ return {
     },
     {
         'Exafunction/codeium.nvim',
-        enabled = require('nixCatsUtils').enableForCategory('ai.codeium'),
+        -- NOTE: Why does completion not work if i set it like this?
+        -- enabled = require('nixCatsUtils').enableForCategory('ai.codeium'),
+        enabled = require('nixCatsUtils').enableForCategory('ai'),
         dependencies = {
             'nvim-lua/plenary.nvim',
             'hrsh7th/nvim-cmp',

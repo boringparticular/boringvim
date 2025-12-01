@@ -481,7 +481,12 @@
           // {
             test = false;
             go = false;
-            ai = false;
+            ai = {
+              copilot = true;
+              codeium = false;
+              cody = false;
+              supermaven = false;
+            };
             notes = false;
             debug = false;
             extra = false;
@@ -502,7 +507,12 @@
         categories =
           baseCategories args
           // {
-            ai = false;
+            ai = {
+              copilot = true;
+              codeium = false;
+              cody = false;
+              supermaven = false;
+            };
           };
       };
 

@@ -3,13 +3,14 @@ return {
         'nvim-dap',
         for_cat = 'debug',
         keys = {
-            { '<F5>', desc = 'Debug: Start/Continue' },
-            { '<F1>', desc = 'Debug: Step Into' },
-            { '<F2>', desc = 'Debug: Step Over' },
-            { '<F3>', desc = 'Debug: Step Out' },
-            { '<leader>b', desc = 'Debug: Toggle Breakpoint' },
-            { '<leader>B', desc = 'Debug: Set Breakpoint' },
-            { '<F7>', desc = 'Debug: See last session result.' },
+            { '<leader>dc', desc = '[D]ebug: Start/[C]ontinue' },
+            { '<leader>di', desc = '[D]ebug: Step [I]nto' },
+            { '<leader>dO', desc = '[D]ebug: Step [O]ver' },
+            { '<leader>do', desc = '[D]ebug: Step [O]ut' },
+            { '<leader>db', desc = '[D]ebug: Toggle [B]reakpoint' },
+            { '<leader>dB', desc = '[D]ebug: Set [B]reakpoint' },
+            { '<leader>du', desc = '[D]ebug: See last session result.' },
+            { '<leader>de', desc = '[D]ebug: [E]val.' },
         },
         load = (require('nixCatsUtils').isNixCats and function(name)
             vim.cmd.packadd(name)

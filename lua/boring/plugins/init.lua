@@ -74,6 +74,13 @@ require('lze').load({
         ft = 'qf',
     },
     {
+        'quicker-nvim',
+        for_cat = 'general.extra',
+        after = function(_)
+            require('quicker').setup({})
+        end,
+    },
+    {
         'fastaction.nvim',
         for_cat = 'general.extra',
         after = function(_)

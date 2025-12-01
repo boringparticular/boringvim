@@ -351,6 +351,8 @@
           emmet-vim
         ];
 
+        asm = [];
+
         # general = [
         #   toggleterm-nvim
         # ];
@@ -448,6 +450,7 @@
       webdev = true;
       python = true;
       mini.extra = false;
+      asm = true;
 
       # we can pass whatever we want actually.
       have_nerd_font = true;

@@ -163,6 +163,10 @@ return {
                 servers.ts_ls = {}
             end
 
+            if nixCats('asm') then
+                servers.asm_lsp = {}
+            end
+
             -- servers.nextls = { cmd = { 'nextls' } }
             -- servers.elixirls = { cmd = { 'elixir-ls' } }
             -- servers.lexical = { cmd = { 'lexical' } }

@@ -207,6 +207,8 @@
           #     lua
           #   ]
           # ))
+
+          neogit
         ];
 
         mini = {

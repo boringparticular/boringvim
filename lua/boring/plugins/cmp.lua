@@ -86,8 +86,9 @@ return {
     {
         'nvim-cmp',
         for_cat = 'general.cmp',
-        event = 'InsertEnter',
-        on_require = { 'cmp' },
+        event = 'DeferredUIEnter',
+        -- NOTE: neovim won't source cmp when i use on_require
+        -- on_require = { 'cmp' },
         after = function(_)
             local cmp = require('cmp')
             local luasnip = require('luasnip')
@@ -233,6 +234,7 @@ return {
             cmp.setup.cmdline({ '/', '?' }, {
                 mapping = cmp.mapping.preset.cmdline(),
                 sources = {
+                    { name = 'nvim_lsp_document_symbol' },
                     { name = 'buffer' },
                 },
             })

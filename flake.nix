@@ -126,6 +126,9 @@
       optionalPlugins = {
         gitPlugins = with pkgs.neovimPlugins; [];
         general = with pkgs.vimPlugins; [];
+        general = with pkgs.vimPlugins; [
+          nvim-treesitter.withAllGrammars
+        ];
       };
 
       # shared libraries to be added to LD_LIBRARY_PATH

@@ -238,6 +238,7 @@
                   reactive-nvim
                   grug-far-nvim
                   grapple-nvim
+                  yanky-nvim
                 ];
               };
 

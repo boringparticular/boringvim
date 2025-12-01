@@ -19,6 +19,11 @@ return {
         end,
     },
     {
+        'nvim-treesitter-textobjects',
+        for_cat = 'general',
+        dep_of = 'mini',
+    },
+    {
         'nvim-treesitter',
         for_cat = 'general',
         event = 'DeferredUIEnter',

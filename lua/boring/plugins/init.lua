@@ -79,11 +79,7 @@ require('lze').load({
         for_cat = 'general',
         event = 'DeferredUIEnter',
         after = function(_)
-            require('hlargs').setup({
-                hl_group = 'LspReferenceRead',
-                enable = true,
-                excluded_filetypes = { 'help', 'lazy' },
-            })
+            require('hlargs').setup({})
         end,
     },
 })

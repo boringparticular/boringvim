@@ -26,6 +26,19 @@
       "url": "https://github.com/BirdeeHub/nixCats-nvim/archive/16ac3281f322ea15d39843829e42a44d22da3715.tar.gz",
       "hash": "1gyzjmyi42dvc75wwqyja3bg6ybh1g74h48qnxvbzmwn71ys95w4"
     },
+    "nixpkgs": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nixos",
+        "repo": "nixpkgs"
+      },
+      "branch": "nixpkgs-unstable",
+      "submodules": false,
+      "revision": "c1cb7d097cb250f6e1904aacd5f2ba5ffd8a49ce",
+      "url": "https://github.com/nixos/nixpkgs/archive/c1cb7d097cb250f6e1904aacd5f2ba5ffd8a49ce.tar.gz",
+      "hash": "1j8gnxbmjfkvpj7dvrwvzw2acxbsnx2p1xax1h5h8h0m638mmlc5"
+    },
     "plugins-lze": {
       "type": "Git",
       "repository": {

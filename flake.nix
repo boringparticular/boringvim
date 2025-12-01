@@ -244,6 +244,7 @@
                 ];
 
                 extra = [
+                  overseer-nvim
                   blink-pairs
                   conform-nvim
                   nvim-lint

@@ -30,6 +30,7 @@ require('lze').load({
     { import = 'boring.plugins.tailwind' },
     { import = 'boring.plugins.emmet' },
     { import = 'boring.plugins.yazi' },
+    { import = 'boring.plugins.overseer' },
     {
         'direnv.vim',
         for_cat = 'general.extra',

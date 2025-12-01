@@ -46,7 +46,6 @@ return {
         lsp = function(plugin)
             vim.lsp.config(plugin.name, plugin.lsp or {})
             vim.lsp.enable(plugin.name)
-            vim.print(plugin)
         end,
         before = function(_)
             vim.lsp.config('*', {

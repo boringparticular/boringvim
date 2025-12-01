@@ -151,8 +151,7 @@ return {
             vim.keymap.set('n', '<leader>ccd', '<cmd>CopilotChatDocs<CR>', { desc = '[C]opilot [C]hat [D]ocument Code' })
 
             vim.keymap.set('n', '<leader>ccp', function()
-                local actions = require('CopilotChat.actions')
-                require('CopilotChat.integrations.telescope').pick(actions.prompt_actions())
+                chat.select_prompt()
             end, { desc = '[C]opilot [P]rompt actions' })
 
             local function load_chat_history()

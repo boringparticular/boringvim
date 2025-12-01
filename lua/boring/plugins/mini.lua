@@ -71,6 +71,7 @@ return {
             })
             require('mini.operators').setup()
             require('mini.bracketed').setup()
+            require('mini.bufremove').setup()
             require('mini.files').setup()
             require('mini.cursorword').setup()
 

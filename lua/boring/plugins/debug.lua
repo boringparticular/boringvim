@@ -71,7 +71,7 @@ return {
                     type = 'server',
                     port = '${port}',
                     executable = {
-                        command = 'codelldb',
+                        command = vim.env.CODELLDB_PATH,
                         args = { '--port', '${port}' },
                     },
                 }

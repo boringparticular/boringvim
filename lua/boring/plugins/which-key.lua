@@ -1,3 +1,5 @@
+local icons = require('boring.icons')
+
 return {
     {
         'which-key.nvim',
@@ -32,7 +34,7 @@ return {
                 { '<leader>w_', hidden = true },
                 { '<leader>a', group = '[A]I' },
                 { '<leader>a_', hidden = true },
-                { '<leader>d', group = '[D]ebug', icon = { icon = '󰃤 ', color = 'red' } },
+                { '<leader>d', group = '[D]ebug', icon = { icon = icons.debug, color = 'red' } },
                 { '<leader>d_', hidden = true },
                 { '<leader>x', group = 'Diagnostics' },
                 { '<leader>x_', hidden = true },

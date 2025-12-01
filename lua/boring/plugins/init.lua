@@ -242,7 +242,11 @@ require('lze').load({
         'flatten.nvim',
         for_cat = 'general.extra',
         after = function(_)
-            require('flatten').setup({})
+            require('flatten').setup({
+                window = {
+                    open = 'smart',
+                },
+            })
         end,
     },
     {

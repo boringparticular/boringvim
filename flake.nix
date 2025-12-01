@@ -155,6 +155,7 @@
           better-escape-nvim
           noice-nvim
           colorful-menu-nvim
+          nvim-nio
         ];
       };
 

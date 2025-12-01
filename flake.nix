@@ -131,6 +131,7 @@
           conform-nvim
           nvim-lint
           nvim-treesitter.withAllGrammars
+          which-key-nvim
           fzf-lua
         ];
       };

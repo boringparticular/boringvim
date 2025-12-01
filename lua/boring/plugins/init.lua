@@ -11,4 +11,5 @@ require('lze').load({
     { import = 'boring.plugins.todo-comments' },
     { import = 'boring.plugins.trouble' },
     { import = 'boring.plugins.flash' },
+    { import = 'boring.plugins.fidget' },
 })

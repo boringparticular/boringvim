@@ -1,28 +1,27 @@
 {
-  inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixCats.url = "github:BirdeeHub/nixCats-nvim";
-  };
+  description = "My Neovim configuration using nixCats";
+
+  inputs = { };
+
   outputs =
     {
-      self,
-      nixpkgs,
-      nixCats,
+      self ? (builtins.toString ./.),
       ...
-    }@inputs:
+    }@flakeArgs:
+    let
+      sources = flakeArgs.sources or (import "${self}/npins");
+      nixpkgs = flakeArgs.nixpkgs or sources.nixpkgs;
+      nixCats = flakeArgs.nixCats or sources.nixCats;
+      defaultNix = import ./default.nix { inherit sources nixpkgs nixCats; };
+    in
     {
-      packages = nixpkgs.lib.genAttrs nixpkgs.lib.platforms.all (
-        system:
-        let
-          pkgs = import nixpkgs {
-            inherit system;
-            overlays = [ ];
-            config = { };
-          };
-        in
-        nixCats.utils.mkAllWithDefault (import ./. (inputs // { inherit pkgs; }))
-      );
-      homeModule = self.packages.x86_64-linux.default.homeModule; # <- it will get the system from the importing configuration
-      nixosModule = self.packages.x86_64-linux.default.nixosModule; # <- module namespace defaults to defaultPackageName.{ enable, packageNames, etc... }
+      inherit (defaultNix)
+        packages
+        devShells
+        nixosModule
+        nixosModules
+        homeModule
+        homeModules
+        ;
     };
 }

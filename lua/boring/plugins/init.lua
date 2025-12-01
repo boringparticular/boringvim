@@ -38,6 +38,13 @@ require('lze').load({
         event = 'DeferredUIEnter',
     },
     {
+        'lspsaga.nvim',
+        for_cat = 'general.extra',
+        after = function(_)
+            require('lspsaga').setup({})
+        end,
+    },
+    {
         'typr',
         for_cat = 'general',
         cmd = { 'Typr', 'TyprStats' },

@@ -172,6 +172,10 @@
           nvim-bqf
           nvzone-volt
           nvzone-typr
+
+
+          # try these plugins. currently using lspsaga for window bar
+          lspsaga-nvim
         ];
       };
 

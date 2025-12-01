@@ -139,8 +139,8 @@ return {
                     })
                 end,
             })
-            vim.keymap.set('n', '<leader>ac', '<cmd>CopilotChatToggle<CR>', { desc = '[A]I [C]hat' })
-            vim.keymap.set('n', '<leader>ccc', '<cmd>CopilotChatToggle<CR>', { desc = '[C]opilot [C]hat' })
+            vim.keymap.set('n', 'v', '<leader>ac', '<cmd>CopilotChatToggle<CR>', { desc = '[A]I [C]hat' })
+            vim.keymap.set('n', 'v', '<leader>ccc', '<cmd>CopilotChatToggle<CR>', { desc = '[C]opilot [C]hat' })
             vim.keymap.set('n', '<leader>ae', '<cmd>CopilotChatExplain<CR>', { desc = '[A]I [E]xplain code' })
             vim.keymap.set('n', '<leader>cce', '<cmd>CopilotChatExplain<CR>', { desc = '[C]opilot [C]hat [E]xplain code' })
             vim.keymap.set('n', '<leader>at', '<cmd>CopilotChatTests<CR>', { desc = '[A]I Generate [T]ests' })

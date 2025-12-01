@@ -101,4 +101,17 @@ require('lze').load({
             require('nvim-ts-autotag').setup({})
         end,
     },
+    {
+        'kulala.nvim',
+        for_cat = 'general',
+        ft = { 'http', 'rest' },
+        keys = {
+            { '<leader>Rs', desc = 'Send request' },
+            { '<leader>Ra', desc = 'Send all requests' },
+            { '<leader>Rb', desc = 'Open scratchpad' },
+        },
+        after = function(_)
+            require('kulala').setup({})
+        end,
+    },
 })

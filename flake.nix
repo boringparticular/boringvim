@@ -224,6 +224,7 @@
           aerial-nvim
           glance-nvim
           nvim-navbuddy
+          kulala-nvim
         ];
       };
 

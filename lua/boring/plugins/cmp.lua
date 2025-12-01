@@ -58,10 +58,12 @@ return {
                             nvim_lsp = '[LSP]',
                             nvim_lua = '[Lua]',
                             supermaven = '[Supermaven]',
+                            copilot = '[Copilot]',
                         },
                         mode = 'symbol_text',
                         preset = 'default',
                         symbol_map = {
+                            Copilot = '',
                             Supermaven = '',
                             Codeium = '',
                         },
@@ -119,6 +121,7 @@ return {
                 }),
                 sources = {
                     { name = 'cody' },
+                    { name = 'copilot' },
                     { name = 'nvim_lsp' },
                     { name = 'nvim_lsp_signature_help' },
                     { name = 'nvim_lsp_document_symbol' },

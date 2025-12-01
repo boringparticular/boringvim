@@ -227,6 +227,9 @@
           codeium-nvim
           # sg-nvim # breaks with rust 1.80
           inputs.sg-nvim.packages.${pkgs.system}.sg-nvim
+          copilot-lua
+          copilot-cmp
+          CopilotChat-nvim
         ];
 
         notes = [
@@ -334,6 +337,12 @@
       };
       # populates $LUA_PATH and $LUA_CPATH
       extraLuaPackages = {
+        ai = [
+          (lp:
+            with lp; [
+              tiktoken_core
+            ])
+        ];
         notes = [
           (lp:
             with lp; [

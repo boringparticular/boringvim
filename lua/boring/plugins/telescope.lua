@@ -17,6 +17,8 @@ return {
                         '^.venv/',
                         '^.node_modules/',
                         '^node_modules/',
+                        '**/*.beam',
+                        '^deps/',
                     },
                     mappings = {
                         i = { ['<c-enter>'] = 'to_fuzzy_refine' },

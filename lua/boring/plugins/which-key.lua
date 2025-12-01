@@ -39,6 +39,11 @@ return {
                     { '<leader>h', group = 'Git [H]unk' },
                     { '<leader>h_', hidden = true },
                 },
+                { '[', group = 'prev' },
+                { ']', group = 'next' },
+                { 'g', group = 'goto' },
+                { 'gs', group = 'surround' },
+                { 'z', group = 'fold' },
             })
         end,
     },

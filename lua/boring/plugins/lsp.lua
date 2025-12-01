@@ -78,4 +78,11 @@ return {
             require('fidget').setup({})
         end,
     },
+    {
+        'inc-rename.nvim',
+        for_cat = 'lsp',
+        after = function()
+            require('inc_rename').setup({})
+        end,
+    },
 }

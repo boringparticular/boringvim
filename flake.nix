@@ -244,6 +244,7 @@
                 ];
 
                 extra = [
+                  inc-rename-nvim
                   overseer-nvim
                   edgy-nvim
                   neotest

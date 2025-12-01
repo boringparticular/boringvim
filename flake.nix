@@ -451,6 +451,19 @@
           // {
           };
       };
+
+      aocvim = args: {
+        settings =
+          baseSettings args
+          // {
+          };
+        categories =
+          baseCategories args
+          // {
+            ai.chat = true;
+            ai.completion = false;
+          };
+      };
       };
     };
     # In this section, the main thing you will need to do is change the default package name

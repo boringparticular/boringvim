@@ -216,7 +216,11 @@ require('lze').load({
         'flutter-tools.nvim',
         for_cat = 'languages.flutter',
         after = function(_)
-            require('flutter-tools').setup({})
+            require('flutter-tools').setup({
+                widget_guides = {
+                    enabled = true,
+                },
+            })
         end,
     },
 })

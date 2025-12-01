@@ -44,11 +44,6 @@ require('lze').load({
         event = 'DeferredUIEnter',
     },
     {
-        'dropbar.nvim',
-        for_cat = 'general',
-        after = function(_) end,
-    },
-    {
         'lspsaga.nvim',
         for_cat = 'general.extra',
         after = function(_)

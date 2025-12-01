@@ -209,14 +209,8 @@
           tailwindcss-colors-nvim
           go-nvim
 
-          # try these plugins. currently using lspsaga for window bar
           lspsaga-nvim
-          dropbar-nvim
           outline-nvim
-          nvim-navic
-          aerial-nvim
-          glance-nvim
-          nvim-navbuddy
           kulala-nvim
         ];
       };

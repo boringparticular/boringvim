@@ -257,9 +257,21 @@
             telescope-ui-select-nvim
           ];
 
-          cmp = [
+          blink = [
             blink-cmp
+            blink-compat
+            blink-cmp-copilot
+            # pkgs.neovimPlugins.blink-cmp
+            # inputs.blink-cmp.packages.${pkgs.system}.blink-cmp
+            # pkgs.neovimPlugins.blink-compat
+            # pkgs.neovimPlugins.blink-cmp-copilot
             luasnip
+            friendly-snippets
+          ];
+
+          cmp = [
+            luasnip
+            friendly-snippets
             nvim-cmp
             cmp_luasnip
             cmp-path

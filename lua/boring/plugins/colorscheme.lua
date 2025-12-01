@@ -2,6 +2,7 @@ require('catppuccin').setup({
     flavour = 'mocha',
     term_colors = true,
     integrations = {
+        blink_cmp = true,
         cmp = true,
         gitsigns = true,
         rainbow_delimiters = true,

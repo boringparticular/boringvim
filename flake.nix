@@ -263,61 +263,79 @@
     # but false may be omitted.
     # This entire set is also passed to nixCats for querying within the lua.
 
+    baseSettings = {
+      pkgs,
+      name,
+      ...
+    }: {
+      suffix-path = false;
+      suffix-LD = true;
+      hosts.node.enable = true;
+      wrapRc = true;
+    };
+
+    baseCategories = {
+      pkgs,
+      name,
+      ...
+    }: {
+      general = true;
+      gitPlugins = true;
+      customPlugins = true;
+      test = true;
+      example = {
+        youCan = "add more than just booleans";
+        toThisSet = [
+          "and the contents of this categories set"
+          "will be accessible to your lua with"
+          "nixCats('path.to.value')"
+          "see :help nixCats"
+        ];
+      };
+    };
+
     # see :help nixCats.flake.outputs.packageDefinitions
     packageDefinitions = {
       # These are the names of your packages
       # you can include as many as you wish.
-      nvim = {
-        pkgs,
-        name,
-        ...
-      }: {
+      boringvim = args: {
         # they contain a settings set defined above
         # see :help nixCats.flake.outputs.settings
-        settings = {
-          suffix-path = false;
-          suffix-LD = true;
-          hosts.node.enable = true;
-          wrapRc = true;
-          # IMPORTANT:
-          # your alias may not conflict with your other packages.
-          aliases = ["vim"];
-          # neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.system}.neovim;
-        };
+        settings =
+          baseSettings args
+          // {
+            # IMPORTANT:
+            # your alias may not conflict with your other packages.
+            aliases = ["vim" "nvim" "bvim"];
+            configDirName = "boringvim";
+            # neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.system}.neovim;
+          };
         # and a set of categories that you want
         # (and other information to pass to lua)
-        categories = {
-          general = true;
-          gitPlugins = true;
-          customPlugins = true;
-          test = true;
-          example = {
-            youCan = "add more than just booleans";
-            toThisSet = [
-              "and the contents of this categories set"
-              "will be accessible to your lua with"
-              "nixCats('path.to.value')"
-              "see :help nixCats"
-            ];
+        categories =
+          baseCategories args
+          // {
           };
-        };
       };
-      testvim = {...}: {
-        settings = {
-          suffix-path = true;
-          suffix-LD = true;
-          wrapRc = false;
-        };
-        categories = {
-          general = true;
-          gitPlugins = true;
-          customPlugins = true;
-        };
+
+      testvim = args: {
+        settings =
+          baseSettings args
+          // {
+            aliases = ["tvim"];
+            wrapRc = false;
+            unwrappedCfgPath = "/home/kmies/projects/nixos/boringvim";
+          };
+        categories =
+          baseCategories args
+          // {
+          };
+      };
       };
     };
     # In this section, the main thing you will need to do is change the default package name
     # to the name of the packageDefinitions entry you wish to use as the default.
-    defaultPackageName = "nvim";
+    defaultPackageName = "boringvim";
   in
     # see :help nixCats.flake.outputs.exports
     forEachSystem (system: let

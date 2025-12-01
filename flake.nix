@@ -471,7 +471,7 @@
       };
 
       # remove ai for advent of code
-      aocNVim = args: {
+      aocNvim = args: {
         settings = baseSettings args // {};
         categories =
           baseCategories args

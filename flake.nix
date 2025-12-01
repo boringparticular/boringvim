@@ -140,6 +140,7 @@
           neogit
           undotree
           flash-nvim
+          direnv-vim
           fidget-nvim
           todo-comments-nvim
           trouble-nvim

@@ -61,7 +61,10 @@ return {
                         },
                         mode = 'symbol_text',
                         preset = 'default',
-                        symbol_map = { Copilot = '', Supermaven = '' },
+                        symbol_map = {
+                            Supermaven = '',
+                            Codeium = '',
+                        },
                     }),
                 },
                 snippet = {
@@ -126,6 +129,7 @@ return {
                     { name = 'treesitter' },
                     { max_item_count = 5, name = 'path' },
                     { name = 'supermaven' },
+                    { name = 'codeium' },
                     { name = 'conjure' },
                 },
                 view = {

@@ -141,6 +141,7 @@
           undotree
           flash-nvim
           direnv-vim
+          lazydev-nvim
           fidget-nvim
           todo-comments-nvim
           trouble-nvim

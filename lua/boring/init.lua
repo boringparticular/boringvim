@@ -13,3 +13,10 @@ vim.api.nvim_create_autocmd('TextYankPost', {
         vim.highlight.on_yank()
     end,
 })
+
+require('catppuccin').setup({
+    flavour = 'mocha',
+    term_colors = true,
+    integrations = {},
+})
+vim.cmd.colorscheme('catppuccin')

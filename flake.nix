@@ -129,6 +129,7 @@
         general = with pkgs.vimPlugins; [
           oil-nvim
           conform-nvim
+          nvim-lint
           nvim-treesitter.withAllGrammars
           fzf-lua
         ];

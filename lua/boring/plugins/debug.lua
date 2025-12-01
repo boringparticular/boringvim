@@ -77,13 +77,15 @@ return {
                 }
 
                 dap.configurations.zig = {
-                    name = 'Launch',
-                    type = 'codelldb',
-                    request = 'launch',
-                    program = '${workspaceFolder}/zig-out/bin/${workspaceFolderBasename}',
-                    cwd = '${workspaceFolder}',
-                    stopOnEntry = false,
-                    args = {},
+                    {
+                        name = 'Launch',
+                        type = 'codelldb',
+                        request = 'launch',
+                        program = '${workspaceFolder}/zig-out/bin/${workspaceFolderBasename}',
+                        cwd = '${workspaceFolder}',
+                        stopOnEntry = false,
+                        args = {},
+                    },
                 }
             end
 

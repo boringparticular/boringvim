@@ -57,7 +57,7 @@ require('nixCatsUtils.lazyCat').setup(pluginList, nixLazyPath, {
             local term = require('toggleterm')
             term.setup(opts)
 
-            vim.keymap.set('n', '<leader>tt', '<cmd>lua require("toggleterm").toggle()<CR>')
+            vim.keymap.set('n', '<leader>tt', '<cmd>lua require("toggleterm").toggle()<CR>', { desc = '[T]oggle [T]erminal' })
         end,
     },
     { 'eraserhd/parinfer-rust', build = require('nixCatsUtils').lazyAdd('cargo build --release') },

@@ -23,6 +23,7 @@ require('lze').load({
     { import = 'boring.plugins.noice' },
     { import = 'boring.plugins.colorful-menu' },
     { import = 'boring.plugins.lazydev' },
+    { import = 'boring.plugins.elixir' },
     {
         'direnv.vim',
         for_cat = 'general.extra',

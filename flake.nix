@@ -173,6 +173,7 @@
           nvzone-volt
           nvzone-typr
 
+          elixir-tools-nvim
 
           # try these plugins. currently using lspsaga for window bar
           lspsaga-nvim

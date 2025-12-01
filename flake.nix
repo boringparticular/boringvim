@@ -24,7 +24,10 @@
       url = "github:nix-community/neovim-nightly-overlay";
     };
 
-    neorg-overlay.url = "github:nvim-neorg/nixpkgs-neorg-overlay";
+    # neorg-overlay = {
+    #   url = "github:nvim-neorg/nixpkgs-neorg-overlay";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     sg-nvim = {
       url = "github:sourcegraph/sg.nvim";
@@ -40,8 +43,11 @@
       flake = false;
     };
 
-    plugins-go-nvim = {
-      url = "github:ray-x/go.nvim";
+    # plugins-go-nvim = {
+    #   url = "github:ray-x/go.nvim";
+    #   flake = false;
+    # };
+
       flake = false;
     };
 
@@ -106,7 +112,7 @@
             (utils.standardPluginOverlay inputs)
 
             inputs.neovim-nightly-overlay.overlays.default
-            inputs.neorg-overlay.overlays.default
+            # inputs.neorg-overlay.overlays.default
             # add any flake overlays here.
           ];
         # these overlays will be wrapped with ${system}
@@ -218,7 +224,7 @@
             nvim-colorizer-lua
             nvim-lint
             nvim-notify
-            pkgs.neovimPlugins.go-nvim
+            # pkgs.neovimPlugins.go-nvim
             pkgs.neovimPlugins.large-file
             rainbow-delimiters-nvim
             todo-comments-nvim
@@ -292,8 +298,8 @@
         ];
 
         notes = [
-          neorg
-          neorg-telescope
+          # neorg
+          # neorg-telescope
           pkgs.neovimPlugins.render-markdown
           markdown-preview-nvim
           obsidian-nvim

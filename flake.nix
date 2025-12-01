@@ -432,6 +432,7 @@
           baseSettings args
           // {
             wrapRc = false;
+            extraName = "testNvim";
           };
         categories =
           baseCategories args // {};

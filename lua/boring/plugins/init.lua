@@ -36,4 +36,16 @@ require('lze').load({
         for_cat = 'general',
         ft = 'qf',
     },
+    {
+        'typr',
+        for_cat = 'general',
+        cmd = { 'Typr', 'TyprStats' },
+        load = function(name)
+            vim.cmd.packadd(name)
+            vim.cmd.packadd('volt')
+        end,
+        after = function(_)
+            require('typr').setup({})
+        end,
+    },
 })

@@ -408,7 +408,7 @@
       wrapRc = true;
       unwrappedCfgPath = "/home/kmies/projects/nixos/boringvim";
       neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.system}.neovim;
-      withNodeJs = true;
+      hosts.node.enable = true;
     };
     # and a set of categories that you want
     # (and other information to pass to lua)

@@ -148,17 +148,63 @@ return {
                 require('CopilotChat.integrations.telescope').pick(actions.prompt_actions())
             end, { desc = '[C]opilot [P]rompt actions' })
 
-            -- vim.keymap.set('n', '<leader>ccl', function()
-            --     local options = vim.tbl_map(function(file)
-            --         return vim.fn.fnamemodify(file, ':t:r')
-            --     end, vim.fn.glob(M.config.history_path .. '/*', true, true))
-            --
-            --     if not vim.tbl_contains(options, 'default') then
-            --         table.insert(options, 1, 'default')
-            --     end
-            --
-            --     require('CopilotChat.integrations.telescope').pick(options)
-            -- end, { desc = '[C]opilot [L]oad chat' })
+            local function load_chat_history()
+                local telescope = require('telescope.builtin')
+                telescope.find_files({
+                    prmpt_title = 'Load Copilot Chat History',
+                    cwd = chat.config.history_path,
+                    attach_mappings = function(prompt_bufnr, map)
+                        local action_state = require('telescope.actions.state')
+                        local actions = require('telescope.actions')
+                        local custom_action = function()
+                            local selection = action_state.get_selected_entry()
+                            actions.close(prompt_bufnr)
+                            local filename = vim.fn.fnamemodify(selection.value, ':t:r')
+                            vim.cmd('CopilotChatLoad ' .. filename)
+                            vim.cmd('CopilotChatOpen')
+                        end
+                        map('i', '<CR>', custom_action)
+                        return true
+                    end,
+                    entry_marker = function(entry)
+                        return {
+                            value = entry,
+                            display = vim.fn.fnamemodify(entry, ':t:r'),
+                            ordinal = vim.fn.fnamemodify(entry, ':t:r'),
+                            path = entry,
+                        }
+                    end,
+                })
+            end
+
+            local function search_chat_history_content()
+                local telescope = require('telescope.builtin')
+                telescope.live_grep({
+                    prompt_title = 'Search Copilot Chat History',
+                    cwd = chat.config.history_path,
+                    attach_mappings = function(prompt_bufnr, map)
+                        local action_state = require('telescope.actions.state')
+                        local actions = require('telescope.actions')
+                        local custom_action = function()
+                            local selection = action_state.get_selected_entry()
+                            actions.close(prompt_bufnr)
+                            local filename = vim.fn.fnamemodify(selection.filename, ':t:r')
+                            vim.cmd('CopilotChatLoad ' .. filename)
+                            vim.cmd('CopilotChatOpen')
+                        end
+                        map('i', '<CR>', custom_action)
+                        return true
+                    end,
+                })
+            end
+
+            vim.keymap.set('n', '<leader>ccl', load_chat_history, { desc = '[C]opilot [C]hat [L]oad history' })
+            vim.keymap.set('n', '<leader>ccs', search_chat_history_content, { desc = '[C]opilot [C]hat [S]earch history' })
+
+            vim.keymap.set({ 'n', 'v' }, '<leader>ax', function()
+                vim.g.chat_title = nil
+                chat.reset()
+            end)
 
             vim.keymap.set({ 'n', 'v' }, '<leader>ax', function()
                 vim.g.chat_title = nil

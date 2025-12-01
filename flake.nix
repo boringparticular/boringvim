@@ -165,6 +165,13 @@
               ]
             ];
 
+            languages.python = [
+              [
+                "debug"
+                "python"
+              ]
+            ];
+
             webdev = [
               [ "emmet" ]
               [
@@ -352,6 +359,10 @@
               go = [
                 nvim-dap-go
               ];
+
+              python = [
+                nvim-dap-python
+              ];
             };
 
             languages = with pkgs.vimPlugins; {
@@ -378,6 +389,10 @@
               tailwind = with pkgs.vimPlugins; [
                 tailwind-tools-nvim
                 tailwindcss-colors-nvim
+              ];
+
+              python = with pkgs.vimPlugins; [
+                neotest-python
               ];
             };
 

@@ -33,6 +33,7 @@ require('lze').load({
     { import = 'boring.plugins.overseer' },
     { import = 'boring.plugins.neotest' },
     { import = 'boring.plugins.lisp' },
+    { import = 'boring.plugins.python' },
     {
         'direnv.vim',
         for_cat = 'general.extra',

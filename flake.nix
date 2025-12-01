@@ -344,6 +344,7 @@
             languages = with pkgs.vimPlugins; {
               elixir = with pkgs.vimPlugins; [
                 elixir-tools-nvim
+                neotest-elixir
               ];
 
               go = with pkgs.vimPlugins; [

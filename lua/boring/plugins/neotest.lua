@@ -24,7 +24,9 @@ return {
                         require('trouble').open({ mode = 'quickfix', focus = false })
                     end,
                 },
-                adapters = {},
+                adapters = {
+                    require('neotest-elixir'),
+                },
             })
         end,
     },

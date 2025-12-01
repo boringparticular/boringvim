@@ -261,6 +261,7 @@
             nvim-bqf
             fastaction-nvim
             pkgs.neovimPlugins.quicker-nvim
+            dressing-nvim
           ];
 
           telescope = [

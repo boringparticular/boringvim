@@ -87,4 +87,11 @@ require('lze').load({
             vim.keymap.set({ 'n', 'x' }, '<leader>a', '<cmd>lua require("fastaction").code_action()<CR>')
         end,
     },
+    {
+        'dressing.nvim',
+        for_cat = 'general.extra',
+        after = function(_)
+            require('dressing').setup({})
+        end,
+    },
 })

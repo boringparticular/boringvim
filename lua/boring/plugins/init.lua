@@ -12,4 +12,5 @@ require('lze').load({
     { import = 'boring.plugins.trouble' },
     { import = 'boring.plugins.flash' },
     { import = 'boring.plugins.fidget' },
+    { import = 'boring.plugins.copilot' },
 })

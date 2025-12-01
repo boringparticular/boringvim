@@ -139,6 +139,8 @@
           fidget-nvim
           todo-comments-nvim
           trouble-nvim
+          CopilotChat-nvim
+          copilot-lua
         ];
       };
 
@@ -204,6 +206,7 @@
         settings = {
           suffix-path = true;
           suffix-LD = true;
+          hosts.node.enable = true;
           wrapRc = true;
           # IMPORTANT:
           # your alias may not conflict with your other packages.

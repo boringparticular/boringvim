@@ -126,6 +126,7 @@
       optionalPlugins = {
         gitPlugins = with pkgs.neovimPlugins; [];
         general = with pkgs.vimPlugins; [
+          vim-sleuth
           snacks-nvim
           oil-nvim
           conform-nvim

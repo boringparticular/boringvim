@@ -326,6 +326,8 @@
         webdev = [
           pkgs.neovimPlugins.nvim-emmet
           emmet-vim
+          tailwind-tools-nvim
+          tailwindcss-colors-nvim
         ];
 
         asm = [];

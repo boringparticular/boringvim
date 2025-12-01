@@ -319,6 +319,22 @@
         "type": "github"
       }
     },
+    "plugins-golf": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1745767873,
+        "narHash": "sha256-lCzt+7/uZ/vvWnvWPIqjtS3G3w3qOhI7vHdSQ9bvMKU=",
+        "owner": "vuciv",
+        "repo": "golf",
+        "rev": "abf1bc0c1c4a5482b4a4b36b950b49aaa0f39e69",
+        "type": "github"
+      },
+      "original": {
+        "owner": "vuciv",
+        "repo": "golf",
+        "type": "github"
+      }
+    },
     "plugins-hlargs": {
       "flake": false,
       "locked": {
@@ -437,6 +453,7 @@
         "neovim-nightly-overlay": "neovim-nightly-overlay",
         "nixCats": "nixCats",
         "nixpkgs": "nixpkgs_3",
+        "plugins-golf": "plugins-golf",
         "plugins-hlargs": "plugins-hlargs",
         "plugins-lze": "plugins-lze",
         "plugins-lzextras": "plugins-lzextras",

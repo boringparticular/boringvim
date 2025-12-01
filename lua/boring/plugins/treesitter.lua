@@ -27,7 +27,6 @@ return {
         load = function(name)
             vim.cmd.packadd(name)
             vim.cmd.packadd('nvim-treesitter-textobjects')
-            -- vim.cmd.packadd('nvim-treesitter-context')
             vim.cmd.packadd('nvim-treesitter-refactor')
             vim.cmd.packadd('nvim-treesitter-commentstring')
         end,
@@ -35,7 +34,8 @@ return {
             -- Prefer git instead of curl in order to improve connectivity in some environments
             require('nvim-treesitter.install').prefer_git = true
 
-            local opts = {
+            ---@diagnostic disable-next-line: missing-fields
+            require('nvim-treesitter.configs').setup({
                 highlight = {
                     enable = true,
                     -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
@@ -43,10 +43,9 @@ return {
                     --  the list of additional_vim_regex_highlighting and disabled languages for indent.
                     additional_vim_regex_highlighting = { 'ruby' },
                 },
-                indent = { enable = true, disable = { 'ruby' } },
-            }
 
-            opts = vim.tbl_deep_extend('force', opts, {
+                indent = { enable = true, disable = { 'ruby' } },
+
                 refactor = {
                     highlight_current_scope = { enable = true },
                     highlight_definitions = { clear_on_cursor_move = true, enable = true },
@@ -66,7 +65,6 @@ return {
                     setlect = {
                         enable = true,
                         lookahead = true,
-
                         keymaps = {
                             -- You can use the capture groups defined in textobjects.scm
                             ['af'] = '@function.outer',
@@ -150,9 +148,6 @@ return {
                     },
                 },
             })
-
-            ---@diagnostic disable-next-line: missing-fields
-            require('nvim-treesitter.configs').setup(opts)
         end,
     },
 }

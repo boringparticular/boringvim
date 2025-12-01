@@ -58,7 +58,17 @@ require('nixCatsUtils.lazyCat').setup(pluginList, nixLazyPath, {
         },
         config = true,
     },
+    {
+        'akinsho/toggleterm.nvim',
+        version = '*',
+        opts = {},
+        config = function(_, opts)
+            local term = require('toggleterm')
+            term.setup(opts)
 
+            vim.keymap.set('n', '<leader>tt', '<cmd>lua require("toggleterm").toggle()<CR>')
+        end,
+    },
     { 'eraserhd/parinfer-rust', build = require('nixCatsUtils').lazyAdd('cargo build --release') },
     { 'numToStr/Comment.nvim', name = 'comment.nvim', opts = {}, enabled = require('nixCatsUtils').enableForCategory('general') },
     { 'tpope/vim-sleuth', enabled = require('nixCatsUtils').enableForCategory('general') },

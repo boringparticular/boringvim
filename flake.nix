@@ -208,6 +208,7 @@
           #   ]
           # ))
 
+          toggleterm-nvim
           neogit
         ];
 

@@ -22,8 +22,6 @@ return {
                 { '<leader>u_', hidden = true },
                 { '<leader>c', group = '[C]ode' },
                 { '<leader>c_', hidden = true },
-                { '<leader>d', group = '[D]ocument' },
-                { '<leader>d_', hidden = true },
                 { '<leader>r', group = '[R]ename' },
                 { '<leader>r_', hidden = true },
                 { '<leader>s', group = '[S]earch' },
@@ -34,6 +32,8 @@ return {
                 { '<leader>w_', hidden = true },
                 { '<leader>a', group = '[A]I' },
                 { '<leader>a_', hidden = true },
+                { '<leader>d', group = '[D]ebug', icon = { icon = '󰃤 ', color = 'red' } },
+                { '<leader>d_', hidden = true },
                 {
                     mode = { 'v' },
                     { '<leader>h', group = 'Git [H]unk' },

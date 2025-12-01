@@ -210,6 +210,7 @@
           nvzone-typr
           nvim-web-devicons
 
+          nvim-ts-autotag
           elixir-tools-nvim
           tailwind-tools-nvim
           tailwindcss-colors-nvim

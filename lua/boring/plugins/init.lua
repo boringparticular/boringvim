@@ -93,4 +93,12 @@ require('lze').load({
             })
         end,
     },
+    {
+        'nvim-ts-autotag',
+        for_cat = 'general',
+        event = { 'BufNewFile', 'BufReadPre' },
+        after = function(_)
+            require('nvim-ts-autotag').setup({})
+        end,
+    },
 })

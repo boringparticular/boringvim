@@ -134,6 +134,7 @@
           which-key-nvim
           fzf-lua
           neogit
+          undotree
         ];
       };
 

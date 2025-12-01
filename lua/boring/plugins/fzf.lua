@@ -50,6 +50,7 @@ return {
                     '.venv/',
                     '.direnv/',
                     '.zig-cache/',
+                    '.dart_tool/',
                     '.node_modules/',
                     'node_modules/',
                     'deps/',

@@ -1,6 +1,6 @@
 return {
     {
-        'go-nvim',
+        'go.nvim',
         for_cat = 'general',
         event = { 'CmdlineEnter' },
         ft = { 'go', 'gomod' },

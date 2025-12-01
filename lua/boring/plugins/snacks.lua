@@ -74,9 +74,9 @@ return {
                 zen = { enabled = true },
             })
 
-            vim.keymap.set('n', '<leader>tt', function()
+            vim.keymap.set('n', '<c-/>', function()
                 require('snacks').terminal.toggle()
-            end, { desc = '[T]oggle [T]erminal' })
+            end, { desc = 'Toggle Terminal' })
 
             vim.keymap.set('n', '<leader>ss', function()
                 require('snacks').picker.smart()

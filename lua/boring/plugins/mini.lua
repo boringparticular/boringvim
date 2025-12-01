@@ -13,7 +13,21 @@ return {
 
             require('mini.icons').setup()
             require('mini.surround').setup()
-            require('mini.ai').setup({ n_lines = 500 })
+
+            local spec_treesitter = require('mini.ai').gen_spec.treesitter
+            require('mini.ai').setup({
+                n_lines = 500,
+                custom_textobjects = {
+                    ['='] = spec_treesitter({ a = '@assignment.outer', i = '@assignment.inner' }),
+                    a = spec_treesitter({ a = '@parameter.outer', i = '@parameter.inner' }),
+                    i = spec_treesitter({ a = '@conditional.outer', i = '@conditional.inner' }),
+                    c = spec_treesitter({ a = '@class.outer', i = '@class.inner' }),
+                    f = spec_treesitter({ a = '@call.outer', i = '@call.inner' }),
+                    l = spec_treesitter({ a = '@loop.outer', i = '@loop.inner' }),
+                    m = spec_treesitter({ a = '@function.outer', i = '@function.inner' }),
+                },
+            })
+
             require('mini.trailspace').setup()
             -- NOTE: Do i need this in neovim >- 0.10?
             require('mini.comment').setup()

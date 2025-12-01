@@ -38,7 +38,6 @@ return {
                         end,
                     },
                 },
-                -- NOTE: Doesn't work. it outputs part of the prompt in chat
                 callback = function(response)
                     if vim.g.chat_title then
                         chat.save(vim.g.chat_title)

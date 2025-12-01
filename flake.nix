@@ -48,6 +48,23 @@
     #   flake = false;
     # };
 
+    blink-cmp = {
+      url = "github:Saghen/blink.cmp";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # plugins-blink-cmp = {
+    #   url = "github:Saghen/blink.cmp";
+    #   flake = false;
+    # };
+
+    plugins-blink-cmp-copilot = {
+      url = "github:giuxtaposition/blink-cmp-copilot";
+      flake = false;
+    };
+
+    plugins-blink-compat = {
+      url = "github:saghen/blink.compat";
       flake = false;
     };
 

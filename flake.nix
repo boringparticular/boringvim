@@ -237,6 +237,7 @@
                   yazi-nvim
                   reactive-nvim
                   grug-far-nvim
+                  grapple-nvim
                 ];
               };
 

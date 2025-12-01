@@ -116,4 +116,13 @@ require('lze').load({
             require('grug-far').setup({})
         end,
     },
+    {
+        'grapple.nvim',
+        for_cat = 'general.extra',
+        after = function(_)
+            require('grapple').setup({
+                icons = true,
+            })
+        end,
+    },
 })

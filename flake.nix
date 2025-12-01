@@ -509,6 +509,9 @@
           packages = [
             defaultPackage
             pkgs.nixd
+            pkgs.nixfmt-rfc-style
+            pkgs.nix-doc
+            pkgs.nil
             pkgs.stylua
           ];
           inputsFrom = [];

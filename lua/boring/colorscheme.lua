@@ -71,6 +71,7 @@ require('catppuccin').setup({
         dap_ui = true,
         render_markdown = true,
         lsp_trouble = true,
+        overseer = true,
     },
 })
 vim.cmd.colorscheme('catppuccin')

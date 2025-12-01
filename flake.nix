@@ -40,6 +40,11 @@
       flake = false;
     };
 
+    plugins-reactive-nvim = {
+      url = "github:rasulomaroff/reactive.nvim";
+      flake = false;
+    };
+
     blink-pairs = {
       url = "github:Saghen/blink.pairs";
     };
@@ -152,6 +157,7 @@
           nvim-emmet
           navigator-lua
           hlargs
+          reactive-nvim
         ];
         general = with pkgs.vimPlugins; [
           blink-pairs

@@ -82,4 +82,15 @@ require('lze').load({
             require('hlargs').setup({})
         end,
     },
+    {
+        'reactive-nvim',
+        for_cat = 'general',
+        event = 'DeferredUIEnter',
+        enabled = false,
+        after = function(_)
+            require('reactive').setup({
+                load = { 'catppuccin-mocha-cursor', 'catppuccin-mocha-cursorline' },
+            })
+        end,
+    },
 })

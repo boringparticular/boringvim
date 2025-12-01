@@ -127,6 +127,7 @@
         gitPlugins = with pkgs.neovimPlugins; [];
         general = with pkgs.vimPlugins; [];
         general = with pkgs.vimPlugins; [
+          oil-nvim
           nvim-treesitter.withAllGrammars
           fzf-lua
         ];

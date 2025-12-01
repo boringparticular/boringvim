@@ -35,5 +35,8 @@ return {
                 desc = 'Quickfix List (Trouble)',
             },
         },
+        after = function(_)
+            require('trouble').setup({})
+        end,
     },
 }

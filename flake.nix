@@ -149,6 +149,7 @@
           blink-cmp-spell
           gitsigns-nvim
           nvim-bqf
+          arrow-nvim
         ];
       };
 

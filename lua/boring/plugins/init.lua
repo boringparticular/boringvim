@@ -9,4 +9,5 @@ require('lze').load({
     { import = 'boring.plugins.git' },
     { import = 'boring.plugins.undotree' },
     { import = 'boring.plugins.todo-comments' },
+    { import = 'boring.plugins.trouble' },
 })

@@ -136,6 +136,7 @@
           neogit
           undotree
           todo-comments-nvim
+          trouble-nvim
         ];
       };
 

@@ -34,6 +34,7 @@ require('lze').load({
     { import = 'boring.plugins.neotest' },
     { import = 'boring.plugins.lisp' },
     { import = 'boring.plugins.python' },
+    { import = 'boring.plugins.zig' },
     {
         'direnv.vim',
         for_cat = 'general.extra',

@@ -52,6 +52,7 @@ return {
                     rust = { 'rustfmt', lsp_format = 'fallback' },
                     just = { 'just' },
                     elixir = { 'mix' },
+                    heex = { 'mix' },
                     ['*'] = { 'injected' },
                     ['_'] = { 'trim_whitespace' },
                 },

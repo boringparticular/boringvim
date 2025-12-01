@@ -1,7 +1,7 @@
 return {
     {
         'nvim-treesitter-context',
-        for_cat = 'general.always',
+        for_cat = 'general',
         dep_of = 'nvim-treesitter',
         after = function(_)
             require('treesitter-context').setup({

@@ -133,6 +133,8 @@
           nvim-treesitter.withAllGrammars
           which-key-nvim
           fzf-lua
+          luasnip
+          friendly-snippets
           neogit
           undotree
           flash-nvim

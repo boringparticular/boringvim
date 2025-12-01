@@ -8,26 +8,21 @@ return {
         end,
     },
     {
+        'lazydev.nvim',
+        for_cat = 'general.extra',
+        ft = 'lua',
+        after = function(_)
+            require('lazydev').setup({
+                library = {
+                    { path = require('nixCats').nixCatsPath .. '/lua', words = { 'nixCats' } },
+                },
+            })
+        end,
+    },
+    {
         'nvim-lspconfig',
         for_cat = 'general.extra',
         event = 'FileType',
-        -- dependencies = {
-        --     { 'j-hui/fidget.nvim', opts = {}, enabled = require('nixCatsUtils').enableForCategory('devtools') },
-        --
-        --     -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
-        --     -- used for completion, annotations and signatures of Neovim apis
-        --     {
-        --         'folke/lazydev.nvim',
-        --         enabled = require('nixCatsUtils').enableForCategory('devtools'),
-        --         ft = 'lua',
-        --         opts = {
-        --             library = {
-        --                 -- adds type hints for nixCats global
-        --                 { path = require('nixCats').nixCatsPath .. '/lua', words = { 'nixCats' } },
-        --             },
-        --         },
-        --     },
-        -- },
         after = function(_)
             vim.api.nvim_create_autocmd('LspAttach', {
                 group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),

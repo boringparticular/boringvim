@@ -4,7 +4,6 @@ return {
         for_cat = 'general.extra',
         dep_of = { 'nvim-lspconfig' },
         after = function(_)
-            vim.notify('fidget')
             require('fidget').setup({})
         end,
     },

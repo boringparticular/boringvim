@@ -38,7 +38,7 @@ return {
                 end,
                 formatters_by_ft = {
                     lua = { 'stylua' },
-                    nix = { 'alejandra' },
+                    nix = { 'nixfmt', 'alejandra', stop_after_first = true },
                     python = function(bufnr)
                         if require('conform').get_formatter_info('ruff_format', bufnr).available then
                             return { 'ruff_format' }

@@ -8,4 +8,5 @@ require('lze').load({
     { import = 'boring.plugins.lint' },
     { import = 'boring.plugins.git' },
     { import = 'boring.plugins.undotree' },
+    { import = 'boring.plugins.todo-comments' },
 })

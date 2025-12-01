@@ -135,6 +135,7 @@
           fzf-lua
           neogit
           undotree
+          todo-comments-nvim
         ];
       };
 

@@ -22,6 +22,23 @@ require('catppuccin').setup({
         shade = 'dark',
         percentage = 0.15,
     },
+    custom_highlights = function(colors)
+        return {
+            BlinkCmpKind = { fg = colors.blue },
+
+            BlinkCmpMenu = { fg = colors.text, bg = colors.base },
+            -- BlinkCmpMenuBorder = { fg = colors.overlay0, bg = colors.base },
+            BlinkCmpMenuBorder = { fg = colors.blue, bg = colors.base },
+            BlinkCmpMenuSelection = { bg = colors.surface0 },
+            BlinkCmpLabel = { fg = colors.text },
+            BlinkCmpLabelDeprecated = { fg = colors.overlay0, style = { 'strikethrough' } },
+            -- BlinkCmpDocBorder = { fg = colors.overlay0, bg = colors.base },
+            BlinkCmpDocBorder = { fg = colors.blue, bg = colors.base },
+            BlinkCmpDoc = { fg = colors.text, bg = colors.base },
+            BlinkCmpSignatureHelpActiveParameter = { fg = colors.mauve },
+            BlinkCmpSignatureHelpBorder = { fg = colors.blue },
+        }
+    end,
     integrations = {
         blink_cmp = true,
         cmp = true,

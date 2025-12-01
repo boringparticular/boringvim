@@ -8,14 +8,26 @@ return {
         end,
     },
     {
+        -- NOTE: doesn't work with phoenix and tailwind v4 since there is no tailwind.config.js file
         'tailwind-tools.nvim',
         for_cat = 'languages.tailwind',
+        ft = { 'heex', 'html', 'css' },
         after = function(_)
             require('tailwind-tools').setup({
                 server = {
+                    override = true,
                     on_attach = function(_, bufnr)
                         require('tailwindcss-colors').buf_attach(bufnr)
                     end,
+                    settings = {
+                        experimental = {
+                            classRegex = { "tw\\('([^']*)'\\)" },
+                        },
+                        includeLanguages = {
+                            elixir = 'phoenix-heex',
+                            heex = 'phoenix-heex',
+                        },
+                    },
                 },
             })
         end,

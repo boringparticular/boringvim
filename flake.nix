@@ -78,6 +78,11 @@
       flake = false;
     };
 
+    plugins-nvim-emmet = {
+      url = "github:olrtg/nvim-emmet";
+      flake = false;
+    };
+
     # see :help nixCats.flake.inputs
     # If you want your plugin to be loaded by the standard overlay,
     # i.e. if it wasnt on nixpkgs, but doesnt have an extra build step.
@@ -319,6 +324,7 @@
         ];
 
         webdev = [
+          pkgs.neovimPlugins.nvim-emmet
           emmet-vim
         ];
 

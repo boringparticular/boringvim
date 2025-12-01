@@ -161,6 +161,7 @@ return {
                 servers.svelte = {}
                 servers.tailwindcss = {}
                 servers.ts_ls = {}
+                servers.emmet_language_server = {}
             end
 
             if nixCats('asm') then

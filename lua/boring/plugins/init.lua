@@ -18,7 +18,6 @@ require('lze').load({
     { import = 'boring.plugins.todo-comments' },
     { import = 'boring.plugins.trouble' },
     { import = 'boring.plugins.flash' },
-    { import = 'boring.plugins.fidget' },
     { import = 'boring.plugins.copilot' },
     { import = 'boring.plugins.gitsigns' },
     { import = 'boring.plugins.arrow' },
@@ -44,20 +43,6 @@ require('lze').load({
         for_cat = 'general.extra',
         ft = 'qf',
         event = 'DeferredUIEnter',
-    },
-    {
-        'lspsaga.nvim',
-        for_cat = 'lsp',
-        after = function(_)
-            require('lspsaga').setup({})
-        end,
-    },
-    {
-        'outline.nvim',
-        for_cat = 'lsp',
-        after = function(_)
-            require('outline').setup()
-        end,
     },
     {
         'typr',

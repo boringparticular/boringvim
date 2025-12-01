@@ -53,4 +53,25 @@ return {
             })
         end,
     },
+    {
+        'lspsaga.nvim',
+        for_cat = 'lsp',
+        after = function(_)
+            require('lspsaga').setup({})
+        end,
+    },
+    {
+        'outline.nvim',
+        for_cat = 'lsp',
+        after = function(_)
+            require('outline').setup()
+        end,
+    },
+    {
+        'fidget.nvim',
+        for_cat = 'lsp',
+        after = function(_)
+            require('fidget').setup({})
+        end,
+    },
 }

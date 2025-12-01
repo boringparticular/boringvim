@@ -35,6 +35,11 @@
       flake = false;
     };
 
+    plugins-hlargs = {
+      url = "github:m-demare/hlargs.nvim";
+      flake = false;
+    };
+
     blink-pairs = {
       url = "github:Saghen/blink.pairs";
     };
@@ -146,6 +151,7 @@
         gitPlugins = with pkgs.neovimPlugins; [
           nvim-emmet
           navigator-lua
+          hlargs
         ];
         general = with pkgs.vimPlugins; [
           blink-pairs

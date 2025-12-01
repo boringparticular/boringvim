@@ -174,7 +174,7 @@ return {
                 servers.htmx = {}
                 servers.svelte = {}
                 servers.tailwindcss = {}
-                servers.tsserver = {}
+                servers.ts_ls = {}
             end
 
             -- NOTE: nixCats: nixd is not available on mason.

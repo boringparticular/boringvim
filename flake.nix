@@ -203,6 +203,7 @@
               vim-sleuth
               snacks-nvim
               mini-nvim
+              nvim-nio
             ];
           };
 
@@ -218,7 +219,6 @@
                   fzf-lua
                   flash-nvim
                   oil-nvim
-                  nvim-nio
                 ];
 
                 extra = [

@@ -151,6 +151,7 @@
           nvim-bqf
           arrow-nvim
           better-escape-nvim
+          noice-nvim
         ];
       };
 

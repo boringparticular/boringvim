@@ -17,6 +17,7 @@ require('lze').load({
     { import = 'boring.plugins.gitsigns' },
     { import = 'boring.plugins.arrow' },
     { import = 'boring.plugins.better-escape' },
+    { import = 'boring.plugins.noice' },
     {
         'vim-sleuth',
         for_cat = 'general',

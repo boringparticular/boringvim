@@ -1,7 +1,7 @@
 return {
     {
         'fidget.nvim',
-        for_cat = 'general',
+        for_cat = 'lsp',
         after = function(_)
             require('fidget').setup({})
         end,

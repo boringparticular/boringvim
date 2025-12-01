@@ -1,7 +1,7 @@
 return {
     {
         'conform.nvim',
-        for_cat = 'general',
+        for_cat = 'general.extra',
         event = { 'BufWritePre' },
         cmd = { 'ConformInfo' },
         keys = {

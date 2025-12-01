@@ -1,7 +1,7 @@
 return {
     {
         'yazi.nvim',
-        for_cat = 'general',
+        for_cat = 'general.extra',
         event = 'DeferredUIEnter',
         keys = {},
         after = function(_)

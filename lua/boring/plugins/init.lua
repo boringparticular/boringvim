@@ -39,27 +39,27 @@ require('lze').load({
     },
     {
         'nvim-bqf',
-        for_cat = 'general',
+        for_cat = 'general.extra',
         ft = 'qf',
         event = 'DeferredUIEnter',
     },
     {
         'lspsaga.nvim',
-        for_cat = 'general.extra',
+        for_cat = 'lsp',
         after = function(_)
             require('lspsaga').setup({})
         end,
     },
     {
         'outline.nvim',
-        for_cat = 'general',
+        for_cat = 'lsp',
         after = function(_)
             require('outline').setup()
         end,
     },
     {
         'typr',
-        for_cat = 'general',
+        for_cat = 'typr',
         cmd = { 'Typr', 'TyprStats' },
         load = function(name)
             vim.cmd.packadd(name)
@@ -71,7 +71,7 @@ require('lze').load({
     },
     {
         'hlargs',
-        for_cat = 'general',
+        for_cat = 'general.extra',
         event = 'DeferredUIEnter',
         after = function(_)
             require('hlargs').setup({})
@@ -79,7 +79,7 @@ require('lze').load({
     },
     {
         'reactive-nvim',
-        for_cat = 'general',
+        for_cat = 'general.extra',
         event = 'DeferredUIEnter',
         enabled = false,
         after = function(_)
@@ -90,7 +90,7 @@ require('lze').load({
     },
     {
         'nvim-ts-autotag',
-        for_cat = 'general',
+        for_cat = 'webdev',
         event = { 'BufNewFile', 'BufReadPre' },
         after = function(_)
             require('nvim-ts-autotag').setup({})
@@ -98,7 +98,7 @@ require('lze').load({
     },
     {
         'kulala.nvim',
-        for_cat = 'general',
+        for_cat = 'general.extra',
         ft = { 'http', 'rest' },
         keys = {
             { '<leader>Rs', desc = 'Send request' },

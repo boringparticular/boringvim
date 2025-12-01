@@ -1,7 +1,7 @@
 return {
     {
         'oil.nvim',
-        for_cat = 'general',
+        for_cat = 'general.core',
         after = function(_)
             require('oil').setup({
                 default_file_explorer = true,

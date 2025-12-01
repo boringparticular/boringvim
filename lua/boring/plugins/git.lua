@@ -1,6 +1,7 @@
 return {
     {
         'neogit',
+        for_cat = 'general.extra',
         keys = {
             { '<leader>tg', '<cmd>Neogit kind=floating<CR>', desc = '[T]oggle Neo[g]it' },
         },

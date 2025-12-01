@@ -1,7 +1,7 @@
 return {
     {
         'lazydev.nvim',
-        for_cat = 'general',
+        for_cat = 'neonixdev',
         ft = 'lua',
         on_require = 'lazydev',
         after = function(_)

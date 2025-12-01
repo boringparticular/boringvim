@@ -1,7 +1,7 @@
 return {
     {
         'trouble.nvim',
-        for_cat = 'general',
+        for_cat = 'general.extra',
         on_require = 'trouble',
         cmd = 'Trouble',
         keys = {

@@ -1,7 +1,7 @@
 return {
     {
         'copilot.lua',
-        for_cat = 'general',
+        for_cat = 'ai',
         cmd = 'Copilot',
         event = 'InsertEnter',
         after = function(_)
@@ -17,7 +17,7 @@ return {
     },
     {
         'CopilotChat.nvim',
-        for_cat = 'general',
+        for_cat = 'ai.chat',
         after = function(_)
             local chat = require('CopilotChat')
             chat.setup({

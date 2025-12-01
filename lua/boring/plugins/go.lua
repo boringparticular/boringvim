@@ -1,7 +1,7 @@
 return {
     {
         'go.nvim',
-        for_cat = 'general',
+        for_cat = 'go',
         event = { 'CmdlineEnter' },
         ft = { 'go', 'gomod' },
         after = function(_)

@@ -1,7 +1,7 @@
 return {
     {
         'fzf-lua',
-        for_cat = 'general',
+        for_cat = 'general.core',
         cmd = 'FzfLua',
         on_require = 'fzf-lua',
         keys = {
@@ -116,10 +116,13 @@ return {
                     '**/*.beam',
                 },
             })
-            require('fzf-lua').register_ui_select()
-            local config = require('fzf-lua.config')
-            local actions = require('trouble.sources.fzf').actions
-            config.defaults.actions.files['ctrl-t'] = actions.open
+
+            if nixCats('general.extra') then
+                require('fzf-lua').register_ui_select()
+                local config = require('fzf-lua.config')
+                local actions = require('trouble.sources.fzf').actions
+                config.defaults.actions.files['ctrl-t'] = actions.open
+            end
         end,
     },
 }

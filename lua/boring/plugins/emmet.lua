@@ -1,7 +1,7 @@
 return {
     {
         'nvim-emmet',
-        for_cat = 'general',
+        for_cat = 'emmet',
         keys = {
             {
                 '<leader>xe',

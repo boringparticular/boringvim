@@ -1,7 +1,7 @@
 return {
     {
         'flash.nvim',
-        for_cat = 'general',
+        for_cat = 'general.core',
         event = 'DeferredUIEnter',
         keys = {
             {

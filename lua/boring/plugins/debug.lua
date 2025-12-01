@@ -1,7 +1,7 @@
 return {
     {
         'nvim-dap',
-        for_cat = 'general',
+        for_cat = 'debug',
         keys = {
             { '<F5>', desc = 'Debug: Start/Continue' },
             { '<F1>', desc = 'Debug: Step Into' },
@@ -132,7 +132,7 @@ return {
     },
     {
         'nvim-dap-go',
-        for_cat = 'general',
+        for_cat = 'debug.go',
         on_plugin = { 'nvim-dap' },
         after = function(_)
             require('dap-go').setup({

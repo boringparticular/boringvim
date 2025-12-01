@@ -1,7 +1,7 @@
 return {
     {
         'obsidian.nvim',
-        for_cat = 'general',
+        for_cat = 'notes',
         lazy = true,
         ft = 'markdown',
         after = function(_)
@@ -17,7 +17,7 @@ return {
     },
     {
         'markdown-preview.nvim',
-        for_cat = 'general',
+        for_cat = 'markdown',
         cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
         ft = { 'markdown' },
         build = function()
@@ -26,7 +26,7 @@ return {
     },
     {
         'render-markdown.nvim',
-        for_cat = 'general',
+        for_cat = 'markdown',
         after = function(_)
             require('render-markdown').setup({})
         end,
@@ -34,7 +34,7 @@ return {
     },
     {
         'zk-nvim',
-        for_cat = 'general',
+        for_cat = 'notes',
         after = function(_)
             require('zk').setup({})
         end,

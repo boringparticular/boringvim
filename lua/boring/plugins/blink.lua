@@ -1,12 +1,12 @@
 return {
     {
         'friendly-snippets',
-        for_cat = 'general',
+        for_cat = 'blink',
         dep_of = { 'blink.cmp' },
     },
     {
         'luasnip',
-        for_cat = 'general',
+        for_cat = 'blink',
         dep_of = { 'blink.cmp' },
         after = function(_)
             local luasnip = require('luasnip')
@@ -17,30 +17,39 @@ return {
     },
     {
         'blink-copilot',
-        for_cat = 'general',
+        for_cat = 'blink',
         dep_of = { 'blink.cmp' },
     },
     {
         'blink-cmp-spell',
-        for_cat = 'general',
+        for_cat = 'blink',
         dep_of = { 'blink.cmp' },
     },
     {
         'blink.cmp',
-        for_cat = 'general',
+        for_cat = 'blink',
         after = function(_)
+            local default_sources = {
+                'lsp',
+                'buffer',
+                'snippets',
+                'path',
+                'spell',
+                'lazydev',
+            }
+
+            if nixCats('ai.completion') then
+                vim.list_extend(default_sources, { 'copilot' })
+            end
+
+            if nixCats('neonixdev') then
+                vim.list_extend(default_sources, { 'lazydev' })
+            end
+
             require('blink.cmp').setup({
                 keymap = { preset = 'default' },
                 sources = {
-                    default = {
-                        'lsp',
-                        'buffer',
-                        'snippets',
-                        'path',
-                        'copilot',
-                        'spell',
-                        'lazydev',
-                    },
+                    default = default_sources,
                     providers = {
                         lazydev = {
                             name = 'LazyDev',

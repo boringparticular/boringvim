@@ -1,7 +1,7 @@
 return {
     {
         'nvim-lint',
-        for_cat = 'general',
+        for_cat = 'general.extra',
         event = { 'BufReadPre', 'BufNewFile' },
         after = function(_)
             local lint = require('lint')

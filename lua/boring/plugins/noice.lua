@@ -1,7 +1,7 @@
 return {
     {
         'noice.nvim',
-        for_cat = 'general',
+        for_cat = 'general.extra',
         event = 'DeferredUIEnter',
         after = function()
             require('noice').setup({

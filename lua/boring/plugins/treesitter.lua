@@ -1,7 +1,7 @@
 return {
     {
         'nvim-treesitter-context',
-        for_cat = 'general',
+        for_cat = 'treesitter',
         dep_of = 'nvim-treesitter',
         after = function(_)
             require('treesitter-context').setup({
@@ -20,13 +20,14 @@ return {
     },
     {
         'nvim-treesitter-textobjects',
-        for_cat = 'general',
+        for_cat = 'treesitter',
         dep_of = 'mini',
     },
     {
         'nvim-treesitter',
-        for_cat = 'general',
+        for_cat = 'treesitter',
         event = 'DeferredUIEnter',
+        on_require = 'nvim-treesitter',
         load = function(name)
             vim.cmd.packadd(name)
             vim.cmd.packadd('nvim-treesitter-textobjects')

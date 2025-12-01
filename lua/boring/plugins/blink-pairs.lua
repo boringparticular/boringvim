@@ -1,7 +1,7 @@
 return {
     {
         'blink.pairs',
-        for_cat = 'general',
+        for_cat = 'general.extra',
         event = 'DeferredUIEnter',
         after = function(_)
             require('blink-pairs').setup({

@@ -123,95 +123,192 @@
       # provide when you build the package using this builder function.
       # see :help nixCats.flake.outputs.packageDefinitions for info on that section.
 
+      extraCats = {
+        debug = [
+          ["debug" "default"]
+        ];
+
+        go = [
+          ["debug" "go"]
+        ];
+
+        webdev = [
+          ["emmet"]
+          ["tailwind"]
+        ];
+
+        notes = [
+          ["markdown"]
+        ];
+      };
+
       # lspsAndRuntimeDeps:
       # this section is for dependencies that should be available
       # at RUN TIME for plugins. Will be available to PATH within neovim terminal
       # this includes LSPs
       lspsAndRuntimeDeps = {
-        general = with pkgs; [
+        general = with pkgs; {
+          core = [
+            ripgrep
+            fd
+          ];
+
+          extra = [
+            chafa
+            yazi
+          ];
+        };
+
+        nix = with pkgs; [
+          nix-doc
+          nil
+          nixd
+          nixfmt-rfc-style
+        ];
+
+        neonixdev = with pkgs; [
+          nix-doc
+          nil
+          nixd
+          nixfmt-rfc-style
           lua-language-server
-          yazi
+          stylua
+        ];
+
+        notes = [
+          pkgs.zk
         ];
       };
 
       # This is for plugins that will load at startup without using packadd:
       startupPlugins = {
-        gitPlugins = with pkgs.neovimPlugins; [];
         general = with pkgs.vimPlugins; [
           catppuccin-nvim
           lze
           plenary-nvim
+          vim-sleuth
+          snacks-nvim
+          mini-nvim
         ];
       };
 
       # not loaded automatically at startup.
       # use with packadd and an autocommand in config to achieve lazy loading
       optionalPlugins = {
-        gitPlugins = with pkgs.neovimPlugins; [
-          nvim-emmet
-          hlargs
-          reactive-nvim
-        ];
-        general = with pkgs.vimPlugins; [
-          blink-pairs
-          vim-sleuth
-          snacks-nvim
-          mini-nvim
-          oil-nvim
-          conform-nvim
-          nvim-lint
-          nvim-treesitter.withAllGrammars
-          which-key-nvim
-          fzf-lua
-          luasnip
-          friendly-snippets
-          neogit
-          undotree
-          flash-nvim
-          direnv-vim
+        general = with pkgs.vimPlugins;
+        with pkgs.neovimPlugins; {
+          core = [
+            which-key-nvim
+            fzf-lua
+            flash-nvim
+            oil-nvim
+            nvim-nio
+          ];
+
+          extra = [
+            blink-pairs
+            conform-nvim
+            nvim-lint
+            neogit
+            undotree
+            direnv-vim
+            todo-comments-nvim
+            trouble-nvim
+
+            gitsigns-nvim
+            nvim-bqf
+            arrow-nvim
+            better-escape-nvim
+            noice-nvim
+            nvim-bqf
+            nvim-web-devicons
+            kulala-nvim
+            yazi-nvim
+            reactive-nvim
+          ];
+        };
+
+        neonixdev = with pkgs.vimPlugins; [
           lazydev-nvim
+        ];
+
+        webdev = with pkgs.vimPlugins; [
+          nvim-ts-autotag
+        ];
+
+        lsp = with pkgs.vimPlugins;
+        with pkgs.neovimPlugins; [
           fidget-nvim
-          todo-comments-nvim
-          trouble-nvim
-          CopilotChat-nvim
-          copilot-lua
+          lspsaga-nvim
+          outline-nvim
+          hlargs
+        ];
+
+        typr = with pkgs.vimPlugins; [
+          nvzone-volt
+          nvzone-typr
+        ];
+
+        emmet = [
+          pkgs.vimPlugins.emmet-vim
+          pkgs.neovimPlugins.nvim-emmet
+        ];
+
+        blink = with pkgs.vimPlugins; [
           blink-cmp
           blink-copilot
           blink-cmp-spell
-          gitsigns-nvim
-          nvim-bqf
-          arrow-nvim
-          better-escape-nvim
-          noice-nvim
           colorful-menu-nvim
-          markdown-preview-nvim
-          render-markdown-nvim
-          obsidian-nvim
-          zk-nvim
-          nvim-dap
-          nvim-dap-ui
-          nvim-dap-go
-          nvim-dap-virtual-text
-          nvim-nio
+          luasnip
+          friendly-snippets
+        ];
+
+        treesitter = with pkgs.vimPlugins; [
+          nvim-treesitter.withAllGrammars
           nvim-treesitter-textobjects
           nvim-ts-context-commentstring
           nvim-treesitter-context
           nvim-treesitter-refactor
-          nvim-bqf
-          yazi-nvim
-          nvzone-volt
-          nvzone-typr
-          nvim-web-devicons
+        ];
 
-          nvim-ts-autotag
-          elixir-tools-nvim
+        tailwind = with pkgs.vimPlugins; [
           tailwind-tools-nvim
           tailwindcss-colors-nvim
-          go-nvim
+        ];
 
-          lspsaga-nvim
-          outline-nvim
-          kulala-nvim
+        markdown = with pkgs.vimPlugins; [
+          markdown-preview-nvim
+          render-markdown-nvim
+        ];
+
+        notes = with pkgs.vimPlugins; [
+          obsidian-nvim
+          zk-nvim
+        ];
+
+        ai = with pkgs.vimPlugins; [
+          CopilotChat-nvim
+          copilot-lua
+        ];
+
+        debug = with pkgs.vimPlugins; {
+          default = [
+            nvim-dap
+            nvim-dap-ui
+            nvim-dap-virtual-text
+          ];
+
+          go = [
+            nvim-dap-go
+          ];
+        };
+
+        elixir = with pkgs.vimPlugins; [
+          elixir-tools-nvim
+        ];
+
+        go = with pkgs.vimPlugins; [
+          go-nvim
         ];
       };
 
@@ -254,7 +351,11 @@
       };
       # populates $LUA_PATH and $LUA_CPATH
       extraLuaPackages = {
-        test = [(_: [])];
+        ai = [
+          (lp: [
+            lp.tiktoken_core
+          ])
+        ];
       };
     };
 
@@ -280,9 +381,28 @@
       ...
     }: {
       general = true;
-      gitPlugins = true;
+      lsp = true;
+      typr = true;
+      emmet = true;
+      blink = true;
+      treesitter = true;
+      tailwind = true;
+      markdown = true;
+      notes = true;
+      ai = {
+        completion = true;
+        chat = true;
+      };
+      debug = true;
+      elixir = true;
+      go = true;
+      webdev = true;
+      nix = true;
+      neonixdev = true;
+
       customPlugins = true;
       test = true;
+
       example = {
         youCan = "add more than just booleans";
         toThisSet = [

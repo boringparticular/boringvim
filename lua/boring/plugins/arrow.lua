@@ -1,7 +1,7 @@
 return {
     {
         'arrow.nvim',
-        for_cat = 'general',
+        for_cat = 'general.extra',
         after = function(_)
             require('arrow').setup({
                 show_icons = true,

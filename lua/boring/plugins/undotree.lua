@@ -1,7 +1,7 @@
 return {
     {
         'undotree',
-        for_cat = 'general',
+        for_cat = 'general.extra',
         cmd = {
             'UndotreeToggle',
             'UndotreeHide',

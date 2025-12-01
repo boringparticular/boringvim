@@ -1,7 +1,7 @@
 return {
     {
         'tailwindcss-colors.nvim',
-        for_cat = 'general',
+        for_cat = 'tailwind',
         dep_of = 'tailwind-tools.nvim',
         after = function(_)
             require('tailwindcss-colors').setup({})
@@ -9,7 +9,7 @@ return {
     },
     {
         'tailwind-tools.nvim',
-        for_cat = 'general',
+        for_cat = 'tailwind',
         after = function(_)
             require('tailwind-tools').setup({
                 server = {

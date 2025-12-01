@@ -178,4 +178,32 @@ require('lze').load({
             require('yanky').setup({})
         end,
     },
+    {
+        'edgy.nvim',
+        for_cat = 'general.extra',
+        init = function()
+            vim.opt.laststatus = 3
+            vim.opt.splitkeep = 'screen'
+        end,
+        after = function(_)
+            require('edgy').setup({
+                right = {
+                    {
+                        ft = 'help',
+                        size = { width = 100 },
+                        filter = function(buf)
+                            return vim.bo[buf].buftype == 'help'
+                        end,
+                    },
+                    {
+                        title = 'Overseer',
+                        ft = 'OverseerList',
+                        open = function()
+                            require('overseer').open()
+                        end,
+                    },
+                },
+            })
+        end,
+    },
 })

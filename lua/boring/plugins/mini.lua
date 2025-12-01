@@ -72,6 +72,7 @@ return {
             require('mini.operators').setup()
             require('mini.bracketed').setup()
             require('mini.files').setup()
+            require('mini.cursorword').setup()
 
             -- NOTE: maybe replace this with catgoose/nvim-colorizer.lua
             local hipatterns = require('mini.hipatterns')

@@ -87,7 +87,7 @@ return {
         end)()),
         opts = {
             debug = false, -- Enable debugging
-            model = 'gpt-4o-2024-08-06', -- GPT model to use, 'gpt-3.5-turbo', 'gpt-4', or 'gpt-4o'
+            model = 'claude-3.5-sonnet', -- GPT model to use, 'gpt-3.5-turbo', 'gpt-4', or 'gpt-4o'
             temperature = 0.1, -- GPT temperature
         },
         config = function(_, opts)

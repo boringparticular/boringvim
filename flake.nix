@@ -279,6 +279,7 @@
             cmp-cmdline
             cmp-buffer
             cmp-treesitter
+            cmp-spell
             lspkind-nvim
           ];
 

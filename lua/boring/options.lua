@@ -75,3 +75,6 @@ vim.opt.statuscolumn = '%=%{v:relnum?v:relnum:v:lnum} %s%C '
 vim.opt.conceallevel = 2
 
 vim.opt.hlsearch = true
+
+vim.opt.spell = true
+vim.opt.spelllang = { 'en_us', 'de_de' }

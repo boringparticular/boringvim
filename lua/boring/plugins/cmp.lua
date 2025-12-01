@@ -67,6 +67,11 @@ return {
         load = load_w_after_plugin,
     },
     {
+        'cmp-spell',
+        for_cat = 'general.cmp',
+        on_plugin = { 'nvim-cmp' },
+        load = load_w_after_plugin,
+    {
         'friendly-snippets',
         for_cat = 'general.cmp',
         dep_of = { 'nvim-cmp' },
@@ -175,6 +180,16 @@ return {
                     { max_item_count = 5, name = 'buffer' },
                     { name = 'treesitter' },
                     { max_item_count = 5, name = 'path' },
+                    {
+                        name = 'spell',
+                        option = {
+                            keep_all_entries = false,
+                            enable_in_context = function()
+                                return true
+                            end,
+                            preselect_correct_word = true,
+                        },
+                    },
                     { name = 'supermaven' },
                     { name = 'codeium' },
                     { name = 'conjure' },

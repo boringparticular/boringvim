@@ -66,26 +66,35 @@ return {
                 },
             }
 
+            local icons = require('boring.icons')
+
+            vim.fn.sign_define('DapBreakpoint', { text = icons.dap.breakpoint, texthl = 'DapBreakpoint', linehl = '', numhl = '' })
+            vim.fn.sign_define('DapBreakpointCondition', { text = icons.dap.breakpoint_condition, texthl = 'DapBreakpointCondition', linehl = '', numhl = '' })
+            vim.fn.sign_define('DapLogPoint', { text = icons.dap.log_point, texthl = 'DapLogPoint', linehl = '', numhl = '' })
+            vim.fn.sign_define('DapStopped', { text = icons.dap.stopped, texthl = 'DapStopped', linehl = '', numhl = '' })
+            vim.fn.sign_define('DapBreakpointRejected', { text = icons.dap.breakpoint_rejected, texthl = 'DapBreakpointRejected', linehl = '', numhl = '' })
+
             local dapui = require('dapui')
 
             -- Dap UI setup
             -- For more information, see |:help nvim-dap-ui|
             dapui.setup({
-                -- Set icons to characters that are more likely to work in every terminal.
-                --    Feel free to remove or use ones that you like more! :)
-                --    Don't feel like these are good choices.
-                icons = { expanded = '▾', collapsed = '▸', current_frame = '*' },
+                icons = {
+                    expanded = icons.dap.expanded,
+                    collapsed = icons.dap.collapsed,
+                    current_frame = icons.dap.current_frame,
+                },
                 controls = {
                     icons = {
-                        pause = '⏸',
-                        play = '▶',
-                        step_into = '⏎',
-                        step_over = '⏭',
-                        step_out = '⏮',
-                        step_back = 'b',
-                        run_last = '▶▶',
-                        terminate = '⏹',
-                        disconnect = '⏏',
+                        pause = icons.dap.pause,
+                        play = icons.dap.play,
+                        step_into = icons.dap.step_into,
+                        step_over = icons.dap.step_over,
+                        step_out = icons.dap.step_out,
+                        step_back = icons.dap.step_back,
+                        run_last = icons.dap.run_last,
+                        terminate = icons.dap.terminate,
+                        disconnect = icons.dap.disconnect,
                     },
                 },
             })

@@ -36,7 +36,11 @@ return {
             require('nvim-treesitter.configs').setup({
                 refactor = {
                     highlight_current_scope = { enable = true },
-                    highlight_definitions = { clear_on_cursor_move = true, enable = true },
+                    highlight_definitions = {
+                        -- does the same as snack words
+                        enable = false,
+                        clear_on_cursor_move = true,
+                    },
                 },
                 highlight = {
                     enable = true,

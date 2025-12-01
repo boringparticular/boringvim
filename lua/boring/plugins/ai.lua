@@ -140,6 +140,8 @@ return {
             vim.keymap.set('n', '<leader>cct', '<cmd>CopilotChatTests<CR>', { desc = '[C]opilot [C]hat Generate [T]ests' })
             vim.keymap.set('n', '<leader>ar', '<cmd>CopilotChatReview<CR>', { desc = '[A]I [R]eview Code' })
             vim.keymap.set('n', '<leader>ccr', '<cmd>CopilotChatReview<CR>', { desc = '[C]opilot [C]hat [R]eview Code' })
+            vim.keymap.set('n', '<leader>cco', '<cmd>CopilotChatOptimize<CR>', { desc = '[C]opilot [C]hat [O]ptimize Code' })
+            vim.keymap.set('n', '<leader>ccd', '<cmd>CopilotChatDocs<CR>', { desc = '[C]opilot [C]hat [D]ocument Code' })
 
             vim.keymap.set('n', '<leader>ccp', function()
                 local actions = require('CopilotChat.actions')

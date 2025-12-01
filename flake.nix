@@ -107,42 +107,12 @@
     extra_pkg_config = {
       allowUnfree = true;
     };
-    # sometimes our overlays require a ${system} to access the overlay.
-    # management of this variable is one of the harder parts of using flakes.
 
-    # so I have done it here in an interesting way to keep it out of the way.
+    dependencyOverlays = [
+      (utils.standardPluginOverlay inputs)
+      inputs.neovim-nightly-overlay.overlays.default
+    ];
 
-    # First, we will define just our overlays per system.
-    # later we will pass them into the builder, and the resulting pkgs set
-    # will get passed to the categoryDefinitions and packageDefinitions
-    # which follow this section.
-
-    # this allows you to use ${pkgs.system} whenever you want in those sections
-    # without fear.
-    inherit
-      (forEachSystem (system: let
-        # see :help nixCats.flake.outputs.overlays
-        dependencyOverlays =
-          /*
-          (import ./overlays inputs) ++
-          */
-          [
-            # This overlay grabs all the inputs named in the format
-            # `plugins-<pluginName>`
-            # Once we add this overlay to our nixpkgs, we are able to
-            # use `pkgs.neovimPlugins`, which is a set of our plugins.
-            (utils.standardPluginOverlay inputs)
-
-            inputs.neovim-nightly-overlay.overlays.default
-            # inputs.neorg-overlay.overlays.default
-            # add any flake overlays here.
-          ];
-        # these overlays will be wrapped with ${system}
-        # and we will call the same utils.eachSystem function
-        # later on to access them.
-      in {inherit dependencyOverlays;}))
-      dependencyOverlays
-      ;
     # see :help nixCats.flake.outputs.categories
     # and
     # :help nixCats.flake.outputs.categoryDefinitions.scheme

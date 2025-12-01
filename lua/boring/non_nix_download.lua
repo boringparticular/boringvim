@@ -1,0 +1,1 @@
+require('nixCatsUtils.catPacker').setup({})

@@ -86,6 +86,9 @@ return {
                     row = 0.35,
                     col = 0.5,
                 },
+                fzf_opts = {
+                    ['--cycle'] = true,
+                },
                 keymap = {
                     builtin = {
                         true,

@@ -18,6 +18,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 local icons = require('boring.icons')
+
 -- NOTE: can i disable virtual text for the current line and instead show the virtual line?
 vim.diagnostic.config({
     underline = true,

@@ -128,6 +128,7 @@
         general = with pkgs.vimPlugins; [
           vim-sleuth
           snacks-nvim
+          mini-nvim
           oil-nvim
           conform-nvim
           nvim-lint

@@ -117,6 +117,7 @@
         general = with pkgs.vimPlugins; [
           catppuccin-nvim
           lze
+          plenary-nvim
         ];
       };
 

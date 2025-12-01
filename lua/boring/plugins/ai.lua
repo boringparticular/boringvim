@@ -69,7 +69,9 @@ return {
         'copilot-cmp',
         for_cat = 'ai.copilot-cmp',
         after = function(_)
-            require('copilot_cmp').setup()
+            if pcall(require, 'cmp') then
+                require('copilot_cmp').setup()
+            end
         end,
     },
     {

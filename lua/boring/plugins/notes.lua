@@ -17,7 +17,7 @@ return {
     },
     {
         'markdown-preview.nvim',
-        for_cat = 'markdown',
+        for_cat = 'languages.markdown',
         cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
         ft = { 'markdown' },
         build = function()
@@ -26,7 +26,7 @@ return {
     },
     {
         'render-markdown.nvim',
-        for_cat = 'markdown',
+        for_cat = 'languages.markdown',
         after = function(_)
             require('render-markdown').setup({})
         end,

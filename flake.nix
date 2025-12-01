@@ -142,7 +142,7 @@
               ]
             ];
 
-            go = [
+            languages.go = [
               [
                 "debug"
                 "go"
@@ -151,11 +151,17 @@
 
             webdev = [
               [ "emmet" ]
-              [ "tailwind" ]
+              [
+                "languages"
+                "tailwind"
+              ]
             ];
 
             notes = [
-              [ "markdown" ]
+              [
+                "languages"
+                "markdown"
+              ]
             ];
           };
 
@@ -297,16 +303,6 @@
               nvim-treesitter-refactor
             ];
 
-            tailwind = with pkgs.vimPlugins; [
-              tailwind-tools-nvim
-              tailwindcss-colors-nvim
-            ];
-
-            markdown = with pkgs.vimPlugins; [
-              markdown-preview-nvim
-              render-markdown-nvim
-            ];
-
             notes = with pkgs.vimPlugins; [
               obsidian-nvim
               zk-nvim
@@ -329,13 +325,26 @@
               ];
             };
 
-            elixir = with pkgs.vimPlugins; [
-              elixir-tools-nvim
-            ];
+            languages = with pkgs.vimPlugins; {
+              elixir = with pkgs.vimPlugins; [
+                elixir-tools-nvim
+              ];
 
-            go = with pkgs.vimPlugins; [
-              go-nvim
-            ];
+              go = with pkgs.vimPlugins; [
+                go-nvim
+              ];
+
+              markdown = with pkgs.vimPlugins; [
+                markdown-preview-nvim
+                render-markdown-nvim
+              ];
+
+              tailwind = with pkgs.vimPlugins; [
+                tailwind-tools-nvim
+                tailwindcss-colors-nvim
+              ];
+            };
+
           };
 
           # shared libraries to be added to LD_LIBRARY_PATH
@@ -416,16 +425,13 @@
           emmet = true;
           blink = true;
           treesitter = true;
-          tailwind = true;
-          markdown = true;
           notes = true;
           ai = {
             completion = true;
             chat = true;
           };
           debug = true;
-          elixir = true;
-          go = true;
+          languages = true;
           webdev = true;
           nix = true;
           neonixdev = true;

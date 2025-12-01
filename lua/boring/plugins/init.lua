@@ -50,6 +50,13 @@ require('lze').load({
         end,
     },
     {
+        'outline.nvim',
+        for_cat = 'general',
+        after = function(_)
+            require('outline').setup()
+        end,
+    },
+    {
         'typr',
         for_cat = 'general',
         cmd = { 'Typr', 'TyprStats' },

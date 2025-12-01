@@ -125,7 +125,7 @@
           # (utils.fixSystemizedOverlay inputs.codeium.overlays
           #   (system: inputs.codeium.overlays.${system}.default)
           # )
-          inputs.neovim-nightly-overlay.overlays.default
+          # inputs.neovim-nightly-overlay.overlays.default
           (final: prev: {
             blink-pairs = inputs.blink-pairs.${prev.system}.default;
           })

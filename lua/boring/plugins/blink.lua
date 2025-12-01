@@ -39,6 +39,7 @@ return {
                 },
                 snippets = { preset = 'luasnip' },
                 completion = {
+                    list = { selection = { preselect = true, auto_insert = false } },
                     menu = {
                         border = 'rounded',
                         draw = {

@@ -87,7 +87,7 @@ return {
         end)()),
         opts = {
             debug = false, -- Enable debugging
-            model = 'gpt-4o', -- GPT model to use, 'gpt-3.5-turbo', 'gpt-4', or 'gpt-4o'
+            model = 'gpt-4o-2024-08-06', -- GPT model to use, 'gpt-3.5-turbo', 'gpt-4', or 'gpt-4o'
             temperature = 0.1, -- GPT temperature
         },
         -- See Commands section for default commands if you want to lazy load on them

@@ -335,6 +335,38 @@
         "type": "github"
       }
     },
+    "plugins-lze": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1745197054,
+        "narHash": "sha256-RfHhH5Mzx62I6KQeSHU/ix54dwUMtCoPhby4+/iz35o=",
+        "owner": "BirdeeHub",
+        "repo": "lze",
+        "rev": "34a1530b7f562d5a6df5e8229ebf76369e197b41",
+        "type": "github"
+      },
+      "original": {
+        "owner": "BirdeeHub",
+        "repo": "lze",
+        "type": "github"
+      }
+    },
+    "plugins-lzextras": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1745197037,
+        "narHash": "sha256-ir5V5yJsc8pwnhbVpD8JK0Q3ehXBicBnwE0lDDHTM/Q=",
+        "owner": "BirdeeHub",
+        "repo": "lzextras",
+        "rev": "b67d604c7c39e119b61982215e8164c73b0e81c4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "BirdeeHub",
+        "repo": "lzextras",
+        "type": "github"
+      }
+    },
     "plugins-nvim-emmet": {
       "flake": false,
       "locked": {
@@ -348,6 +380,22 @@
       "original": {
         "owner": "olrtg",
         "repo": "nvim-emmet",
+        "type": "github"
+      }
+    },
+    "plugins-nvim-lspconfig": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1745692041,
+        "narHash": "sha256-dS5khyhQZbkn8aCtxghVMZAULJV6WmWLTRaZU9d+bJk=",
+        "owner": "neovim",
+        "repo": "nvim-lspconfig",
+        "rev": "f89f18c48c4115239a5c3831db00c04359b0b0c7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "neovim",
+        "repo": "nvim-lspconfig",
         "type": "github"
       }
     },
@@ -390,7 +438,10 @@
         "nixCats": "nixCats",
         "nixpkgs": "nixpkgs_3",
         "plugins-hlargs": "plugins-hlargs",
+        "plugins-lze": "plugins-lze",
+        "plugins-lzextras": "plugins-lzextras",
         "plugins-nvim-emmet": "plugins-nvim-emmet",
+        "plugins-nvim-lspconfig": "plugins-nvim-lspconfig",
         "plugins-portal-nvim": "plugins-portal-nvim",
         "plugins-reactive-nvim": "plugins-reactive-nvim"
       }

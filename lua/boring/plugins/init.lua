@@ -24,6 +24,7 @@ require('lze').load({
     { import = 'boring.plugins.colorful-menu' },
     { import = 'boring.plugins.lazydev' },
     { import = 'boring.plugins.elixir' },
+    { import = 'boring.plugins.tailwind' },
     {
         'direnv.vim',
         for_cat = 'general.extra',

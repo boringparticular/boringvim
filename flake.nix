@@ -174,6 +174,8 @@
           nvzone-typr
 
           elixir-tools-nvim
+          tailwind-tools-nvim
+          tailwindcss-colors-nvim
 
           # try these plugins. currently using lspsaga for window bar
           lspsaga-nvim

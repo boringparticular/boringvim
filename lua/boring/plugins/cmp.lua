@@ -71,6 +71,7 @@ return {
         for_cat = 'general.cmp',
         on_plugin = { 'nvim-cmp' },
         load = load_w_after_plugin,
+    },
     {
         'friendly-snippets',
         for_cat = 'general.cmp',

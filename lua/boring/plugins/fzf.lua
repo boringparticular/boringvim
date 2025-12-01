@@ -102,6 +102,16 @@ return {
                         ['ctrl-q'] = 'select-all+accept',
                     },
                 },
+                file_ignore_patterns = {
+                    '.git/',
+                    '.venv/',
+                    '.node_modules/',
+                    'node_modules/',
+                    'deps/',
+                    '_build/',
+                    '.elixir_ls/',
+                    '**/*.beam',
+                },
             })
             require('fzf-lua').register_ui_select()
             local config = require('fzf-lua.config')

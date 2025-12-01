@@ -16,4 +16,9 @@ return {
             vim.keymap.set({ 'n', 'v' }, '<leader>xe', require('nvim-emmet').wrap_with_abbreviation)
         end,
     },
+    {
+        'emmet-vim',
+        for_cat = 'emmet',
+        ft = { 'heex', 'html', 'css', 'javascript', 'typescript', 'vue' },
+    },
 }

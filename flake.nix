@@ -29,6 +29,16 @@
       url = "github:olrtg/nvim-emmet";
       flake = false;
     };
+
+    plugins-navigator-lua = {
+      url = "github:ray-x/navigator.lua";
+      flake = false;
+    };
+
+    blink-pairs = {
+      url = "github:Saghen/blink.pairs";
+    };
+
     # see :help nixCats.flake.inputs
     # If you want your plugin to be loaded by the standard overlay,
     # i.e. if it wasnt on nixpkgs, but doesnt have an extra build step.
@@ -87,6 +97,9 @@
         #   (system: inputs.codeium.overlays.${system}.default)
         # )
         inputs.neovim-nightly-overlay.overlays.default
+        (final: prev: {
+          blink-pairs = inputs.blink-pairs.${prev.system}.default;
+        })
       ];
 
     # see :help nixCats.flake.outputs.categories
@@ -131,8 +144,10 @@
       optionalPlugins = {
         gitPlugins = with pkgs.neovimPlugins; [
           nvim-emmet
+          navigator-lua
         ];
         general = with pkgs.vimPlugins; [
+          blink-pairs
           vim-sleuth
           snacks-nvim
           mini-nvim
@@ -189,6 +204,10 @@
           lspsaga-nvim
           dropbar-nvim
           outline-nvim
+          nvim-navic
+          aerial-nvim
+          glance-nvim
+          nvim-navbuddy
         ];
       };
 

@@ -4,6 +4,7 @@ require('lze').load({
     { import = 'boring.plugins.mini' },
     { import = 'boring.plugins.fzf' },
     { import = 'boring.plugins.blink' },
+    { import = 'boring.plugins.blink-pairs' },
     { import = 'boring.plugins.oil' },
     { import = 'boring.plugins.which-key' },
     { import = 'boring.plugins.conform' },

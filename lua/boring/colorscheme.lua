@@ -30,6 +30,14 @@ require('catppuccin').setup({
             SnacksIndent6 = { fg = colors.mauve },
             SnacksIndent7 = { fg = colors.teal },
             SnacksIndent8 = { fg = colors.maroon },
+
+            BlinkPairsRed = { blend = 0, fg = colors.red },
+            BlinkPairsYellow = { blend = 0, fg = colors.yellow },
+            BlinkPairsBlue = { blend = 0, fg = colors.blue },
+            BlinkPairsOrange = { blend = 0, fg = colors.peach },
+            BlinkPairsGreen = { blend = 0, fg = colors.green },
+            BlinkPairsViolet = { blend = 0, fg = colors.mauve },
+            BlinkPairsCyan = { blend = 0, fg = colors.teal },
         }
     end,
     integrations = {

@@ -39,8 +39,14 @@ return {
                         'path',
                         'copilot',
                         'spell',
+                        'lazydev',
                     },
                     providers = {
+                        lazydev = {
+                            name = 'LazyDev',
+                            module = 'lazydev.integrations.blink',
+                            score_offset = 50,
+                        },
                         copilot = {
                             name = 'copilot',
                             module = 'blink-copilot',

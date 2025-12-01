@@ -30,7 +30,6 @@ require('lze').load({
     { import = 'boring.plugins.which-key' },
     { import = 'boring.plugins.ai' },
     { import = 'boring.plugins.arrow' },
-    { import = 'boring.plugins.harpoon' },
     {
         'rainbow-delimiters.nvim',
         for_cat = 'general',

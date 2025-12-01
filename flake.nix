@@ -225,7 +225,6 @@
             flash-nvim
             gitsigns-nvim
             pkgs.neovimPlugins.arrow-nvim
-            harpoon2
             indent-blankline-nvim
             lazydev-nvim
             neogit

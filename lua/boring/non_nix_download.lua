@@ -93,7 +93,7 @@ require('nixCatsUtils.catPacker').setup({
     { 'ray-x/go.nvim', opt = true },
     { 'ray-x/guihua.lua', ot = true },
 
-    { 'ThePrimeagen/harpoon', branch = 'harpoon2', opt = true },
+    -- { 'ThePrimeagen/harpoon', branch = 'harpoon2', opt = true },
 
     { 'echasnovski/mini.nvim', opt = true },
 

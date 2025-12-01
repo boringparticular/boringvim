@@ -30,6 +30,11 @@ return {
         after = function()
             require('overseer').setup({
                 dap = false,
+                templates = {
+                    'builtin',
+                    'user.zig_build',
+                    'user.zig_run',
+                },
                 form = {
                     win_opts = {
                         winblend = 0,

@@ -54,6 +54,8 @@ return {
                 { 'g', group = 'goto' },
                 { 'gs', group = 'surround' },
                 { 'z', group = 'fold' },
+                { '<leader>o', group = '[O]verseer' },
+                { '<leader>o_', hidden = true },
             })
         end,
     },

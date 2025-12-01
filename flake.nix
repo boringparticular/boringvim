@@ -150,6 +150,7 @@
           gitsigns-nvim
           nvim-bqf
           arrow-nvim
+          better-escape-nvim
         ];
       };
 

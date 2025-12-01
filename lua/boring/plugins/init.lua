@@ -16,6 +16,7 @@ require('lze').load({
     { import = 'boring.plugins.copilot' },
     { import = 'boring.plugins.gitsigns' },
     { import = 'boring.plugins.arrow' },
+    { import = 'boring.plugins.better-escape' },
     {
         'vim-sleuth',
         for_cat = 'general',

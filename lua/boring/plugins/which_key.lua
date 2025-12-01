@@ -3,6 +3,15 @@ return {
         'which-key.nvim',
         for_cat = 'general',
         event = 'DeferredUIEnter',
+        keys = {
+            {
+                '<leader>?',
+                function()
+                    require('which-key').show({ global = false })
+                end,
+                desc = 'Buffer Local Keymaps (which-key)',
+            },
+        },
         after = function(_)
             require('which-key').setup({})
 

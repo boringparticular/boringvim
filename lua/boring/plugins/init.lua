@@ -153,6 +153,17 @@ require('lze').load({
         end,
     },
     {
+        'portal-nvim',
+        for_cat = 'general.extra',
+        keys = {
+            { '<leader>o', '<cmd>Portal jumplist backward<cr>' },
+            { '<leader>i', '<cmd>Portal jumplist forward<cr>' },
+        },
+        after = function(_)
+            require('portal').setup({})
+        end,
+    },
+    {
         'yanky.nvim',
         for_cat = 'general.extra',
         keys = {

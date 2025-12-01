@@ -39,6 +39,11 @@
       flake = false;
     };
 
+    plugins-portal-nvim = {
+      url = "github:cbochs/portal.nvim";
+      flake = false;
+    };
+
     blink-pairs = {
       url = "github:Saghen/blink.pairs";
     };
@@ -239,6 +244,7 @@
                   grug-far-nvim
                   grapple-nvim
                   yanky-nvim
+                  portal-nvim
                 ];
               };
 

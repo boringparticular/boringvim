@@ -46,14 +46,12 @@ return {
         'cmp-nvim-lsp-document-symbol',
         for_cat = 'general.cmp',
         on_plugin = { 'nvim-cmp' },
-        dep_of = { 'nvim-lspconfig' },
         load = load_w_after_plugin,
     },
     {
         'cmp-nvim-lsp-signature-help',
         for_cat = 'general.cmp',
         on_plugin = { 'nvim-cmp' },
-        dep_of = { 'nvim-lspconfig' },
         load = load_w_after_plugin,
     },
     {

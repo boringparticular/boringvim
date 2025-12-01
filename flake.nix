@@ -146,6 +146,7 @@
           copilot-lua
           blink-cmp
           blink-copilot
+          blink-cmp-spell
           gitsigns-nvim
         ];
       };

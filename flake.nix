@@ -184,6 +184,11 @@
           mini-nvim
           catppuccin-nvim
           comment-nvim
+
+          conjure
+          cmp-conjure
+          parinfer-rust
+
           luasnip
           nvim-cmp
           cmp_luasnip

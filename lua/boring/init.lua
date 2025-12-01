@@ -20,3 +20,5 @@ require('catppuccin').setup({
     integrations = {},
 })
 vim.cmd.colorscheme('catppuccin')
+
+require('boring.lsp')

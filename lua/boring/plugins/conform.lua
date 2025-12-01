@@ -33,7 +33,7 @@ return {
                     local disable_filetypes = { c = true, cpp = true }
                     return {
                         timeout_ms = 2500,
-                        async = true,
+                        async = false,
                         lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
                     }
                 end,
@@ -63,7 +63,7 @@ return {
                     heex = { 'mix' },
                     asm = { 'nasmfmt' },
                     zig = { 'zigfmt' },
-                    dart = { 'dart_format', async = true, lsp_format = 'fallback' },
+                    dart = { 'dart_format', lsp_format = 'prefer' },
                     ['*'] = { 'injected' },
                     ['_'] = { 'trim_whitespace' },
                 },

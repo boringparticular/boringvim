@@ -62,7 +62,7 @@ return {
                     heex = { 'mix' },
                     asm = { 'nasmfmt' },
                     zig = { 'zigfmt' },
-                    dart = { 'dart_format' },
+                    dart = { 'dart_format', async = true, lsp_format = 'fallback' },
                     ['*'] = { 'injected' },
                     ['_'] = { 'trim_whitespace' },
                 },

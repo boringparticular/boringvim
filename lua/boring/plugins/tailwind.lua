@@ -15,7 +15,6 @@ return {
         after = function(_)
             require('tailwind-tools').setup({
                 server = {
-                    override = true,
                     on_attach = function(_, bufnr)
                         require('tailwindcss-colors').buf_attach(bufnr)
                     end,

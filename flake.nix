@@ -244,7 +244,6 @@
             lspsaga-nvim
             dropbar-nvim
             nvim-bqf
-            fastaction-nvim
             pkgs.neovimPlugins.quicker-nvim
             dressing-nvim
             pkgs.neovimPlugins.volt

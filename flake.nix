@@ -126,6 +126,7 @@
       lspsAndRuntimeDeps = {
         general = with pkgs; [
           lua-language-server
+          yazi
         ];
       };
 
@@ -192,6 +193,7 @@
           nvim-treesitter-context
           nvim-treesitter-refactor
           nvim-bqf
+          yazi-nvim
           nvzone-volt
           nvzone-typr
 
@@ -271,7 +273,7 @@
         # they contain a settings set defined above
         # see :help nixCats.flake.outputs.settings
         settings = {
-          suffix-path = true;
+          suffix-path = false;
           suffix-LD = true;
           hosts.node.enable = true;
           wrapRc = true;
